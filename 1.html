@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 1 - Pengenalan Sel | IPA TERPADU Kelas VIII Semester I</title>
+    
+    <!-- Google Fonts & Icons (Konsisten dengan Landing Page) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Variabel CSS konsisten dengan landing page untuk nuansa modern-luxury */
+        :root {
+            --primary-navy: #0A192F;
+            --secondary-navy: #112240;
+            --accent-gold: #D4AF37;
+            --accent-gold-light: #F4E4BC;
+            --text-light: #E6F1FF;
+            --text-muted: #8892B0;
+            --white: #FFFFFF;
+            --glass-border: rgba(212, 175, 55, 0.2);
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-navy);
+            color: var(--text-light);
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        /* Top Navigation */
+        .top-nav {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--glass-border);
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .top-nav a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+        
+        .top-nav a:hover {
+            color: var(--accent-gold-light);
+            text-decoration: underline;
+        }
+        
+        .top-nav span {
+            color: var(--text-muted);
+        }
+        
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--white);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, var(--white), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .chapter-subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            font-style: italic;
+            border-left: 3px solid var(--accent-gold);
+            padding-left: 1rem;
+        }
+        
+        /* Buttons */
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+        
+        .btn-primary {
+            background: var(--accent-gold);
+            color: var(--primary-navy);
+        }
+        
+        .btn-primary:hover {
+            background: var(--accent-gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -10px rgba(212, 175, 55, 0.5);
+        }
+        
+        .btn-outline {
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+        }
+        
+        .btn-outline:hover {
+            background: rgba(212, 175, 55, 0.1);
+        }
+        
+        /* Content Sections */
+        h2 {
+            font-size: 1.8rem;
+            color: var(--accent-gold-light);
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 1rem;
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+            color: var(--text-light);
+        }
+        
+        ul, ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            color: var(--text-muted);
+        }
+        
+        li {
+            margin-bottom: 0.8rem;
+        }
+        
+        strong {
+            color: var(--white);
+        }
+        
+        /* Table Styling */
+        .table-container {
+            overflow-x: auto;
+            background: var(--secondary-navy);
+            border-radius: 8px;
+            border: 1px solid var(--glass-border);
+            margin: 2rem 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: var(--text-light);
+        }
+        
+        th {
+            text-align: left;
+            padding: 1rem;
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--accent-gold);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            border-bottom: 2px solid var(--accent-gold);
+        }
+        
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(136, 146, 176, 0.2);
+            color: var(--text-muted);
+        }
+        
+        tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+            color: var(--text-light);
+        }
+        
+        /* Case Study Box */
+        .case-study {
+            background: rgba(10, 25, 47, 0.5);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .case-study strong {
+            color: var(--accent-gold);
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Exam Points Box */
+        .exam-points {
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .exam-points h3 {
+            color: var(--accent-gold);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .exam-points ul {
+            color: var(--text-light);
+            margin-bottom: 0;
+        }
+        
+        /* Footer */
+        footer {
+            background: #020c1b;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--glass-border);
+            margin-top: 4rem;
+        }
+        
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        footer a {
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Top Navigation -->
+        <div class="top-nav">
+            <a href="index.html"><i class="fas fa-book-open"></i> IPA TERPADU Kelas VIII</a>
+            <span>|</span>
+            <a href="index.html">Beranda</a>
+            <span>|</span>
+            <a href="index.html#daftar-isi">Daftar Bab</a>
+            <span>|</span>
+            <a href="index.html#tentang">Penulis</a>
+        </div>
+
+        <!-- Header -->
+        <header>
+            <h1>BAB 1</h1>
+            <h1 style="font-size: 2rem; margin-top: -0.5rem;">Pengenalan Sel: Teori Sel, Struktur Sel, dan Fungsi Organel Sel</h1>
+            <p class="chapter-subtitle">Konsep dasar sel sebagai unit terkecil kehidupan, perkembangan teori sel, perbedaan struktur sel prokariotik dan eukariotik, serta fungsi mendalam dari berbagai organel sel.</p>
+            
+            <div class="nav-buttons">
+                <a href="index.html" class="btn btn-outline"><i class="fas fa-home"></i> Beranda</a>
+                <a href="uji-formatif-1.html" class="btn btn-primary"><i class="fas fa-clipboard-check"></i> Uji Formatif Bab 1</a>
+                <a href="2.html" class="btn btn-outline">Bab Selanjutnya <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <h2>A. Pengertian dan Hakikat Sel</h2>
+            <p>Sel merupakan unit struktural dan fungsional terkecil dari makhluk hidup. Secara etimologis, "sel" berasal dari bahasa Latin <em>"cella"</em> yang berarti ruangan kecil. Istilah ini pertama kali dikemukakan oleh Robert Hooke pada tahun 1665 saat mengamati irisan gabus di bawah mikroskop sederhana.</p>
+            <p>Dalam perspektif yang lebih komprehensif, sel bukan hanya sekadar "ruangan" mati, melainkan sebuah sistem dinamis yang mencakup:</p>
+            <ul>
+                <li><strong>Membran Sel:</strong> Batas fleksibel yang mengatur keluar masuknya zat (selektif permeabel).</li>
+                <li><strong>Sitoplasma:</strong> Cairan koloid tempat berlangsungnya reaksi kimia kehidupan dan tempat organel berada.</li>
+                <li><strong>Inti Sel (Nukleus):</strong> Pusat pengendali aktivitas sel yang menyimpan materi genetik (DNA).</li>
+            </ul>
+
+            <h2>B. Teori Sel</h2>
+            <p>Perkembangan teori sel melibatkan berbagai ilmuwan yang berkontribusi pada pemahaman kita tentang kehidupan:</p>
+            <ol>
+                <li><strong>Robert Hooke (1665):</strong> Menemukan dan menamai "cell" pada irisan gabus.</li>
+                <li><strong>Matthias Schleiden & Theodor Schwann (1839):</strong> Menyatakan bahwa semua makhluk hidup tersusun atas sel (Teori Sel Klasik).</li>
+                <li><strong>Rudolf Virchow (1855):</strong> Mengemukakan prinsip <em>"Omnis cellula e cellula"</em> (setiap sel berasal dari sel sebelumnya melalui pembelahan).</li>
+                <li><strong>Max Schultze:</strong> Menyempurnakan teori bahwa sel adalah kesatuan fungsional kehidupan.</li>
+            </ol>
+
+            <h2>C. Struktur Sel: Prokariotik dan Eukariotik</h2>
+            <p>Berdasarkan ada tidaknya membran inti, sel dibagi menjadi dua kategori utama:</p>
+            <ul>
+                <li><strong>Sel Prokariotik:</strong> Tidak memiliki membran inti yang membungkus materi genetik. Materi genetik tersebar di daerah nukleoid. Contoh: Bakteri dan Arkea.</li>
+                <li><strong>Sel Eukariotik:</strong> Memiliki membran inti yang membungkus materi genetik (DNA), serta memiliki berbagai organel bermembran. Contoh: Sel hewan, sel tumbuhan, protista, dan jamur.</li>
+            </ul>
+
+            <h2>D. Fungsi Organel Sel</h2>
+            <p>Organel adalah komponen khusus di dalam sel yang memiliki fungsi tertentu, mirip dengan organ dalam tubuh manusia. Berikut adalah analisis perbandingan fungsi organel utama:</p>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Organel</th>
+                            <th>Fungsi Utama</th>
+                            <th>Analogi Sederhana</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Nukleus</strong></td>
+                            <td>Mengendalikan aktivitas sel dan menyimpan informasi genetik (DNA)</td>
+                            <td>Otak / Pusat Komando</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mitokondria</strong></td>
+                            <td>Tempat respirasi sel untuk menghasilkan energi (ATP)</td>
+                            <td>Pembangkit Listrik</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ribosom</strong></td>
+                            <td>Tempat sintesis (pembentukan) protein</td>
+                            <td>Pabrik Protein</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Retikulum Endoplasma (RE)</strong></td>
+                            <td>Transportasi zat di dalam sel dan sintesis lipid/protein</td>
+                            <td>Jalan Raya / Sistem Transportasi</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Badan Golgi</strong></td>
+                            <td>Memodifikasi, mengemas, dan mendistribusikan protein</td>
+                            <td>Kantor Pos / Gudang</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Lisosom</strong></td>
+                            <td>Pencernaan intraseluler (menghancurkan zat asing atau organel rusak)</td>
+                            <td>Kantong Penghancur / Daur Ulang</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Kloroplas</strong></td>
+                            <td>Tempat berlangsungnya fotosintesis (hanya pada sel tumbuhan)</td>
+                            <td>Dapur / Panel Surya</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="case-study">
+                <strong><i class="fas fa-microscope"></i> Studi Kasus: Penyakit Tay-Sachs</strong>
+                <p>Penyakit Tay-Sachs adalah contoh nyata pentingnya fungsi organel. Penyakit ini disebabkan oleh kelainan genetik yang membuat <strong>lisosom</strong> tidak memiliki enzim heksosaminidase A. Akibatnya, lipid (lemak) menumpuk di sel-sel saraf otak, menyebabkan kerusakan progresif pada sistem saraf, gangguan motorik, dan pada kasus parah dapat berakibat fatal. Ini menunjukkan bagaimana kegagalan satu organel kecil dapat memengaruhi keseluruhan fungsi tubuh siswa dan manusia secara umum.</p>
+            </div>
+
+            <h2>E. Tantangan dan Miskonsepsi tentang Sel</h2>
+            <p>Di era digital dan kemajuan mikroskop elektron, pemahaman tentang sel terus berkembang. Tantangan belajar bagi siswa meliputi:</p>
+            <ul>
+                <li><strong>Miskonsepsi Statis:</strong> Beranggapan bahwa sel adalah benda mati atau statis, padahal sel sangat dinamis dan terus berinteraksi.</li>
+                <li><strong>Skala Mikroskopis:</strong> Kesulitan membayangkan skala ukuran sel dan interaksi kompleks antar organel yang tidak terlihat oleh mata telanjang.</li>
+                <li><strong>Kesenjangan Visual:</strong> Perbedaan antara gambar 2D di buku teks dengan visualisasi 3D sel yang sebenarnya di laboratorium.</li>
+            </ul>
+
+            <h2>F. Relevansi untuk Kehidupan Sehari-hari</h2>
+            <p>Pemahaman tentang sel sangat relevan dan aplikatif dalam kehidupan:</p>
+            <ul>
+                <li><strong>Menjaga Kesehatan:</strong> Memahami mengapa nutrisi (seperti protein, vitamin, dan mineral) sangat penting untuk perbaikan dan regenerasi sel tubuh.</li>
+                <li><strong>Teknologi Medis:</strong> Dasar pengembangan obat-obatan modern yang menargetkan sel kanker secara spesifik tanpa merusak sel sehat (terapi target).</li>
+                <li><strong>Bioteknologi:</strong> Pemanfaatan sel bakteri (prokariotik) yang dimodifikasi secara genetik untuk memproduksi insulin bagi penderita diabetes.</li>
+            </ul>
+
+            <!-- Poin Penting untuk Ujian -->
+            <div class="exam-points">
+                <h3><i class="fas fa-star"></i> Poin Penting untuk Ujian</h3>
+                <ul>
+                    <li>Pahami perbedaan mendasar antara sel prokariotik dan eukariotik (ada/tidaknya membran inti).</li>
+                    <li>Kuasai fungsi minimal 5 organel sel utama dan mampu membuat analoginya.</li>
+                    <li>Hafalkan nama ilmuwan (Hooke, Schleiden, Schwann, Virchow) dan kontribusi mereka dalam Teori Sel.</li>
+                    <li>Pahami hubungan antara struktur organel dengan fungsinya (misal: sel otot memiliki banyak mitokondria).</li>
+                    <li>Siapkan contoh konkret penyakit akibat gangguan organel (seperti Penyakit Tay-Sachs atau gangguan mitokondria).</li>
+                    <li><em>Catatan Administratif:</em> Untuk keperluan ujian formatif ini, pastikan siswa menuliskan <strong>NIS</strong> (Nomor Induk Siswa) dengan jelas pada lembar jawaban, bukan NIM.</li>
+                </ul>
+            </div>
+
+            <!-- Bottom Navigation -->
+            <div class="nav-buttons" style="margin-top: 3rem;">
+                <a href="index.html" class="btn btn-outline"><i class="fas fa-home"></i> Kembali ke Beranda</a>
+                <a href="uji-formatif-1.html" class="btn btn-primary"><i class="fas fa-clipboard-check"></i> Uji Formatif Bab 1</a>
+                <a href="2.html" class="btn btn-outline">Bab Selanjutnya <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div style="margin-bottom: 1.5rem;">
+            <i class="fas fa-book-open" style="font-size: 2rem; color: var(--accent-gold);"></i>
+        </div>
+        <p style="font-size: 1.1rem; color: var(--white); margin-bottom: 0.5rem;">IPA TERPADU Kelas VIII Semester I</p>
+        <p>Buku daras untuk siswa MTsS. Teori, praktik, dan aplikasi sains dalam kehidupan sehari-hari.</p>
+        <p style="margin-top: 1.5rem;">
+            <strong>Miri Susanti, S.Pd., Gr</strong> | MTsS Diniyah Limo Jurai
+        </p>
+        <p>
+            <i class="fas fa-envelope"></i> <a href="mailto:mirisusanti97@gmail.com">mirisusanti97@gmail.com</a>
+        </p>
+        <p style="margin-top: 2rem; font-size: 0.8rem; opacity: 0.6;">
+            &copy; 2026 Hak Cipta Dilindungi Undang-Undang.
+        </p>
+    </footer>
+
+</body>
+</html>

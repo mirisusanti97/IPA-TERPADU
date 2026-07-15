@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTS - Ujian Tengah Semester | IPA TERPADU Kelas VIII Semester I</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-navy: #0A192F;
+            --secondary-navy: #112240;
+            --accent-gold: #D4AF37;
+            --accent-gold-light: #F4E4BC;
+            --text-light: #E6F1FF;
+            --text-muted: #8892B0;
+            --white: #FFFFFF;
+            --glass-border: rgba(212, 175, 55, 0.2);
+            --success: #28a745;
+            --error: #dc3545;
+            --info: #17a2b8;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-navy);
+            color: var(--text-light);
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        .top-nav {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--glass-border);
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .top-nav a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+        
+        .top-nav a:hover {
+            color: var(--accent-gold-light);
+            text-decoration: underline;
+        }
+        
+        .top-nav span {
+            color: var(--text-muted);
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--white);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, var(--white), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .exam-banner {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(17, 34, 64, 0.8));
+            border: 2px solid var(--accent-gold);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .exam-banner::before {
+            content: '🏆';
+            position: absolute;
+            font-size: 8rem;
+            opacity: 0.08;
+            top: -20px;
+            right: -20px;
+        }
+        
+        .exam-banner h2 {
+            color: var(--accent-gold);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .exam-banner p {
+            color: var(--text-muted);
+            margin: 0.3rem 0;
+        }
+        
+        .exam-meta {
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .exam-meta p {
+            margin: 0.5rem 0;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        
+        .exam-meta strong {
+            color: var(--accent-gold);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--accent-gold-light);
+            font-weight: 500;
+        }
+        
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background: var(--secondary-navy);
+            border: 1px solid var(--glass-border);
+            border-radius: 6px;
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+        
+        .required {
+            color: var(--error);
+        }
+        
+        .section-divider {
+            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+            height: 2px;
+            margin: 3rem 0;
+            position: relative;
+        }
+        
+        .section-divider::before {
+            content: attr(data-label);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--primary-navy);
+            padding: 0 1.5rem;
+            color: var(--accent-gold);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        
+        .question-block {
+            background: var(--secondary-navy);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: border-color 0.3s;
+        }
+        
+        .question-block:hover {
+            border-color: var(--accent-gold);
+        }
+        
+        .question-number {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--primary-navy);
+            padding: 0.2rem 0.7rem;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .question-text {
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        
+        .narrative {
+            background: rgba(10, 25, 47, 0.6);
+            border-left: 3px solid var(--info);
+            padding: 1rem 1.2rem;
+            margin-bottom: 1rem;
+            border-radius: 0 6px 6px 0;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        
+        .narrative strong {
+            color: var(--accent-gold-light);
+        }
+        
+        .narrative table {
+            width: 100%;
+            margin-top: 0.8rem;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        
+        .narrative table th {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--accent-gold);
+            padding: 0.5rem;
+            text-align: left;
+            border: 1px solid var(--glass-border);
+        }
+        
+        .narrative table td {
+            padding: 0.5rem;
+            border: 1px solid var(--glass-border);
+            color: var(--text-muted);
+        }
+        
+        .options label {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            padding: 0.6rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+            color: var(--text-muted);
+        }
+        
+        .options label:hover {
+            background: rgba(212, 175, 55, 0.05);
+            color: var(--text-light);
+        }
+        
+        .options input[type="radio"] {
+            margin-top: 0.3rem;
+            accent-color: var(--accent-gold);
+        }
+        
+        .options textarea, .options input[type="text"] {
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary-navy);
+            border: 1px solid var(--glass-border);
+            border-radius: 6px;
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+        }
+        
+        .options textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .options textarea:focus, .options input[type="text"]:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.9rem 1.8rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: var(--accent-gold);
+            color: var(--primary-navy);
+        }
+        
+        .btn-primary:hover {
+            background: var(--accent-gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -10px rgba(212, 175, 55, 0.5);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+        }
+        
+        .btn-outline:hover {
+            background: rgba(212, 175, 55, 0.1);
+        }
+        
+        .btn-secondary {
+            background: var(--secondary-navy);
+            border: 1px solid var(--glass-border);
+            color: var(--text-light);
+        }
+        
+        .btn-secondary:hover {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+        }
+        
+        #hasil-section {
+            display: none;
+            background: rgba(212, 175, 55, 0.05);
+            border: 2px solid var(--accent-gold);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+        
+        .score-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .score-card {
+            background: var(--secondary-navy);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--glass-border);
+        }
+        
+        .score-card h4 {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+        }
+        
+        .score-card .score-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .essay-note {
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem;
+            margin-top: 1.5rem;
+            text-align: left;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        
+        footer {
+            background: #020c1b;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--glass-border);
+            margin-top: 4rem;
+        }
+        
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        footer a {
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        @media print {
+            body { background: white; color: black; }
+            .top-nav, .btn-group, footer { display: none; }
+            .container { max-width: 100%; padding: 0; }
+            .question-block, #hasil-section { border: 1px solid #ccc; break-inside: avoid; }
+            h1, h2, h3 { color: black; -webkit-text-fill-color: black; }
+            .score-value { color: black; }
+            .exam-banner { background: #f5f5f5; border-color: #333; }
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8rem; }
+            .exam-banner h2 { font-size: 1.3rem; }
+            .score-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Top Navigation -->
+        <div class="top-nav">
+            <a href="index.html"><i class="fas fa-book-open"></i> IPA TERPADU Kelas VIII</a>
+            <span>|</span>
+            <a href="index.html">Beranda</a>
+            <span>|</span>
+            <a href="index.html#daftar-isi">Daftar Bab</a>
+            <span>|</span>
+            <a href="7.html">Materi Bab 7</a>
+        </div>
+
+        <!-- Header -->
+        <header>
+            <h1><i class="fas fa-trophy"></i> UJIAN TENGAH SEMESTER</h1>
+            <p style="color: var(--text-muted); font-size: 1.1rem; margin-top: 0.5rem;">IPA TERPADU Kelas VIII Semester I | MTsS Diniyah Limo Jurai</p>
+            
+            <div class="exam-banner">
+                <h2>📋 UTS GANJIL 2026/2027</h2>
+                <p><strong>Materi Ujian:</strong> Bab 1 s.d. Bab 7</p>
+                <p style="font-size: 0.9rem; margin-top: 0.5rem;">Pengenalan Sel • Sistem Pencernaan • Sistem Peredaran Darah • Sistem Pernapasan</p>
+            </div>
+            
+            <div class="exam-meta">
+                <p><strong>📋 Struktur Ujian:</strong></p>
+                <p>• Bagian A: Pilihan Ganda HOTS (20 soal × 5 poin = <strong>100 poin</strong>)</p>
+                <p>• Bagian B: Isian Singkat (5 soal × 4 poin = <strong>20 poin</strong>)</p>
+                <p>• Bagian C: Essay/Uraian (5 soal × 16 poin = <strong>80 poin</strong>)</p>
+                <p><strong>⏱️ Waktu:</strong> 120 menit | <strong>🎯 Total Skor:</strong> 200 poin</p>
+                <p><strong>📖 Cakupan Materi:</strong> Bab 1 (Sel), Bab 2 (Pencernaan Dasar), Bab 3 (Gangguan Pencernaan), Bab 4 (Komponen Darah), Bab 5 (Mekanisme Peredaran Darah), Bab 6 (Gangguan Peredaran Darah), Bab 7 (Sistem Pernapasan)</p>
+            </div>
+        </header>
+
+        <!-- Student Data Form -->
+        <section id="data-siswa">
+            <h3 style="color: var(--accent-gold); margin-bottom: 1.5rem;"><i class="fas fa-user-graduate"></i> Data Siswa</h3>
+            <div class="form-group">
+                <label>Nama Lengkap <span class="required">*</span></label>
+                <input type="text" id="namaSiswa" placeholder="Masukkan nama lengkap siswa" required>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                <div class="form-group">
+                    <label>NIS (Nomor Induk Siswa) <span class="required">*</span></label>
+                    <input type="text" id="nisSiswa" placeholder="Masukkan NIS" required>
+                </div>
+                <div class="form-group">
+                    <label>Kelas <span class="required">*</span></label>
+                    <select id="kelasSiswa" required>
+                        <option value="">Pilih Kelas</option>
+                        <option value="VIII A">VIII A</option>
+                        <option value="VIII B">VIII B</option>
+                        <option value="VIII C">VIII C</option>
+                        <option value="VIII D">VIII D</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>📅 Tanggal Ujian</label>
+                <input type="date" id="tanggalUjian">
+            </div>
+        </section>
+
+        <!-- ============================================= -->
+        <!-- BAGIAN A: PILIHAN GANDA HOTS (20 SOAL) -->
+        <!-- ============================================= -->
+        <div class="section-divider" data-label="BAGIAN A – PILIHAN GANDA HOTS"></div>
+        
+        <section id="bagian-a">
+            <h3 style="color: var(--accent-gold); margin-bottom: 1rem;"><i class="fas fa-brain"></i> Pilihan Ganda Higher Order Thinking Skills (HOTS)</h3>
+            <p style="color: var(--error); font-size: 0.9rem; margin-bottom: 1.5rem;">⚠️ Bacalah narasi dengan cermat! Setiap soal bernilai 5 poin. Pilih satu jawaban yang paling tepat.</p>
+
+            <!-- Soal 1 - Bab 1: Sel -->
+            <div class="question-block">
+                <span class="question-number">Soal 1</span>
+                <div class="narrative">
+                    <strong>Studi Kasus:</strong> Seorang anak berusia 3 tahun didiagnosis menderita <em>Penyakit Tay-Sachs</em>. Hasil pemeriksaan laboratorium menunjukkan adanya penumpukan lipid (lemak) di dalam sel-sel saraf otak. Dokter menjelaskan bahwa penyakit ini disebabkan oleh kelainan genetik yang membuat salah satu organel sel tidak berfungsi dengan baik, sehingga tidak mampu mencerna lipid tersebut.
+                </div>
+                <div class="question-text">Berdasarkan kasus di atas, organel sel yang mengalami kelainan fungsi pada penderita Tay-Sachs adalah...</div>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="a"> a) Mitokondria, karena tidak mampu menghasilkan energi untuk memecah lipid</label>
+                    <label><input type="radio" name="q1" value="b"> b) Lisosom, karena tidak memiliki enzim heksosaminidase A untuk mencerna lipid</label>
+                    <label><input type="radio" name="q1" value="c"> c) Ribosom, karena tidak mampu mensintesis protein pemecah lipid</label>
+                    <label><input type="radio" name="q1" value="d"> d) Retikulum Endoplasma, karena tidak mampu mengangkut lipid keluar sel</label>
+                </div>
+            </div>
+
+            <!-- Soal 2 - Bab 1: Sel -->
+            <div class="question-block">
+                <span class="question-number">Soal 2</span>
+                <div class="narrative">
+                    <strong>Data Pengamatan Mikroskopis:</strong> Seorang siswa mengamati dua preparat sel di bawah mikroskop elektron dan mencatat hasilnya sebagai berikut:
+                    <table>
+                        <tr><th>Karakteristik</th><th>Preparat X</th><th>Preparat Y</th></tr>
+                        <tr><td>Membran inti</td><td>Tidak ada</td><td>Ada</td></tr>
+                        <tr><td>Organel bermembran</td><td>Tidak ada</td><td>Ada</td></tr>
+                        <tr><td>Ukuran</td><td>1-5 μm</td><td>10-100 μm</td></tr>
+                        <tr><td>Dinding sel</td><td>Peptidoglikan</td><td>Selulosa</td></tr>
+                    </table>
+                </div>
+                <div class="question-text">Berdasarkan data pengamatan, kesimpulan yang paling tepat mengenai kedua preparat tersebut adalah...</div>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="a"> a) Preparat X adalah sel tumbuhan, Preparat Y adalah sel hewan</label>
+                    <label><input type="radio" name="q2" value="b"> b) Preparat X adalah sel prokariotik (bakteri), Preparat Y adalah sel eukariotik (tumbuhan)</label>
+                    <label><input type="radio" name="q2" value="c"> c) Kedua preparat adalah sel eukariotik dengan fungsi berbeda</label>
+                    <label><input type="radio" name="q2" value="d"> d) Preparat X adalah sel hewan, Preparat Y adalah sel jamur</label>
+                </div>
+            </div>
+
+            <!-- Soal 3 - Bab 2: Pencernaan -->
+            <div class="question-block">
+                <span class="question-number">Soal 3</span>
+                <div class="narrative">
+                    <strong>Eksperimen Virtual:</strong> Andi melakukan percobaan dengan menambahkan ekstrak pankreas ke dalam tiga tabung reaksi berisi substrat berbeda: Tabung A berisi larutan pati, Tabung B berisi putih telur (protein), Tabung C berisi minyak goreng. Setelah diinkubasi 30 menit pada suhu 37°C, dilakukan uji Biuret dan uji Benedict. Hasilnya: Tabung A memberikan hasil positif uji Benedict (warna merah bata), Tabung B memberikan hasil positif uji Biuret (warna ungu memudar), dan Tabung C menunjukkan lapisan minyak menjadi lebih halus.
+                </div>
+                <div class="question-text">Kesimpulan yang paling tepat dari eksperimen tersebut adalah...</div>
+                <div class="options">
+                    <label><input type="radio" name="q3" value="a"> a) Ekstrak pankreas hanya mengandung amilase yang bekerja pada pati</label>
+                    <label><input type="radio" name="q3" value="b"> b) Pankreas menghasilkan tiga enzim sekaligus: amilase, tripsin, dan lipase yang bekerja pada substrat berbeda</label>
+                    <label><input type="radio" name="q3" value="c"> c) Ekstrak pankreas hanya efektif pada suhu ruang, bukan suhu tubuh</label>
+                    <label><input type="radio" name="q3" value="d"> d) Putih telur tidak dapat dicerna oleh enzim pankreas</label>
+                </div>
+            </div>
+
+            <!-- Soal 4 - Bab 2: Pencernaan -->
+            <div class="question-block">
+                <span class="question-number">Soal 4</span>
+                <div class="narrative">
+                    <strong>Data Kesehatan (SSGI 2023):</strong> Prevalensi stunting di Indonesia mencapai 21,5%, artinya 1 dari 5 balita mengalami gagal tumbuh. Seorang peneliti melakukan studi di sebuah desa dan menemukan bahwa meskipun asupan kalori anak-anak di desa tersebut mencukupi, banyak anak yang tetap mengalami stunting. Analisis lebih lanjut menunjukkan bahwa sanitasi lingkungan yang buruk menyebabkan infeksi diare berulang pada anak-anak.
+                </div>
+                <div class="question-text">Analisis yang paling tepat untuk menjelaskan fenomena tersebut adalah...</div>
+                <div class="options">
+                    <label><input type="radio" name="q4" value="a"> a) Stunting hanya disebabkan oleh kekurangan kalori, bukan infeksi</label>
+                    <label><input type="radio" name="q4" value="b"> b) Infeksi diare berulang merusak vili usus halus sehingga penyerapan nutrisi terganggu meskipun asupan kalori cukup</label>
+                    <label><input type="radio" name="q4" value="c"> c) Stunting disebabkan oleh faktor genetik semata, tidak dipengaruhi lingkungan</label>
+                    <label><input type="radio" name="q4" value="d"> d) Sanitasi lingkungan tidak berpengaruh terhadap pertumbuhan anak</label>
+                </div>
+            </div>
+
+            <!-- Soal 5 - Bab 3: Gangguan Pencernaan -->
+            <div class="question-block">
+                <span class="question-number">Soal 5</span>
+                <div class="narrative">
+                    <strong>Kasus Klinis:</strong> Rina (16 tahun) sering mengalami sensasi panas di dada (<em>heartburn</em>) dan rasa asam naik ke tenggorokan, terutama setelah makan larut malam sambil belajar. Ia sering mengonsumsi kopi kekinian dan makanan pedas. Dokter mendiagnosis Rina mengalami kondisi di mana sfingter esofagus bawah (LES) melemah sehingga isi lambung naik kembali ke kerongkongan.
+                </div>
+                <div class="question-text">Diagnosis yang paling tepat untuk kasus Rina dan mekanisme patofisiologinya adalah...</div>
+                <div class="options">
+                    <label><input type="radio" name="q5" value="a"> a) Gastritis akibat infeksi <em>Helicobacter pylori</em></label>
+                    <label><input type="radio" name="q5" value="b"> b) GERD (Gastroesophageal Reflux Disease) akibat melemahnya sfingter esofagus bawah</label>
+                    <label><input type="radio" name="q5" value="c"> c) Tukak lambung akibat penggunaan OAINS berlebihan</label>
+                    <label><input type="radio" name="q5" value="d"> d) Appendisitis akibat sumbatan lumen appendiks</label>
+                </div>
+            </div>
+
+            <!-- Soal 6 - Bab 3: Gangguan Pencernaan -->
+            <div class="question-block">
+                <span class="question-number">Soal 6</span>
+                <div class="narrative">
+                    <strong>Situasi Darurat:</strong> Dalam sebuah kegiatan pramuka, seorang adik berusia 12 tahun mengalami diare akut setelah mengonsumsi makanan dari warung yang kurang higienis. Ia BAB encer lebih dari 5 kali dalam 3 jam, disertai lemas dan mulut kering. Kakak pembina segera memberikan pertolongan pertama.
+                </div>
+                <div class="question-text">Tindakan pertolongan pertama yang paling tepat dan rasional secara medis adalah...</div>
+                <div class="options">
+                    <label><input type="radio" name="q6" value="a"> a) Memberikan obat anti-diare segera untuk menghentikan diare</label>
+                    <label><input type="radio" name="q6" value="b"> b) Memberikan oralit untuk rehidrasi, karena diare adalah mekanisme tubuh mengeluarkan patogen dan yang terpenting adalah mencegah dehidrasi</label>
+                    <label><input type="radio" name="q6" value="c"> c) Memuasakan penderita selama 24 jam agar usus istirahat</label>
+                    <label><input type="radio" name="q6" value="d"> d) Memberikan minuman bersoda untuk menggantikan cairan yang hilang</label>
+                </div>
+            </div>
+
+            <!-- Soal 7 - Bab 4: Komponen Darah -->
+            <div class="question-block">
+                <span class="question-number">Soal 7</span>
+                <div class="narrative">
+                    <strong>Hasil Pemeriksaan Laboratorium:</strong> Seorang siswi berusia 15 tahun datang ke klinik dengan keluhan sering pusing, lemas, dan sulit berkonsentrasi saat belajar. Hasil pemeriksaan darah menunjukkan:
+                    <table>
+                        <tr><th>Parameter</th><th>Hasil</th><th>Nilai Normal</th></tr>
+                        <tr><td>Hemoglobin (Hb)</td><td>9,5 g/dL</td><td>12-16 g/dL</td></tr>
+                        <tr><td>Eritrosit</td><td>3,8 juta/μL</td><td>4-5 juta/μL</td></tr>
+                        <tr><td>Leukosit</td><td>7.000/μL</td><td>5.000-10.000/μL</td></tr>
+                        <tr><td>Trombosit</td><td>250.000/μL</td><td>150.000-400.000/μL</td></tr>
+                    </table>
+                    Anamnesis menunjukkan siswi tersebut sering melewatkan sarapan dan jarang mengonsumsi daging atau sayur hijau.
+                </div>
+                <div class="question-text">Berdasarkan data tersebut, diagnosis yang paling tepat dan penjelasan fisiologisnya adalah...</div>
+                <div class="options">
+                    <label><input type="radio" name="q7" value="a"> a) Leukemia, karena leukosit meningkat di atas normal</label>
+                    <label><input type="radio" name="q7" value="b"> b) Anemia defisiensi besi, karena Hb rendah akibat asupan zat besi kurang, sehingga kapasitas angkut oksigen darah menurun</label>
+                    <label><input type="radio" name="q7" value="c"> c) Hemofilia, karena trombosit berada di bawah normal</label>
+                    <label><input type="radio" name="q7" value="d"> d) Thalassemia, karena eritrosit mengalami kelainan genetik</label>
+                </div>
+            </div>
+
+            <!-- Soal 8 - Bab 4: Komponen Darah -->
+            <div class="question-block">
+                <span class="question-number">Soal 8</span>
+                <div class="narrative">
+                    <strong>Analisis Mekanisme:</strong> Saat seseorang terluka dan pembuluh darah robek, serangkaian reaksi berantai terjadi untuk menghentikan perdarahan. Proses dimulai dengan trombosit yang menempel pada dinding pembuluh yang rusak, kemudian melepaskan zat kimia yang memicu rangkaian reaksi pembekuan. Pada tahap akhir, suatu protein plasma diubah menjadi benang-benang halus yang membentuk jaring untuk menjebak sel darah.
+                </div>
+                <div class="question-text">Protein plasma yang diubah menjadi benang-benang jaring pembeku pada tahap akhir proses hemostasis adalah...</div>
+                <div class="options">
+                    <label><input type="radio" name="q8" value="a"> a) Albumin diubah menjadi globulin</label>
+                    <label><input type="radio" name="q8" value="b"> b) Fibrinogen diubah menjadi fibrin</label>
+                    <label><input type="radio" name="q8" value="c"> c) Hemoglobin diubah menjadi bilirubin</label>
+                    <label><input type="radio" name="q8" value="d"> d) Protrombin diubah menjadi tromboplastin</label>
+                </div>
+            </div>
+
+            <!-- Soal 9 - Bab 5: Mekanisme Peredaran Darah -->
+            <div class="question-block">
+                <span class="question-number">Soal 9</span>
+                <div class="narrative">
+                    <strong>Analisis Alur:</strong> Perhatikan skema peredaran darah berikut:<br>
+                    <em>"Ruang Jantung X → Pembuluh Y → Paru-paru → Pembuluh Z → Ruang Jantung W"</em><br>
+                    Seorang siswa diminta menganalisis alur peredaran darah kecil (pulmonal) dan menentukan ruang jantung serta pembuluh darah yang terlibat.
+                </div>
+                <div class="question-text">Identifikasi yang tepat untuk X, Y, Z, dan W secara berurutan adalah...</div>
+                <div class="options">
+                    <label><input type="radio" name="q9" value="a"> a) Bilik Kiri, Aorta, Vena Kava, Serambi Kanan</label>
+                    <label><input type="radio" name="q9" value="b"> b) Bilik Kanan, Arteri Pulmonalis, Vena Pulmonalis, Serambi Kiri</label>
+                    <label><input type="radio" name="q9" value="c"> c) Serambi Kiri, Vena Pulmonalis, Arteri Pulmonalis, Bilik Kanan</label>
+                    <label><input type="radio" name="q9" value="d"> d) Bilik Kanan, Vena Kava, Aorta, Serambi Kiri</label>
+                </div>
+            </div>
+
+            <!-- Soal 10 - Bab 5: Mekanisme Peredaran Darah -->
+            <div class="question-block">
+                <span class="question-number">Soal 10</span>
+                <div class="narrative">
+                    <strong>Kasus Transfusi:</strong> Di sebuah rumah sakit, terjadi kesalahan prosedur transfusi darah. Seorang pasien dengan golongan darah B secara tidak sengaja menerima transfusi darah golongan A. Beberapa menit setelah transfusi dimulai, pasien mengalami demam tinggi, nyeri pinggang hebat, dan urin berwarna gelap. Tim medis segera menghentikan transfusi dan memberikan penanganan darurat.
+                </div>
+                <div class="question-text">Mekanisme reaksi yang terjadi pada kasus tersebut adalah...</div>
+                <div class="options">
+                    <label><input type="radio" name="q10" value="a"> a) Antibodi Anti-A pada plasma pasien menyerang antigen A pada eritrosit donor, menyebabkan aglutinasi dan hemolisis</label>
+                    <label><input type="radio" name="q10" value="b"> b) Antibodi Anti-B pada plasma donor menyerang antigen B pada eritrosit pasien</label>
+                    <label><input type="radio" name="q10" value="c"> c) Terjadi reaksi alergi terhadap protein plasma donor</label>
+                    <label><input type="radio" name="q10" value="d"> d) Golongan darah A dan B saling menetralkan sehingga darah menjadi tidak berfungsi</label>
+                </div>
+            </div>
+
+            <!-- Soal 11 - Bab 5: Mekanisme Peredaran Darah -->
+            <div class="question-block">
+                <span class="question-number">Soal 11</span>
+                <div class="narrative">
+                    <strong>Data Tekanan Darah:</strong> Seorang pasien berusia 45 tahun memeriksakan tekanan darahnya di klinik selama 3 kali kunjungan dalam seminggu. Hasilnya:
+                    <table>
+                        <tr><th>Kunjungan</th><th>Tekanan Darah</th></tr>
+                        <tr><td>1</td><td>145/95 mmHg</td></tr>
+                        <tr><td>2</td><td>150/98 mmHg</td></tr>
+                        <tr><td>3</td><td>148/96 mmHg</td></tr>
+                    </table>
+                </div>
+                <div class="question-text">Interpretasi yang paling tepat terhadap data tekanan darah pasien tersebut adalah...</div>
+                <div class="options">
+                    <label><input type="radio" name="q11" value="a"> a) Pasien memiliki tekanan darah normal karena masih di bawah 160/100 mmHg</label>
+                    <label><input type="radio" name="q11" value="b"> b) Pasien mengalami hipertensi karena tekanan darah sistolik ≥140 mmHg dan diastolik ≥90 mmHg secara persisten</label>
+                    <label><input type="radio" name="q11" value="c"> c) Pasien mengalami hipotensi karena tekanan darah terlalu rendah</label>
+                    <label><input type="radio" name="q11" value="d"> d) Hasil tidak valid karena harus diukur dalam posisi berdiri</label>
+                </div>
+            </div>
+
+            <!-- Soal 12 - Bab 6: Gangguan Peredaran Darah -->
+            <div class="question-block">
+                <span class="question-number">Soal 12</span>
+                <div class="narrative">
+                    <strong>Kasus Autopsi:</strong> Seorang pria berusia 55 tahun meninggal dunia akibat serangan jantung. Hasil autopsi menunjukkan adanya penyempitan signifikan pada arteri koroner. Pemeriksaan mikroskopis dinding pembuluh darah mengungkapkan adanya penumpukan plak yang terdiri dari lemak, kolesterol, kalsium, dan zat sisa metabolisme di bawah lapisan endotel.
+                </div>
+                <div class="question-text">Kondisi patologis yang ditemukan pada kasus tersebut disebut...</div>
+                <div class="options">
+                    <label><input type="radio" name="q12" value="a"> a) Varises, yaitu pelebaran vena akibat katup melemah</label>
+                    <label><input type="radio" name="q12" value="b"> b) Aneurisma, yaitu pelebaran abnormal dinding arteri</label>
+                    <label><input type="radio" name="q12" value="c"> c) Aterosklerosis, yaitu penumpukan plak lemak di dinding arteri yang menyebabkan penyempitan</label>
+                    <label><input type="radio" name="q12" value="d"> d) Hemofilia, yaitu kelainan pembekuan darah genetik</label>
+                </div>
+            </div>
+
+            <!-- Soal 13 - Bab 6: Gangguan Peredaran Darah -->
+            <div class="question-block">
+                <span class="question-number">Soal 13</span>
+                <div class="narrative">
+                    <strong>Situasi Darurat Medis:</strong> Seorang wanita berusia 60 tahun tiba-tiba mengalami gejala berikut: sisi kanan wajahnya tampak turun/asimetris, lengan kanannya tidak dapat diangkat, dan bicaranya menjadi pelo. Keluarganya segera membawanya ke IGD rumah sakit. Dokter segera menerapkan protokol <strong>FAST</strong> untuk evaluasi cepat.
+                </div>
+                <div class="question-text">Berdasarkan gejala yang muncul dan protokol FAST, diagnosis yang paling mungkin dan tindakan yang harus segera dilakukan adalah...</div>
+                <div class="options">
+                    <label><input type="radio" name="q13" value="a"> a) Serangan jantung, berikan nitrogliserin</label>
+                    <label><input type="radio" name="q13" value="b"> b) Stroke akut, segera lakukan pencitraan otak (CT-Scan) dan penanganan dalam "golden period"</label>
+                    <label><input type="radio" name="q13" value="c"> c) Hipertensi darurat, berikan obat penurun tekanan darah oral</label>
+                    <label><input type="radio" name="q13" value="d"> d) Migrain berat, berikan obat pereda nyeri dan istirahat</label>
+                </div>
+            </div>
+
+            <!-- Soal 14 - Bab 6: Gangguan Peredaran Darah -->
+            <div class="question-block">
+                <span class="question-number">Soal 14</span>
+                <div class="narrative">
+                    <strong>Studi Epidemiologi:</strong> Sebuah penelitian longitudinal selama 10 tahun mengikuti 5.000 remaja berusia 13-18 tahun. Hasilnya menunjukkan bahwa remaja dengan pola makan tinggi natrium (>3.000 mg/hari), jarang berolahraga (<60 menit/minggu), dan memiliki IMT >25 memiliki risiko 3 kali lebih besar mengalami prehipertensi di usia dewasa muda dibandingkan kelompok kontrol.
+                </div>
+                <div class="question-text">Kesimpulan yang paling tepat dari studi epidemiologi tersebut adalah...</div>
+                <div class="options">
+                    <label><input type="radio" name="q14" value="a"> a) Prehipertensi hanya terjadi pada orang tua, tidak mungkin pada remaja</label>
+                    <label><input type="radio" name="q14" value="b"> b) Faktor gaya hidup (diet tinggi natrium, sedentari, obesitas) pada remaja merupakan prediktor kuat prehipertensi di usia dewasa</label>
+                    <label><input type="radio" name="q14" value="c"> c) Olahraga tidak berpengaruh terhadap tekanan darah</label>
+                    <label><input type="radio" name="q14" value="d"> d) Natrium dalam makanan tidak memengaruhi tekanan darah</label>
+                </div>
+            </div>
+
+            <!-- Soal 15 - Bab 6: Gangguan Peredaran Darah -->
+            <div class="question-block">
+                <span class="question-number">Soal 15</span>
+                <div class="narrative">
+                    <strong>Analisis Genetik:</strong> Seorang anak laki-laki berusia 8 tahun sering mengalami perdarahan sulit berhenti saat luka, bahkan dari luka kecil. Pemeriksaan laboratorium menunjukkan waktu perdarahan yang sangat lama. Dokter mendiagnosis anak tersebut menderita kelainan genetik resesif terkait kromosom X, di mana tubuhnya kekurangan faktor pembekuan VIII.
+                </div>
+                <div class="question-text">Diagnosis yang paling tepat dan pola penurunan genetik kelainan tersebut adalah...</div>
+                <div class="options">
+                    <label><input type="radio" name="q15" value="a"> a) Thalassemia, diturunkan secara autosomal resesif</label>
+                    <label><input type="radio" name="q15" value="b"> b) Leukemia, disebabkan oleh mutasi somatik</label>
+                    <label><input type="radio" name="q15" value="c"> c) Hemofilia A, diturunkan secara resesif terkait kromosom X (ibu carrier ke anak laki-laki)</label>
+                    <label><input type="radio" name="q15" value="d"> d) Sickle cell anemia, diturunkan secara autosomal dominan</label>
+                </div>
+            </div>
+
+            <!-- Soal 16 - Bab 7: Pernapasan -->
+            <div class="question-block">
+                <span class="question-number">Soal 16</span>
+                <div class="narrative">
+                    <strong>Data Kualitas Udara:</strong> Berdasarkan data IQAir, Jakarta sering masuk dalam 10 kota dengan polusi udara terburuk di dunia, dengan konsentrasi PM2.5 rata-rata >50 μg/m³ (kategori "tidak sehat"). Seorang peneliti melakukan studi pada 100 pekerja outdoor dan 100 pekerja indoor di Jakarta selama 6 bulan. Hasil spirometri menunjukkan:
+                    <table>
+                        <tr><th>Parameter</th><th>Pekerja Outdoor</th><th>Pekerja Indoor</th></tr>
+                        <tr><td>FVC (Kapasitas Vital Paru)</td><td>Menurun 15%</td><td>Stabil</td></tr>
+                        <tr><td>FEV1</td><td>Menurun 18%</td><td>Stabil</td></tr>
+                        <tr><td>Gejala batuk kronis</td><td>45%</td><td>12%</td></tr>
+                    </table>
+                </div>
+                <div class="question-text">Interpretasi yang paling tepat dari data penelitian tersebut adalah...</div>
+                <div class="options">
+                    <label><input type="radio" name="q16" value="a"> a) Polusi udara hanya memengaruhi kulit, tidak berdampak pada paru-paru</label>
+                    <label><input type="radio" name="q16" value="b"> b) Paparan PM2.5 jangka panjang menyebabkan penurunan kapasitas vital paru dan peningkatan gejala respiratorik pada pekerja outdoor</label>
+                    <label><input type="radio" name="q16" value="c"> c) Pekerja indoor lebih sehat karena tidak berolahraga</label>
+                    <label><input type="radio" name="q16" value="d"> d) Spirometri tidak dapat digunakan untuk mengukur fungsi paru</label>
+                </div>
+            </div>
+
+            <!-- Soal 17 - Bab 7: Pernapasan -->
+            <div class="question-block">
+                <span class="question-number">Soal 17</span>
+                <div class="narrative">
+                    <strong>Analisis Fisiologis:</strong> Seorang atlet renang sedang berlatih di kolam. Saat mengambil napas dalam-dalam, otot diafragmanya berkontraksi dan mendatar, sementara otot interkosta eksternal juga berkontraksi mengangkat tulang rusuk. Volume rongga dadanya membesar secara vertikal dan transversal.
+                </div>
+                <div class="question-text">Berdasarkan Hukum Boyle, apa yang terjadi pada tekanan intra-alveolar dan arah aliran udara pada kondisi tersebut?</div>
+                <div class="options">
+                    <label><input type="radio" name="q17" value="a"> a) Tekanan intra-alveolar meningkat di atas atmosfer, udara keluar dari paru-paru (ekspirasi)</label>
+                    <label><input type="radio" name="q17" value="b"> b) Tekanan intra-alveolar menurun di bawah atmosfer, udara masuk ke paru-paru (inspirasi)</label>
+                    <label><input type="radio" name="q17" value="c"> c) Tekanan intra-alveolar tetap sama dengan atmosfer, tidak ada aliran udara</label>
+                    <label><input type="radio" name="q17" value="d"> d) Volume paru-paru mengecil, tekanan meningkat, udara masuk</label>
+                </div>
+            </div>
+
+            <!-- Soal 18 - Bab 7: Pernapasan -->
+            <div class="question-block">
+                <span class="question-number">Soal 18</span>
+                <div class="narrative">
+                    <strong>Data Komposisi Gas:</strong> Seorang siswa mengukur komposisi gas pada udara inspirasi dan ekspirasi menggunakan alat analisis gas. Hasilnya:
+                    <table>
+                        <tr><th>Gas</th><th>Udara Inspirasi</th><th>Udara Ekspirasi</th></tr>
+                        <tr><td>O₂</td><td>21%</td><td>16%</td></tr>
+                        <tr><td>CO₂</td><td>0,04%</td><td>4%</td></tr>
+                        <tr><td>N₂</td><td>78%</td><td>78%</td></tr>
+                    </table>
+                </div>
+                <div class="question-text">Kesimpulan yang paling tepat berdasarkan data komposisi gas tersebut adalah...</div>
+                <div class="options">
+                    <label><input type="radio" name="q18" value="a"> a) Tubuh menyerap semua oksigen yang dihirup (100%)</label>
+                    <label><input type="radio" name="q18" value="b"> b) Terjadi pertukaran gas di alveolus: O₂ diserap tubuh (5% berkurang) dan CO₂ dilepaskan (meningkat 100x lipat)</label>
+                    <label><input type="radio" name="q18" value="c"> c) Nitrogen digunakan oleh tubuh untuk metabolisme</label>
+                    <label><input type="radio" name="q18" value="d"> d) Udara ekspirasi tidak mengandung oksigen sama sekali</label>
+                </div>
+            </div>
+
+            <!-- Soal 19 - Integrasi Bab 4 & 7 -->
+            <div class="question-block">
+                <span class="question-number">Soal 19</span>
+                <div class="narrative">
+                    <strong>Kasus Integratif:</strong> Seorang pendaki gunung mencapai ketinggian 4.000 mdpl. Ia merasakan sesak napas, pusing, dan jantung berdebar. Pemeriksaan menunjukkan saturasi O₂ darahnya hanya 85% (normal >95%). Tubuh pendaki merespons dengan meningkatkan produksi hormon eritropoietin (EPO) dari ginjal untuk merangsang sumsum tulang memproduksi lebih banyak eritrosit.
+                </div>
+                <div class="question-text">Analisis fisiologis yang paling tepat untuk menjelaskan mekanisme kompensasi tubuh pendaki tersebut adalah...</div>
+                <div class="options">
+                    <label><input type="radio" name="q19" value="a"> a) Kadar O₂ rendah di dataran tinggi → ginjal mendeteksi hipoksia → mensekresi EPO → sumsum tulang meningkatkan produksi eritrosit → kapasitas angkut O₂ darah meningkat</label>
+                    <label><input type="radio" name="q19" value="b"> b) Jantung berdebar karena kelebihan eritrosit yang menyumbat pembuluh darah</label>
+                    <label><input type="radio" name="q19" value="c"> c) Paru-paru mengecil sehingga kapasitas vital menurun drastis</label>
+                    <label><input type="radio" name="q19" value="d"> d) Hemoglobin berubah menjadi mioglobin untuk mengikat CO₂</label>
+                </div>
+            </div>
+
+            <!-- Soal 20 - Integrasi Bab 1-7 -->
+            <div class="question-block">
+                <span class="question-number">Soal 20</span>
+                <div class="narrative">
+                    <strong>Analisis Sistemik:</strong> Seorang pasien menderita penyakit paru obstruktif kronis (PPOK) akibat merokok selama 20 tahun. Alveolusnya rusak dan kehilangan elastisitasnya, sehingga pertukaran gas terganggu. Dalam jangka panjang, pasien juga mengalami komplikasi pada sistem peredaran darah: tekanan di arteri pulmonalis meningkat dan jantung kanan membesar (<em>cor pulmonale</em>).
+                </div>
+                <div class="question-text">Hubungan kausal yang paling tepat antara gangguan pernapasan dan komplikasi kardiovaskular pada kasus tersebut adalah...</div>
+                <div class="options">
+                    <label><input type="radio" name="q20" value="a"> a) Kerusakan alveolus → hipoksia kronis → vasokonstriksi pembuluh darah paru → tekanan arteri pulmonalis meningkat → beban kerja jantung kanan meningkat → jantung kanan membesar</label>
+                    <label><input type="radio" name="q20" value="b"> b) Rokok langsung merusak jantung tanpa melalui paru-paru</label>
+                    <label><input type="radio" name="q20" value="c"> c) Jantung kanan membesar karena kelebihan oksigen dari paru-paru yang rusak</label>
+                    <label><input type="radio" name="q20" value="d"> d) Tidak ada hubungan antara penyakit paru dan jantung</label>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================= -->
+        <!-- BAGIAN B: ISIAN SINGKAT (5 SOAL) -->
+        <!-- ============================================= -->
+        <div class="section-divider" data-label="BAGIAN B – ISIAN SINGKAT"></div>
+        
+        <section id="bagian-b">
+            <h3 style="color: var(--accent-gold); margin-bottom: 1rem;"><i class="fas fa-pen"></i> Isian Singkat</h3>
+            <p style="color: var(--error); font-size: 0.9rem; margin-bottom: 1.5rem;">⚠️ Jawablah dengan singkat dan tepat! Setiap soal bernilai 4 poin.</p>
+
+            <div class="question-block">
+                <span class="question-number">Soal 21</span>
+                <div class="question-text">Organel sel yang berfungsi sebagai "pembangkit listrik" karena tempat berlangsungnya respirasi sel untuk menghasilkan ATP adalah...</div>
+                <div class="options">
+                    <input type="text" id="isian21" placeholder="Ketik jawaban Anda...">
+                </div>
+            </div>
+
+            <div class="question-block">
+                <span class="question-number">Soal 22</span>
+                <div class="question-text">Enzim yang dihasilkan oleh lambung dan berfungsi untuk membunuh kuman serta mengaktifkan pepsinogen menjadi pepsin adalah...</div>
+                <div class="options">
+                    <input type="text" id="isian22" placeholder="Ketik jawaban Anda...">
+                </div>
+            </div>
+
+            <div class="question-block">
+                <span class="question-number">Soal 23</span>
+                <div class="question-text">Golongan darah yang dikenal sebagai "universal donor" karena dapat mendonorkan darah ke semua golongan darah ABO adalah golongan darah...</div>
+                <div class="options">
+                    <input type="text" id="isian23" placeholder="Ketik jawaban Anda...">
+                </div>
+            </div>
+
+            <div class="question-block">
+                <span class="question-number">Soal 24</span>
+                <div class="question-text">Mnemonik "FAST" digunakan untuk mengenali tanda-tanda awal stroke. Huruf "S" dalam FAST merupakan singkatan dari...</div>
+                <div class="options">
+                    <input type="text" id="isian24" placeholder="Ketik jawaban Anda...">
+                </div>
+            </div>
+
+            <div class="question-block">
+                <span class="question-number">Soal 25</span>
+                <div class="question-text">Kantung udara mikroskopis di paru-paru yang menjadi situs utama pertukaran gas O₂ dan CO₂ dengan darah disebut...</div>
+                <div class="options">
+                    <input type="text" id="isian25" placeholder="Ketik jawaban Anda...">
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================= -->
+        <!-- BAGIAN C: ESSAY (5 SOAL) -->
+        <!-- ============================================= -->
+        <div class="section-divider" data-label="BAGIAN C – ESSAY / URAIAN"></div>
+        
+        <section id="bagian-c">
+            <h3 style="color: var(--accent-gold); margin-bottom: 1rem;"><i class="fas fa-pen-fancy"></i> Essay / Uraian</h3>
+            <p style="color: var(--error); font-size: 0.9rem; margin-bottom: 1.5rem;">⚠️ Jawablah dengan jelas dan sistematis! Setiap soal bernilai 16 poin.</p>
+
+            <div class="question-block">
+                <span class="question-number">Soal 26</span>
+                <div class="question-text">Seorang pasien didiagnosis menderita penyakit Tay-Sachs akibat kelainan fungsi lisosom. Jelaskan secara komprehensif: (a) apa fungsi normal lisosom dalam sel, (b) bagaimana mekanisme penyakit Tay-Sachs pada tingkat seluler, dan (c) mengapa kegagalan satu organel kecil dapat berdampak fatal bagi keseluruhan sistem tubuh!</div>
+                <div class="options">
+                    <textarea id="essay26" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <span class="question-number">Soal 27</span>
+                <div class="question-text">Indonesia masih menghadapi masalah stunting dengan prevalensi 21,5% (SSGI 2023). Analisislah secara integratif: (a) mekanisme biologis bagaimana kekurangan gizi kronis menghambat pertumbuhan, (b) peran sistem pencernaan dalam penyerapan nutrisi, dan (c) strategi pencegahan stunting yang melibatkan aspek gizi, sanitasi, dan edukasi masyarakat!</div>
+                <div class="options">
+                    <textarea id="essay27" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <span class="question-number">Soal 28</span>
+                <div class="question-text">Dalam sebuah kecelakaan, seorang pasien bergolongan darah AB Rh+ membutuhkan transfusi darah darurat, namun tersedia hanya donor bergolongan darah O Rh+. Analisislah: (a) apakah transfusi ini aman dilakukan berdasarkan prinsip sistem ABO dan Rhesus, (b) jelaskan mekanisme antigen-antibodi yang terjadi, dan (c) mengapa pasien AB disebut "universal resipien"!</div>
+                <div class="options">
+                    <textarea id="essay28" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <span class="question-number">Soal 29</span>
+                <div class="question-text">Seorang pria berusia 50 tahun memiliki riwayat hipertensi tidak terkontrol, merokok 1 bungkus/hari selama 25 tahun, dan kadar kolesterol tinggi. Ia mengalami serangan jantung akibat Penyakit Jantung Koroner (PJK). Analisislah: (a) faktor risiko yang memperberat kondisinya, (b) mekanisme patofisiologi dari merokok hingga serangan jantung, dan (c) rekomendasi perubahan gaya hidup berdasarkan prinsip Diet DASH dan aktivitas fisik!</div>
+                <div class="options">
+                    <textarea id="essay29" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <span class="question-number">Soal 30</span>
+                <div class="question-text">Kota Jakarta sering mengalami polusi udara dengan konsentrasi PM2.5 tinggi. Jelaskan secara komprehensif: (a) mekanisme bagaimana PM2.5 merusak sistem pernapasan dari saluran napas atas hingga alveolus, (b) dampak jangka panjang terhadap kapasitas paru dan kesehatan kardiovaskular, dan (c) strategi preventif yang dapat diterapkan oleh individu dan pemerintah!</div>
+                <div class="options">
+                    <textarea id="essay30" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                </div>
+            </div>
+        </section>
+
+        <!-- Action Buttons -->
+        <div class="btn-group" style="margin-top: 3rem;">
+            <button class="btn btn-primary" onclick="hitungNilai()"><i class="fas fa-paper-plane"></i> KIRIM JAWABAN & LIHAT HASIL</button>
+        </div>
+
+        <!-- Hasil UTS -->
+        <section id="hasil-section">
+            <h2 style="color: var(--accent-gold); margin-top: 0;"><i class="fas fa-chart-bar"></i> Hasil Ujian Tengah Semester</h2>
+            <p>Terima kasih telah menyelesaikan UTS, <strong id="hasilNama">Siswa</strong>!</p>
+            
+            <div class="score-grid">
+                <div class="score-card">
+                    <h4>Skor Pilihan Ganda</h4>
+                    <div class="score-value" id="skorPG">0/100</div>
+                </div>
+                <div class="score-card">
+                    <h4>Skor Isian & Essay</h4>
+                    <div class="score-value" id="skorEssay">Menunggu</div>
+                </div>
+                <div class="score-card">
+                    <h4>Skor Total Sementara</h4>
+                    <div class="score-value" id="skorTotal">0/200</div>
+                </div>
+                <div class="score-card">
+                    <h4>Nilai Akhir (PG)</h4>
+                    <div class="score-value" id="nilaiAkhir">0</div>
+                </div>
+            </div>
+
+            <div class="essay-note">
+                <strong><i class="fas fa-info-circle"></i> Catatan Penilaian:</strong><br>
+                Skor Pilihan Ganda (20 soal × 5 poin = 100 poin) dihitung secara otomatis. Skor Isian Singkat (5 soal × 4 poin = 20 poin) dan Essay (5 soal × 16 poin = 80 poin) akan dinilai secara manual oleh guru berdasarkan ketepatan konsep, kelengkapan jawaban, analisis kritis, dan penggunaan istilah ilmiah yang benar. Silakan unduh hasil ini dan kumpulkan kepada guru pengampu.
+            </div>
+
+            <div class="btn-group" style="margin-top: 2rem;">
+                <button class="btn btn-primary" onclick="window.print()"><i class="fas fa-file-pdf"></i> UNDUH PDF LENGKAP</button>
+                <button class="btn btn-outline" onclick="alert('Fitur kirim email ke guru (mirisusanti97@gmail.com) akan membuka aplikasi email default Anda.')"><i class="fas fa-envelope"></i> KIRIM EMAIL GURU</button>
+                <button class="btn btn-secondary" onclick="location.reload()"><i class="fas fa-redo"></i> MULAI ULANG</button>
+            </div>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="top-nav" style="margin-top: 3rem; justify-content: center; border-top: 1px solid var(--glass-border); border-bottom: none; padding-top: 2rem;">
+            <a href="index.html">🏠 Kembali ke Beranda</a>
+            <span>|</span>
+            <a href="7.html">📖 Kembali ke Materi Bab 7</a>
+            <span>|</span>
+            <a href="9.html">Lanjut ke Materi Bab 9 →</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div style="margin-bottom: 1.5rem;">
+            <i class="fas fa-book-open" style="font-size: 2rem; color: var(--accent-gold);"></i>
+        </div>
+        <p style="font-size: 1.1rem; color: var(--white); margin-bottom: 0.5rem;">IPA TERPADU Kelas VIII Semester I</p>
+        <p>Ujian Tengah Semester (UTS) - Materi Bab 1 s.d. Bab 7</p>
+        <p style="margin-top: 1.5rem;">
+            <strong>Miri Susanti, S.Pd., Gr</strong> | MTsS Diniyah Limo Jurai
+        </p>
+        <p>
+            <i class="fas fa-envelope"></i> <a href="mailto:mirisusanti97@gmail.com">mirisusanti97@gmail.com</a>
+        </p>
+        <p style="margin-top: 2rem; font-size: 0.8rem; opacity: 0.6;">
+            &copy; 2026 Hak Cipta Dilindungi Undang-Undang.
+        </p>
+    </footer>
+
+    <!-- JavaScript for Scoring and Validation -->
+    <script>
+        // Kunci Jawaban Pilihan Ganda (20 soal)
+        const kunciJawaban = {
+            q1: 'b',   // Lisosom - Tay-Sachs
+            q2: 'b',   // Prokariotik vs Eukariotik
+            q3: 'b',   // Pankreas: amilase, tripsin, lipase
+            q4: 'b',   // Stunting & diare merusak vili
+            q5: 'b',   // GERD
+            q6: 'b',   // Oralit untuk rehidrasi
+            q7: 'b',   // Anemia defisiensi besi
+            q8: 'b',   // Fibrinogen → fibrin
+            q9: 'b',   // Alur peredaran kecil
+            q10: 'a',  // Reaksi hemolitik A→B
+            q11: 'b',  // Hipertensi
+            q12: 'c',  // Aterosklerosis
+            q13: 'b',  // Stroke FAST
+            q14: 'b',  // Prehipertensi remaja
+            q15: 'c',  // Hemofilia A
+            q16: 'b',  // PM2.5 menurunkan FVC & FEV1
+            q17: 'b',  // Hukum Boyle inspirasi
+            q18: 'b',  // Komposisi gas inspirasi-ekspirasi
+            q19: 'a',  // EPO kompensasi dataran tinggi
+            q20: 'a'   // PPOK → cor pulmonale
+        };
+
+        // Kunci Jawaban Isian Singkat (5 soal) - fleksibel terhadap variasi jawaban
+        const kunciIsian = {
+            isian21: ['mitokondria'],
+            isian22: ['hcl', 'asam klorida', 'asam lambung'],
+            isian23: ['o', 'golongan o', 'golongan darah o'],
+            isian24: ['speech', 'bicara', 'pelo'],
+            isian25: ['alveolus', 'alveoli']
+        };
+
+        function hitungNilai() {
+            // Validasi Data Siswa
+            const nama = document.getElementById('namaSiswa').value.trim();
+            const nis = document.getElementById('nisSiswa').value.trim();
+            const kelas = document.getElementById('kelasSiswa').value;
+
+            if (!nama || !nis || !kelas) {
+                alert('⚠️ Harap lengkapi data siswa (Nama Lengkap, NIS, dan Kelas) sebelum mengirim jawaban!');
+                document.getElementById('data-siswa').scrollIntoView({ behavior: 'smooth' });
+                return;
+            }
+
+            // Validasi Pilihan Ganda (harus semua terjawab)
+            let terjawab = 0;
+            for (let i = 1; i <= 20; i++) {
+                if (document.querySelector(`input[name="q${i}"]:checked`)) {
+                    terjawab++;
+                }
+            }
+
+            if (terjawab < 20) {
+                alert(`⚠️ Anda baru menjawab ${terjawab} dari 20 soal pilihan ganda. Harap lengkapi semua soal!`);
+                return;
+            }
+
+            // Hitung Skor Pilihan Ganda (20 soal × 5 poin = 100)
+            let skorPG = 0;
+            for (let i = 1; i <= 20; i++) {
+                const jawabanSiswa = document.querySelector(`input[name="q${i}"]:checked`).value;
+                if (jawabanSiswa === kunciJawaban[`q${i}`]) {
+                    skorPG += 5;
+                }
+            }
+
+            // Hitung Skor Isian Singkat (5 soal × 4 poin = 20) - auto-check sederhana
+            let skorIsian = 0;
+            for (let i = 21; i <= 25; i++) {
+                const jawaban = document.getElementById(`isian${i}`).value.trim().toLowerCase();
+                const kunci = kunciIsian[`isian${i}`];
+                if (kunci.some(k => jawaban.includes(k))) {
+                    skorIsian += 4;
+                }
+            }
+
+            // Tampilkan Hasil
+            document.getElementById('hasilNama').textContent = nama;
+            document.getElementById('skorPG').textContent = skorPG + '/100';
+            document.getElementById('skorEssay').textContent = skorIsian + '/100 (isian: ' + skorIsian + '/20 + essay: menunggu)';
+            document.getElementById('skorTotal').textContent = (skorPG + skorIsian) + '/200 (sementara)';
+            document.getElementById('nilaiAkhir').textContent = skorPG + skorIsian;
+            
+            const hasilSection = document.getElementById('hasil-section');
+            hasilSection.style.display = 'block';
+            hasilSection.scrollIntoView({ behavior: 'smooth' });
+
+            // Sembunyikan tombol kirim
+            document.querySelector('button[onclick="hitungNilai()"]').style.display = 'none';
+        }
+
+        // Set tanggal hari ini otomatis
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('tanggalUjian').value = today;
+        });
+    </script>
+</body>
+</html>

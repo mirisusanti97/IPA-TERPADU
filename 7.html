@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 7 - Organ dan Mekanisme Pernapasan | IPA TERPADU Kelas VIII Semester I</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-navy: #0A192F;
+            --secondary-navy: #112240;
+            --accent-gold: #D4AF37;
+            --accent-gold-light: #F4E4BC;
+            --text-light: #E6F1FF;
+            --text-muted: #8892B0;
+            --white: #FFFFFF;
+            --glass-border: rgba(212, 175, 55, 0.2);
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-navy);
+            color: var(--text-light);
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        .top-nav {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--glass-border);
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .top-nav a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+        
+        .top-nav a:hover {
+            color: var(--accent-gold-light);
+            text-decoration: underline;
+        }
+        
+        .top-nav span {
+            color: var(--text-muted);
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--white);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, var(--white), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .chapter-subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            font-style: italic;
+            border-left: 3px solid var(--accent-gold);
+            padding-left: 1rem;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+        
+        .btn-primary {
+            background: var(--accent-gold);
+            color: var(--primary-navy);
+        }
+        
+        .btn-primary:hover {
+            background: var(--accent-gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -10px rgba(212, 175, 55, 0.5);
+        }
+        
+        .btn-outline {
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+        }
+        
+        .btn-outline:hover {
+            background: rgba(212, 175, 55, 0.1);
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            color: var(--accent-gold-light);
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 1rem;
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+            color: var(--text-light);
+        }
+        
+        ul, ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            color: var(--text-muted);
+        }
+        
+        li {
+            margin-bottom: 0.8rem;
+        }
+        
+        strong {
+            color: var(--white);
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            background: var(--secondary-navy);
+            border-radius: 8px;
+            border: 1px solid var(--glass-border);
+            margin: 2rem 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: var(--text-light);
+        }
+        
+        th {
+            text-align: left;
+            padding: 1rem;
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--accent-gold);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            border-bottom: 2px solid var(--accent-gold);
+        }
+        
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(136, 146, 176, 0.2);
+            color: var(--text-muted);
+        }
+        
+        tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+            color: var(--text-light);
+        }
+        
+        .case-study {
+            background: rgba(10, 25, 47, 0.5);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .case-study strong {
+            color: var(--accent-gold);
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .exam-points {
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .exam-points h3 {
+            color: var(--accent-gold);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .exam-points ul {
+            color: var(--text-light);
+            margin-bottom: 0;
+        }
+        
+        footer {
+            background: #020c1b;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--glass-border);
+            margin-top: 4rem;
+        }
+        
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        footer a {
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Top Navigation -->
+        <div class="top-nav">
+            <a href="index.html"><i class="fas fa-book-open"></i> IPA TERPADU Kelas VIII</a>
+            <span>|</span>
+            <a href="index.html">Beranda</a>
+            <span>|</span>
+            <a href="index.html#daftar-isi">Daftar Bab</a>
+            <span>|</span>
+            <a href="index.html#tentang">Penulis</a>
+        </div>
+
+        <!-- Header -->
+        <header>
+            <h1>BAB 7</h1>
+            <h1 style="font-size: 2rem; margin-top: -0.5rem;">Sistem Pernapasan: Organ dan Mekanisme Pernapasan</h1>
+            <p class="chapter-subtitle">Menganalisis struktur organ-organ sistem pernapasan manusia, mekanisme ventilasi paru (inspirasi-ekspirasi), serta proses pertukaran gas di alveolus dan jaringan tubuh secara komprehensif.</p>
+            
+            <div class="nav-buttons">
+                <a href="6.html" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Bab Sebelumnya</a>
+                <a href="index.html" class="btn btn-outline"><i class="fas fa-home"></i> Beranda</a>
+                <a href="uji-formatif-7.html" class="btn btn-primary"><i class="fas fa-clipboard-check"></i> Uji Formatif Bab 7</a>
+                <a href="8.html" class="btn btn-outline">UTS <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <h2>A. Pengertian Sistem Pernapasan</h2>
+            <p>Sistem pernapasan (sistem respirasi) adalah serangkaian organ dan struktur yang berfungsi melakukan pertukaran gas antara tubuh dengan lingkungan eksternal. Secara spesifik, sistem ini mengangkut <strong>oksigen (O₂)</strong> dari udara ke dalam sel-sel tubuh, dan mengeluarkan <strong>karbon dioksida (CO₂)</strong> sebagai zat sisa metabolisme dari sel ke udara luar.</p>
+            <p>Proses pernapasan melibatkan tiga tahap utama:</p>
+            <ul>
+                <li><strong>Ventilasi Pulmonal (Bernapas):</strong> Proses masuk dan keluarnya udara dari dan ke paru-paru (inspirasi dan ekspirasi).</li>
+                <li><strong>Respirasi Eksternal:</strong> Pertukaran O₂ dan CO₂ antara udara di alveolus dengan darah di kapiler paru.</li>
+                <li><strong>Respirasi Internal:</strong> Pertukaran O₂ dan CO₂ antara darah di kapiler jaringan dengan sel-sel tubuh.</li>
+            </ul>
+
+            <h2>B. Organ-Organ Sistem Pernapasan Manusia</h2>
+            <p>Sistem pernapasan manusia terdiri dari saluran pernapasan atas dan bawah, serta organ aksesori. Berikut adalah urutan organ dari luar ke dalam:</p>
+
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">1. Saluran Pernapasan Atas</h3>
+            <ul>
+                <li><strong>Hidung (Cavum Nasalis):</strong> Organ pertama yang dilalui udara. Berfungsi menyaring debu dan partikel (oleh rambut hidung/vibrissae dan mukus), menghangatkan udara (oleh pembuluh darah), dan melembapkan udara (oleh sel goblet). Di dalam hidung juga terdapat <strong>epitel olfaktorius</strong> untuk indra penciuman.</li>
+                <li><strong>Faring (Tenggorokan):</strong> Saluran persimpangan antara saluran pernapasan dan pencernaan. Terdiri dari nasofaring (bagian atas, terkait pernapasan), orofaring (tengah), dan laringofaring (bawah).</li>
+                <li><strong>Laring (Pangkal Tenggorokan):</strong> Mengandung pita suara (<em>vocal cords</em>) yang bergetar saat udara melewatinya, menghasilkan suara. Juga memiliki <strong>epiglotis</strong> (katup tulang rawan) yang menutup saat menelan untuk mencegah makanan masuk ke saluran napas.</li>
+            </ul>
+
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">2. Saluran Pernapasan Bawah</h3>
+            <ul>
+                <li><strong>Trakea (Tenggorokan Batang):</strong> Pipa sepanjang ~10-12 cm yang tersusun dari 16-20 cincin tulang rawan berbentuk C. Dindingnya dilapisi epitel bersilia dengan sel goblet yang menghasilkan mukus untuk menjebak partikel asing (mekanisme <em>mukosiliar</em>).</li>
+                <li><strong>Bronkus:</strong> Percabangan trakea menjadi dua (bronkus kanan dan kiri) yang masuk ke masing-masing paru-paru. Bronkus kanan lebih pendek, lebar, dan vertikal dibandingkan bronkus kiri (sehingga benda asing lebih sering masuk ke paru kanan).</li>
+                <li><strong>Bronkiolus:</strong> Percabangan bronkus yang semakin halus, tanpa tulang rawan, namun memiliki otot polos yang dapat mengatur diameter saluran (bronkokonstriksi dan bronkodilatasi).</li>
+                <li><strong>Alveolus:</strong> Kantung udara mikroskopis (sekitar 300 juta buah di kedua paru) yang menjadi <strong>situs utama pertukaran gas</strong>. Dindingnya sangat tipis (1 lapis sel epitel skuamosa) dan dikelilingi kapiler darah, memungkinkan difusi O₂ dan CO₂ secara efisien. Dilapisi <strong>surfaktan</strong> untuk mencegah kolaps alveolus.</li>
+            </ul>
+
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">3. Organ Aksesori Pernapasan</h3>
+            <ul>
+                <li><strong>Paru-paru (Pulmo):</strong> Organ utama pernapasan, terletak di rongga dada. Paru kanan memiliki 3 lobus, paru kiri 2 lobus (lebih kecil karena ada jantung).</li>
+                <li><strong>Diafragma:</strong> Otot berbentuk kubah yang memisahkan rongga dada dan rongga perut. Otot utama dalam proses ventilasi.</li>
+                <li><strong>Otot Interkosta:</strong> Otot-otot di antara tulang rusuk yang membantu mengangkat dan menurunkan tulang rusuk saat bernapas.</li>
+                <li><strong>Pleura:</strong> Membran ganda (pleura visceral dan parietal) yang membungkus paru-paru dengan cairan pleura sebagai pelumas.</li>
+            </ul>
+
+            <h2>C. Mekanisme Pernapasan (Ventilasi Pulmonal)</h2>
+            <p>Ventilasi pulmonal bekerja berdasarkan <strong>Hukum Boyle</strong>: pada suhu konstan, tekanan gas berbanding terbalik dengan volumenya (P × V = konstan). Ketika volume rongga dada membesar, tekanan di dalam paru menurun (menjadi negatif terhadap atmosfer), sehingga udara masuk. Sebaliknya, ketika volume mengecil, tekanan meningkat, udara keluar.</p>
+
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">1. Inspirasi (Menghirup Udara)</h3>
+            <ul>
+                <li>Otot diafragma <strong>berkontraksi</strong> (mendatar) → volume rongga dada vertikal membesar.</li>
+                <li>Otot interkosta eksternal <strong>berkontraksi</strong> → tulang rusuk terangkat → volume rongga dada transversal membesar.</li>
+                <li>Volume paru-paru membesar → tekanan intra-alveolar <strong>menurun</strong> (di bawah tekanan atmosfer ~760 mmHg menjadi ~758 mmHg).</li>
+                <li>Udara dari luar <strong>masuk</strong> ke paru-paru (dari tekanan tinggi ke rendah).</li>
+            </ul>
+
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">2. Ekspirasi (Menghembuskan Udara)</h3>
+            <ul>
+                <li>Otot diafragma <strong>relaksasi</strong> (melengkung ke atas) → volume rongga dada mengecil.</li>
+                <li>Otot interkosta eksternal <strong>relaksasi</strong> → tulang rusuk turun → volume rongga dada mengecil.</li>
+                <li>Volume paru-paru mengecil → tekanan intra-alveolar <strong>meningkat</strong> (menjadi ~762 mmHg).</li>
+                <li>Udara dari paru-paru <strong>keluar</strong> ke atmosfer.</li>
+            </ul>
+
+            <h2>D. Jenis Pernapasan: Dada vs Perut</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Aspek Perbandingan</th>
+                            <th>Pernapasan Dada</th>
+                            <th>Pernapasan Perut</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Otot Utama</strong></td>
+                            <td>Otot interkosta eksternal</td>
+                            <td>Otot diafragma</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mekanisme Inspirasi</strong></td>
+                            <td>Otot interkosta kontraksi → tulang rusuk terangkat → volume dada membesar</td>
+                            <td>Diafragma kontraksi (mendatar) → volume dada membesar</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mekanisme Ekspirasi</strong></td>
+                            <td>Otot interkosta relaksasi → tulang rusuk turun → volume dada mengecil</td>
+                            <td>Diafragma relaksasi (melengkung) → volume dada mengecil</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Perubahan Volume</strong></td>
+                            <td>Transversal (samping)</td>
+                            <td>Vertikal (atas-bawah)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Indikator Visual</strong></td>
+                            <td>Dada naik-turun</td>
+                            <td>Perut naik-turun</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Kondisi Penggunaan</strong></td>
+                            <td>Aktivitas ringan, istirahat</td>
+                            <td>Aktivitas berat, olahraga, tidur</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Volume Udara</strong></td>
+                            <td>Lebih sedikit</td>
+                            <td>Lebih banyak (lebih efisien)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>E. Pertukaran Gas di Alveolus dan Jaringan</h2>
+            <p>Pertukaran gas terjadi melalui proses <strong>difusi sederhana</strong>, yaitu perpindahan molekul dari area berkonsentrasi tinggi ke rendah.</p>
+
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">1. Pertukaran Gas di Alveolus (Respirasi Eksternal)</h3>
+            <ul>
+                <li><strong>Oksigen:</strong> Tekanan parsial O₂ di alveolus (~104 mmHg) lebih tinggi daripada di darah vena pulmonalis (~40 mmHg) → O₂ berdifusi dari alveolus ke darah → diikat hemoglobin menjadi <strong>oksihemoglobin (HbO₂)</strong>.</li>
+                <li><strong>Karbon Dioksida:</strong> Tekanan parsial CO₂ di darah vena (~45 mmHg) lebih tinggi daripada di alveolus (~40 mmHg) → CO₂ berdifusi dari darah ke alveolus → dihembuskan keluar.</li>
+            </ul>
+
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">2. Pertukaran Gas di Jaringan (Respirasi Internal)</h3>
+            <ul>
+                <li><strong>Oksigen:</strong> Tekanan parsial O₂ di darah arteri (~100 mmHg) lebih tinggi daripada di sel jaringan (~30 mmHg) → O₂ berdifusi dari darah ke sel → digunakan untuk respirasi seluler.</li>
+                <li><strong>Karbon Dioksida:</strong> Tekanan parsial CO₂ di sel jaringan (~50 mmHg) lebih tinggi daripada di darah arteri (~40 mmHg) → CO₂ berdifusi dari sel ke darah → diangkut kembali ke paru-paru.</li>
+            </ul>
+
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">Pengangkutan CO₂ dalam Darah</h3>
+            <p>CO₂ diangkut dalam darah melalui tiga cara:</p>
+            <ul>
+                <li><strong>Sebagai ion bikarbonat (HCO₃⁻):</strong> ~70% CO₂. CO₂ bereaksi dengan air di eritrosit membentuk asam karbonat (H₂CO₃), lalu terurai menjadi H⁺ dan HCO₃⁻ (dikatalisis enzim <em>karbonat anhidrase</em>).</li>
+                <li><strong>Terikat hemoglobin (HbCO₂/karbaminohemoglobin):</strong> ~23% CO₂. CO₂ berikatan dengan gugus amino hemoglobin.</li>
+                <li><strong>Larut dalam plasma:</strong> ~7% CO₂. Larut langsung dalam plasma darah.</li>
+            </ul>
+
+            <div class="case-study">
+                <strong><i class="fas fa-microscope"></i> Studi Kasus: Dampak Polusi Udara PM2.5 terhadap Sistem Pernapasan</strong>
+                <p>Particulate Matter 2.5 (PM2.5) adalah partikel halus berdiameter ≤2,5 mikrometer yang dihasilkan dari pembakaran bahan bakar fosil, kebakaran hutan, emisi industri, dan asap rokok. Karena ukurannya yang sangat kecil, PM2.5 dapat menembus mekanisme pertahanan saluran napas atas dan mencapai <strong>alveolus</strong> secara langsung.</p>
+                <p><strong>Mekanisme Kerusakan:</strong></p>
+                <ul style="margin-top: 0.5rem;">
+                    <li>PM2.5 merusak <strong>siliasis epitel</strong> saluran napas → mekanisme mukosiliar terganggu → partikel asing tidak dapat dikeluarkan.</li>
+                    <li>Menyebabkan <strong>inflamasi kronis</strong> pada saluran napas bawah (bronkiolus dan alveolus).</li>
+                    <li>Memicu produksi <strong>spesies oksigen reaktif (ROS)</strong> → stres oksidatif → kerusakan sel epitel alveolus.</li>
+                    <li>Menurunkan kapasitas difusi alveolus → gangguan pertukaran O₂ dan CO₂.</li>
+                    <li>Paparan jangka panjang dapat menyebabkan <strong>fibrosis paru</strong> dan meningkatkan risiko kanker paru.</li>
+                </ul>
+                <p><strong>Dampak Kesehatan:</strong></p>
+                <ul style="margin-top: 0.5rem;">
+                    <li>Penurunan kapasitas vital paru (FVC) dan volume ekspirasi paksa detik pertama (FEV1)</li>
+                    <li>Eksaserbasi asma dan PPOK (Penyakit Paru Obstruktif Kronis)</li>
+                    <li>Peningkatan risiko infeksi saluran pernapasan (ISPA)</li>
+                    <li>PM2.5 bahkan dapat masuk ke aliran darah → meningkatkan risiko penyakit kardiovaskular</li>
+                </ul>
+                <p><strong>Data di Indonesia:</strong> Banyak kota besar di Indonesia (Jakarta, Bandung, Surabaya) sering mencatat indeks kualitas udara (AQI) di kategori "tidak sehat" akibat PM2.5, terutama saat musim kemarau dan kebakaran hutan.</p>
+                <p><strong>Upaya Pencegahan:</strong></p>
+                <ul style="margin-top: 0.5rem;">
+                    <li>Penggunaan masker N95 saat kualitas udara buruk</li>
+                    <li>Pemantauan AQI melalui aplikasi (seperti AirVisual, BMKG)</li>
+                    <li>Mengurangi aktivitas luar ruangan pada hari dengan polusi tinggi</li>
+                    <li>Mendukung kebijakan pengurangan emisi kendaraan dan industri</li>
+                    <li>Menanam pohon dan menjaga ruang hijau untuk penyerap polutan</li>
+                </ul>
+            </div>
+
+            <h2>F. Volume Udara Pernapasan (Pengantar)</h2>
+            <p>Volume udara yang keluar-masuk paru-paru dapat dibedakan menjadi beberapa komponen (akan dibahas lebih detail pada Bab 9):</p>
+            <ul>
+                <li><strong>Volume Tidal (VT):</strong> Udara yang keluar-masuk saat napas normal (~500 mL).</li>
+                <li><strong>Volume Komplementer (VK):</strong> Udara tambahan yang masih dapat dihirup setelah inspirasi normal (~1500 mL).</li>
+                <li><strong>Volume Suplementer (VS):</strong> Udara tambahan yang masih dapat dihembuskan setelah ekspirasi normal (~1500 mL).</li>
+                <li><strong>Volume Residu (VR):</strong> Udara yang selalu tersisa di paru-paru (~1000 mL), mencegah kolaps paru.</li>
+                <li><strong>Kapasitas Vital Paru (KVP):</strong> VT + VK + VS (~3500 mL), volume udara maksimal yang dapat dikeluarkan setelah inspirasi maksimal.</li>
+            </ul>
+
+            <h2>G. Tantangan dan Miskonsepsi tentang Sistem Pernapasan</h2>
+            <ul>
+                <li><strong>Miskonsepsi 1:</strong> "Paru-paru mengembang dan mengempis sendiri seperti balon." <em>Koreksi:</em> Paru-paru bersifat pasif; yang aktif adalah otot-otot pernapasan (diafragma dan interkosta) yang mengubah volume rongga dada, sehingga paru-paru ikut mengembang/mengempis akibat perubahan tekanan.</li>
+                <li><strong>Miskonsepsi 2:</strong> "Kita bernapas untuk mengambil oksigen dan membuang karbon dioksida dalam jumlah yang sama." <em>Koreksi:</em> Udara yang kita hirup mengandung ~21% O₂ dan ~0,04% CO₂. Udara yang kita hembuskan mengandung ~16% O₂ dan ~4% CO₂. Kita tetap mengeluarkan O₂ (tidak semua digunakan), dan CO₂ yang dikeluarkan jauh lebih banyak daripada yang dihirup.</li>
+                <li><strong>Miskonsepsi 3:</strong> "Trakea dan kerongkongan adalah saluran yang sama." <em>Koreksi:</em> Trakea (tenggorokan) adalah saluran pernapasan menuju paru-paru, sedangkan esofagus (kerongkongan) adalah saluran pencernaan menuju lambung. Keduanya berawal dari faring namun bercabang.</li>
+                <li><strong>Miskonsepsi 4:</strong> "Oksigen diangkut seluruhnya oleh hemoglobin." <em>Koreksi:</em> Sekitar 98,5% O₂ diikat hemoglobin, tetapi ~1,5% larut langsung dalam plasma. Pada kondisi tertentu (seperti keracunan CO), hemoglobin tidak dapat mengikat O₂ meskipun kadar O₂ plasma normal.</li>
+                <li><strong>Miskonsepsi 5:</strong> "Bernapas melalui mulut sama baiknya dengan melalui hidung." <em>Koreksi:</em> Hidung memiliki fungsi penyaringan, penghangatan, dan pelembapan udara yang tidak dimiliki mulut. Bernapas melalui mulut secara kronis dapat menyebabkan mulut kering, infeksi saluran napas, dan gangguan perkembangan wajah pada anak.</li>
+            </ul>
+
+            <h2>H. Relevansi untuk Kehidupan Sehari-hari</h2>
+            <ul>
+                <li><strong>Kesadaran Polusi Udara:</strong> Memahami bahaya PM2.5 mendorong siswa menggunakan masker dan memantau kualitas udara.</li>
+                <li><strong>Teknik Pernapasan:</strong> Pengetahuan tentang pernapasan perut (diafragma) bermanfaat untuk olahraga, meditasi, yoga, dan teknik relaksasi.</li>
+                <li><strong>Bahaya Merokok:</strong> Memahami bagaimana rokok merusak silia dan alveolus memperkuat motivasi untuk tidak merokok.</li>
+                <li><strong>Pertolongan Pertama:</strong> Pengetahuan tentang mekanisme pernapasan penting untuk resusitasi (CPR) pada korban henti napas.</li>
+                <li><strong>Olahraga dan Kebugaran:</strong> Pemahaman tentang kapasitas vital paru membantu siswa mengoptimalkan performa olahraga.</li>
+                <li><strong>Kesehatan Lingkungan:</strong> Siswa menjadi agen perubahan dalam kampanye udara bersih dan penghijauan.</li>
+                <li><strong>Literasi Kesehatan:</strong> Memahami istilah medis seperti spirometri, kapasitas paru, dan saturasi O₂ saat membaca hasil pemeriksaan kesehatan.</li>
+            </ul>
+
+            <!-- Poin Penting untuk Ujian -->
+            <div class="exam-points">
+                <h3><i class="fas fa-star"></i> Poin Penting untuk Ujian</h3>
+                <ul>
+                    <li>Kuasai urutan organ pernapasan: Hidung → Faring → Laring → Trakea → Bronkus → Bronkiolus → Alveolus.</li>
+                    <li>Pahami fungsi spesifik setiap organ (penyaringan, pertukaran gas, produksi suara, dll).</li>
+                    <li>Hafalkan mekanisme inspirasi dan ekspirasi berdasarkan Hukum Boyle.</li>
+                    <li>Pahami perbedaan pernapasan dada (otot interkosta) dan pernapasan perut (diafragma).</li>
+                    <li>Kuasai mekanisme pertukaran gas di alveolus dan jaringan berdasarkan gradien tekanan parsial.</li>
+                    <li>Pahami tiga cara pengangkutan CO₂ dalam darah (bikarbonat, karbaminohemoglobin, larut plasma).</li>
+                    <li>Kenali peran surfaktan dalam mencegah kolaps alveolus.</li>
+                    <li>Pahami volume-volume udara pernapasan (tidal, komplementer, suplementer, residu, kapasitas vital).</li>
+                    <li>Siapkan analisis kasus dampak polusi PM2.5 sebagai contoh nyata.</li>
+                    <li><em>Catatan Administratif:</em> Untuk keperluan ujian formatif ini, pastikan siswa menuliskan <strong>NIS</strong> (Nomor Induk Siswa) dengan jelas pada lembar jawaban.</li>
+                </ul>
+            </div>
+
+            <!-- Bottom Navigation -->
+            <div class="nav-buttons" style="margin-top: 3rem;">
+                <a href="6.html" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Bab Sebelumnya</a>
+                <a href="index.html" class="btn btn-outline"><i class="fas fa-home"></i> Kembali ke Beranda</a>
+                <a href="uji-formatif-7.html" class="btn btn-primary"><i class="fas fa-clipboard-check"></i> Uji Formatif Bab 7</a>
+                <a href="8.html" class="btn btn-outline">UTS <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div style="margin-bottom: 1.5rem;">
+            <i class="fas fa-book-open" style="font-size: 2rem; color: var(--accent-gold);"></i>
+        </div>
+        <p style="font-size: 1.1rem; color: var(--white); margin-bottom: 0.5rem;">IPA TERPADU Kelas VIII Semester I</p>
+        <p>Buku daras untuk siswa MTsS. Teori, praktik, dan aplikasi sains dalam kehidupan sehari-hari.</p>
+        <p style="margin-top: 1.5rem;">
+            <strong>Miri Susanti, S.Pd., Gr</strong> | MTsS Diniyah Limo Jurai
+        </p>
+        <p>
+            <i class="fas fa-envelope"></i> <a href="mailto:mirisusanti97@gmail.com">mirisusanti97@gmail.com</a>
+        </p>
+        <p style="margin-top: 2rem; font-size: 0.8rem; opacity: 0.6;">
+            &copy; 2026 Hak Cipta Dilindungi Undang-Undang.
+        </p>
+    </footer>
+
+</body>
+</html>

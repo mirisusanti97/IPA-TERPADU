@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 3 - Gangguan Sistem Pencernaan | IPA TERPADU Kelas VIII Semester I</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-navy: #0A192F;
+            --secondary-navy: #112240;
+            --accent-gold: #D4AF37;
+            --accent-gold-light: #F4E4BC;
+            --text-light: #E6F1FF;
+            --text-muted: #8892B0;
+            --white: #FFFFFF;
+            --glass-border: rgba(212, 175, 55, 0.2);
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-navy);
+            color: var(--text-light);
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        .top-nav {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--glass-border);
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .top-nav a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+        
+        .top-nav a:hover {
+            color: var(--accent-gold-light);
+            text-decoration: underline;
+        }
+        
+        .top-nav span {
+            color: var(--text-muted);
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--white);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, var(--white), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .chapter-subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            font-style: italic;
+            border-left: 3px solid var(--accent-gold);
+            padding-left: 1rem;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+        
+        .btn-primary {
+            background: var(--accent-gold);
+            color: var(--primary-navy);
+        }
+        
+        .btn-primary:hover {
+            background: var(--accent-gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -10px rgba(212, 175, 55, 0.5);
+        }
+        
+        .btn-outline {
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+        }
+        
+        .btn-outline:hover {
+            background: rgba(212, 175, 55, 0.1);
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            color: var(--accent-gold-light);
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 1rem;
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+            color: var(--text-light);
+        }
+        
+        ul, ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            color: var(--text-muted);
+        }
+        
+        li {
+            margin-bottom: 0.8rem;
+        }
+        
+        strong {
+            color: var(--white);
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            background: var(--secondary-navy);
+            border-radius: 8px;
+            border: 1px solid var(--glass-border);
+            margin: 2rem 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: var(--text-light);
+        }
+        
+        th {
+            text-align: left;
+            padding: 1rem;
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--accent-gold);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            border-bottom: 2px solid var(--accent-gold);
+        }
+        
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(136, 146, 176, 0.2);
+            color: var(--text-muted);
+        }
+        
+        tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+            color: var(--text-light);
+        }
+        
+        .case-study {
+            background: rgba(10, 25, 47, 0.5);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .case-study strong {
+            color: var(--accent-gold);
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .exam-points {
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .exam-points h3 {
+            color: var(--accent-gold);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .exam-points ul {
+            color: var(--text-light);
+            margin-bottom: 0;
+        }
+        
+        footer {
+            background: #020c1b;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--glass-border);
+            margin-top: 4rem;
+        }
+        
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        footer a {
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Top Navigation -->
+        <div class="top-nav">
+            <a href="index.html"><i class="fas fa-book-open"></i> IPA TERPADU Kelas VIII</a>
+            <span>|</span>
+            <a href="index.html">Beranda</a>
+            <span>|</span>
+            <a href="index.html#daftar-isi">Daftar Bab</a>
+            <span>|</span>
+            <a href="index.html#tentang">Penulis</a>
+        </div>
+
+        <!-- Header -->
+        <header>
+            <h1>BAB 3</h1>
+            <h1 style="font-size: 2rem; margin-top: -0.5rem;">Gangguan Sistem Pencernaan dan Upaya Menjaga Kesehatan Pencernaan</h1>
+            <p class="chapter-subtitle">Menganalisis berbagai gangguan pada sistem pencernaan manusia, faktor penyebabnya, serta strategi preventif dan kuratif untuk menjaga kesehatan saluran pencernaan secara holistik.</p>
+            
+            <div class="nav-buttons">
+                <a href="2.html" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Bab Sebelumnya</a>
+                <a href="index.html" class="btn btn-outline"><i class="fas fa-home"></i> Beranda</a>
+                <a href="uji-formatif-3.html" class="btn btn-primary"><i class="fas fa-clipboard-check"></i> Uji Formatif Bab 3</a>
+                <a href="4.html" class="btn btn-outline">Bab Selanjutnya <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <h2>A. Pengertian Gangguan Sistem Pencernaan</h2>
+            <p>Gangguan sistem pencernaan adalah segala kondisi abnormal yang memengaruhi struktur atau fungsi saluran pencernaan dan organ aksesorisnya, sehingga mengganggu proses pencernaan, penyerapan nutrisi, atau pembuangan sisa makanan. Gangguan ini dapat bersifat akut (tiba-tiba dan singkat) maupun kronis (berlangsung lama dan berulang).</p>
+            <p>Gangguan pencernaan dapat terjadi di bagian mana pun sepanjang saluran pencernaan, mulai dari mulut hingga anus, maupun pada organ aksessoris seperti hati, pankreas, dan kandung empedu. Prevalensi gangguan pencernaan di Indonesia cukup tinggi, dengan data Riskesdas (2018) menunjukkan bahwa penyakit saluran pencernaan menempati urutan ketiga penyebab morbiditas tertinggi di Indonesia.</p>
+
+            <h2>B. Jenis-Jenis Gangguan Sistem Pencernaan</h2>
+            <p>Berdasarkan lokasi terjadinya, gangguan sistem pencernaan dapat dikelompokkan sebagai berikut:</p>
+
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">1. Gangguan pada Mulut dan Kerongkongan</h3>
+            <ul>
+                <li><strong>Sariawan (Stomatitis):</strong> Peradangan pada rongga mulut yang menyebabkan luka berwarna putih kekuningan. Disebabkan oleh defisiensi vitamin B12, vitamin C, zat besi, atau infeksi jamur <em>Candida albicans</em>.</li>
+                <li><strong>Karies Gigi (Gigi Berlubang):</strong> Kerusakan struktur gigi akibat aktivitas bakteri <em>Streptococcus mutans</em> yang memfermentasi sisa karbohidrat menjadi asam, sehingga melarutkan enamel gigi.</li>
+                <li><strong>Xerostomia:</strong> Kondisi mulut kering akibat produksi air liur yang berkurang, dapat disebabkan oleh dehidrasi, efek samping obat, atau penyakit autoimun (Sindrom Sjögren).</li>
+                <li><strong>Esofagitis:</strong> Peradangan pada kerongkongan, sering kali terkait dengan GERD atau infeksi.</li>
+            </ul>
+
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">2. Gangguan pada Lambung</h3>
+            <ul>
+                <li><strong>Gastritis (Sakit Maag):</strong> Peradangan pada dinding lambung akibat produksi asam lambung berlebih, infeksi bakteri <em>Helicobacter pylori</em>, atau penggunaan obat anti-inflamasi non-steroid (OAINS) seperti ibuprofen secara berlebihan.</li>
+                <li><strong>GERD (Gastroesophageal Reflux Disease):</strong> Kondisi naiknya asam lambung ke kerongkongan akibat melemahnya sfingter esofagus bawah (LES), menyebabkan sensasi panas di dada (<em>heartburn</em>).</li>
+                <li><strong>Tukak Lambung (Ulkus Peptikum):</strong> Luka terbuka pada dinding lambung yang biasanya disebabkan oleh infeksi <em>H. pylori</em> atau penggunaan OAINS jangka panjang.</li>
+                <li><strong>Dispepsia Fungsional:</strong> Gangguan pencernaan tanpa kelainan struktural yang jelas, ditandai nyeri ulu hati, kembung, dan cepat kenyang.</li>
+            </ul>
+
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">3. Gangguan pada Usus</h3>
+            <ul>
+                <li><strong>Diare:</strong> Buang air besar encer lebih dari 3 kali sehari akibat infeksi (bakteri, virus, parasit), keracunan makanan, atau intoleransi laktosa. Dapat menyebabkan dehidrasi berat, terutama pada anak-anak.</li>
+                <li><strong>Konstipasi (Sembelit):</strong> Kesulitan buang air besar akibat feses yang keras dan kering, umumnya disebabkan oleh kurang asupan serat, kurang minum, atau gaya hidup sedentari.</li>
+                <li><strong>Appendisitis (Radang Usus Buntu):</strong> Peradangan pada appendiks (usus buntu) yang menyebabkan nyeri hebat di perut kanan bawah. Memerlukan penanganan medis segera, sering kali dengan operasi appendektomi.</li>
+                <li><strong>IBS (Irritable Bowel Syndrome):</strong> Gangguan fungsional usus besar yang ditandai nyeri perut, kembung, dan perubahan pola buang air besar, sering dipicu oleh stres.</li>
+                <li><strong>Wasir (Hemoroid):</strong> Pembengkakan pembuluh darah di anus atau rektum, disebabkan oleh mengejan berlebihan saat BAB, kehamilan, atau obesitas.</li>
+            </ul>
+
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">4. Gangguan pada Organ Aksessoris</h3>
+            <ul>
+                <li><strong>Hepatitis:</strong> Peradangan pada hati, umumnya disebabkan oleh infeksi virus (Hepatitis A, B, C, D, E), konsumsi alkohol berlebihan, atau obat-obatan hepatotoksik.</li>
+                <li><strong>Batu Empedu (Kolelitiasis):</strong> Pengerasan cairan empedu di dalam kandung empedu, menyebabkan nyeri perut kanan atas yang hebat (kolik bilier).</li>
+                <li><strong>Pankreatitis:</strong> Peradangan pada pankreas, dapat disebabkan oleh batu empedu atau konsumsi alkohol kronis.</li>
+            </ul>
+
+            <h2>C. Faktor Penyebab dan Risiko</h2>
+            <p>Gangguan sistem pencernaan dipengaruhi oleh berbagai faktor yang saling berinteraksi:</p>
+            <ul>
+                <li><strong>Pola Makan Tidak Sehat:</strong> Konsumsi makanan pedas, berlemak tinggi, ultra-proses, rendah serat, serta kebiasaan makan tidak teratur.</li>
+                <li><strong>Infeksi Mikroorganisme:</strong> Bakteri (<em>H. pylori, E. coli, Salmonella</em>), virus (Rotavirus, Norovirus), parasit (<em>Entamoeba histolytica</em>), dan jamur.</li>
+                <li><strong>Gaya Hidup:</strong> Kurang olahraga, merokok, konsumsi alkohol, stres kronis, dan kurang tidur.</li>
+                <li><strong>Faktor Genetik:</strong> Riwayat keluarga dengan penyakit pencernaan tertentu (seperti penyakit Crohn atau kolorektal).</li>
+                <li><strong>Penggunaan Obat-obatan:</strong> OAINS jangka panjang, antibiotik yang mengganggu mikrobioma usus.</li>
+                <li><strong>Kebersihan dan Sanitasi:</strong> Lingkungan yang tidak higienis meningkatkan risiko infeksi saluran cerna.</li>
+            </ul>
+
+            <h2>D. Analisis Perbandingan Gangguan Pencernaan</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Gangguan</th>
+                            <th>Organ Terkena</th>
+                            <th>Gejala Khas</th>
+                            <th>Penyebab Utama</th>
+                            <th>Upaya Pencegahan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>GERD</strong></td>
+                            <td>Kerongkongan & lambung</td>
+                            <td>Heartburn, regurgitasi asam</td>
+                            <td>LES lemah, obesitas, makanan pemicu</td>
+                            <td>Hindari makan larut malam, kurangi kafein & pedas</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Gastritis</strong></td>
+                            <td>Dinding lambung</td>
+                            <td>Nyeri ulu hati, mual, kembung</td>
+                            <td>H. pylori, OAINS, stres</td>
+                            <td>Makan teratur, hindari alkohol & rokok</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Diare</strong></td>
+                            <td>Usus halus & besar</td>
+                            <td>BAB encer >3x/hari, dehidrasi</td>
+                            <td>Infeksi, keracunan makanan</td>
+                            <td>Cuci tangan, makanan higienis, air matang</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Konstipasi</strong></td>
+                            <td>Usus besar</td>
+                            <td>BAB keras, jarang, mengejan</td>
+                            <td>Kurang serat & cairan, sedentari</td>
+                            <td>Perbanyak serat, minum air, olahraga</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Appendisitis</strong></td>
+                            <td>Appendiks (usus buntu)</td>
+                            <td>Nyeri perut kanan bawah, demam</td>
+                            <td>Sumbaran lumen appendiks</td>
+                            <td>Pola makan tinggi serat, segera konsultasi dokter</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hepatitis</strong></td>
+                            <td>Hati</td>
+                            <td>Kuning, lemas, mual</td>
+                            <td>Virus, alkohol, obat hepatotoksik</td>
+                            <td>Vaksinasi, hindari alkohol, jarum steril</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Wasir</strong></td>
+                            <td>Anus & rektum</td>
+                            <td>Berdarah saat BAB, benjolan</td>
+                            <td>Mengejan, kehamilan, obesitas</td>
+                            <td>Hindari mengejan, perbanyak serat</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>E. Upaya Menjaga Kesehatan Sistem Pencernaan</h2>
+            <p>Menjaga kesehatan sistem pencernaan memerlukan pendekatan holistik yang mencakup pola makan, gaya hidup, dan kebersihan:</p>
+
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">1. Pola Makan Sehat</h3>
+            <ul>
+                <li><strong>Konsumsi Serat Cukup:</strong> Minimal 25-30 gram/hari dari sayur, buah, biji-bijian utuh, dan kacang-kacangan untuk melancarkan pencernaan dan memberi makan bakteri baik usus.</li>
+                <li><strong>Perbanyak Probiotik & Prebiotik:</strong> Konsumsi yogurt, tempe, kimchi (probiotik) serta pisang, bawang, oat (prebiotik) untuk menjaga keseimbangan mikrobioma usus.</li>
+                <li><strong>Makan Teratur:</strong> Hindari <em>skipping meals</em> yang memicu produksi asam lambung berlebihan.</li>
+                <li><strong>Kunyah dengan Baik:</strong> Mengunyah 20-30 kali per suapan untuk meringankan kerja lambung.</li>
+                <li><strong>Batasi Makanan Pemicu:</strong> Kurangi makanan ultra-proses, pedas berlebihan, berlemak jenuh, dan minuman berkarbonasi.</li>
+            </ul>
+
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">2. Hidrasi yang Cukup</h3>
+            <ul>
+                <li>Minum minimal 2-2,5 liter air putih per hari untuk membantu proses pencernaan, penyerapan nutrisi, dan mencegah konstipasi.</li>
+                <li>Hindari minuman berkafein dan bersoda berlebihan yang dapat mengiritasi lambung.</li>
+            </ul>
+
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">3. Gaya Hidup Sehat</h3>
+            <ul>
+                <li><strong>Olahraga Teratur:</strong> Minimal 30 menit/hari, 5 kali seminggu untuk merangsang motilitas usus.</li>
+                <li><strong>Kelola Stres:</strong> Stres memengaruhi <em>gut-brain axis</em> dan dapat memicu IBS atau gastritis. Lakukan meditasi, hobi, atau aktivitas relaksasi.</li>
+                <li><strong>Tidur Cukup:</strong> 7-9 jam per malam untuk regenerasi sel pencernaan.</li>
+                <li><strong>Hindari Rokok & Alkohol:</strong> Keduanya merusak mukosa lambung dan meningkatkan risiko kanker pencernaan.</li>
+            </ul>
+
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">4. Kebersihan dan Sanitasi</h3>
+            <ul>
+                <li>Cuci tangan dengan sabun sebelum makan dan setelah dari toilet.</li>
+                <li>Pastikan makanan dimasak dengan matang dan air yang diminum bersih.</li>
+                <li>Jaga kebersihan peralatan makan dan dapur.</li>
+            </ul>
+
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">5. Pemeriksaan Rutin</h3>
+            <ul>
+                <li>Konsultasikan ke dokter jika mengalami gejala persisten (nyeri perut >2 minggu, BAB berdarah, penurunan berat badan drastis).</li>
+                <li>Lakukan skrining kesehatan pencernaan sesuai anjuran dokter, terutama jika ada riwayat keluarga.</li>
+            </ul>
+
+            <div class="case-study">
+                <strong><i class="fas fa-microscope"></i> Studi Kasus: Peningkatan GERD pada Remaja</strong>
+                <p>Data dari berbagai studi epidemiologi menunjukkan peningkatan signifikan kasus GERD pada populasi remaja dalam dekade terakhir. Fenomena ini berkaitan erat dengan perubahan gaya hidup modern di kalangan remaja:</p>
+                <p><strong>Faktor Pemicu:</strong></p>
+                <ul style="margin-top: 0.5rem;">
+                    <li>Konsumsi makanan cepat saji dan ultra-proses yang tinggi lemak jenuh</li>
+                    <li>Kebiasaan makan larut malam (<em>late-night eating</em>) sambil bermain gawai</li>
+                    <li>Konsumsi minuman berkafein (kopi kekinian, minuman berenergi) berlebihan</li>
+                    <li>Pola makan tidak teratur (<em>skipping breakfast</em>)</li>
+                    <li>Tingkat stres akademik yang tinggi</li>
+                    <li>Gaya hidup sedentari dan kurang aktivitas fisik</li>
+                </ul>
+                <p><strong>Mekanisme:</strong> Faktor-faktor tersebut melemahkan sfingter esofagus bawah (LES) dan meningkatkan produksi asam lambung, sehingga asam lambung mudah naik ke kerongkongan dan menyebabkan sensasi <em>heartburn</em> serta regurgitasi.</p>
+                <p><strong>Dampak:</strong> Jika tidak ditangani, GERD kronis dapat menyebabkan esofagitis, striktur esofagus, dan dalam jangka panjang meningkatkan risiko Barrett's esophagus (prekursor kanker esofagus).</p>
+                <p><strong>Solusi:</strong> Edukasi pola makan sehat, manajemen stres, serta pembatasan konsumsi makanan pemicu sejak usia remaja sangat penting untuk pencegahan jangka panjang.</p>
+            </div>
+
+            <h2>F. Tantangan dan Miskonsepsi tentang Gangguan Pencernaan</h2>
+            <p>Di tengah masyarakat, masih banyak miskonsepsi yang perlu diluruskan:</p>
+            <ul>
+                <li><strong>Miskonsepsi 1:</strong> "Sakit maag hanya terjadi karena telat makan." <em>Koreksi:</em> Maag juga dapat disebabkan oleh infeksi <em>H. pylori</em>, penggunaan OAINS, dan stres psikologis.</li>
+                <li><strong>Miskonsepsi 2:</strong> "Diare harus segera dihentikan dengan obat anti-diare." <em>Koreksi:</em> Diare akibat infeksi sebenarnya merupakan mekanisme pertahanan tubuh untuk mengeluarkan patogen. Yang terpenting adalah rehidrasi (oralit), bukan menghentikan diare secara paksa.</li>
+                <li><strong>Miskonsepsi 3:</strong> "Makan pedas menyebabkan usus buntu." <em>Koreksi:</em> Appendisitis disebabkan oleh sumbatan lumen appendiks (fekalit, hiperplasia folikel limfoid), bukan oleh makanan pedas.</li>
+                <li><strong>Miskonsepsi 4:</strong> "Semua lemak buruk untuk pencernaan." <em>Koreksi:</em> Lemak esensial (omega-3, omega-6) justru penting untuk kesehatan sel usus dan penyerapan vitamin larut lemak.</li>
+            </ul>
+
+            <h2>G. Relevansi untuk Kehidupan Sehari-hari</h2>
+            <p>Pemahaman tentang gangguan sistem pencernaan memiliki aplikasi praktis yang sangat relevan:</p>
+            <ul>
+                <li><strong>Pencegahan Penyakit:</strong> Dengan memahami faktor risiko, siswa dapat mengadopsi gaya hidup sehat sejak dini untuk mencegah gangguan pencernaan kronis di masa dewasa.</li>
+                <li><strong>Literasi Kesehatan:</strong> Kemampuan mengenali gejala awal gangguan pencernaan memungkinkan penanganan yang lebih cepat dan tepat.</li>
+                <li><strong>Kesehatan Mikrobioma:</strong> Pemahaman tentang probiotik dan prebiotik membantu siswa menjaga keseimbangan bakteri usus yang berperan dalam imunitas, pencernaan, bahkan kesehatan mental (<em>gut-brain axis</em>).</li>
+                <li><strong>Kesadaran Gizi:</strong> Membiasakan pola makan "Isi Piringku" dari Kemenkes RI untuk mencegah berbagai gangguan pencernaan dan penyakit degeneratif.</li>
+                <li><strong>Kemandirian Kesehatan:</strong> Siswa mampu melakukan pertolongan pertama sederhana (seperti pemberian oralit pada diare) sebelum mendapatkan penanganan medis profesional.</li>
+            </ul>
+
+            <!-- Poin Penting untuk Ujian -->
+            <div class="exam-points">
+                <h3><i class="fas fa-star"></i> Poin Penting untuk Ujian</h3>
+                <ul>
+                    <li>Kuasai minimal 8 jenis gangguan pencernaan utama beserta organ yang terkena dan gejala khasnya.</li>
+                    <li>Pahami perbedaan gastritis, GERD, dan tukak lambung (sering tertukar oleh siswa).</li>
+                    <li>Hafalkan faktor penyebab utama gangguan pencernaan (infeksi, pola makan, gaya hidup, genetik).</li>
+                    <li>Kuasai 5 pilar utama menjaga kesehatan pencernaan: pola makan, hidrasi, gaya hidup, kebersihan, pemeriksaan rutin.</li>
+                    <li>Pahami peran mikrobioma usus (probiotik & prebiotik) dalam kesehatan pencernaan.</li>
+                    <li>Siapkan analisis kasus GERD pada remaja sebagai contoh nyata gangguan pencernaan modern.</li>
+                    <li>Mampu membedakan miskonsepsi umum dengan fakta ilmiah tentang gangguan pencernaan.</li>
+                    <li><em>Catatan Administratif:</em> Untuk keperluan ujian formatif ini, pastikan siswa menuliskan <strong>NIS</strong> (Nomor Induk Siswa) dengan jelas pada lembar jawaban.</li>
+                </ul>
+            </div>
+
+            <!-- Bottom Navigation -->
+            <div class="nav-buttons" style="margin-top: 3rem;">
+                <a href="2.html" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Bab Sebelumnya</a>
+                <a href="index.html" class="btn btn-outline"><i class="fas fa-home"></i> Kembali ke Beranda</a>
+                <a href="uji-formatif-3.html" class="btn btn-primary"><i class="fas fa-clipboard-check"></i> Uji Formatif Bab 3</a>
+                <a href="4.html" class="btn btn-outline">Bab Selanjutnya <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div style="margin-bottom: 1.5rem;">
+            <i class="fas fa-book-open" style="font-size: 2rem; color: var(--accent-gold);"></i>
+        </div>
+        <p style="font-size: 1.1rem; color: var(--white); margin-bottom: 0.5rem;">IPA TERPADU Kelas VIII Semester I</p>
+        <p>Buku daras untuk siswa MTsS. Teori, praktik, dan aplikasi sains dalam kehidupan sehari-hari.</p>
+        <p style="margin-top: 1.5rem;">
+            <strong>Miri Susanti, S.Pd., Gr</strong> | MTsS Diniyah Limo Jurai
+        </p>
+        <p>
+            <i class="fas fa-envelope"></i> <a href="mailto:mirisusanti97@gmail.com">mirisusanti97@gmail.com</a>
+        </p>
+        <p style="margin-top: 2rem; font-size: 0.8rem; opacity: 0.6;">
+            &copy; 2026 Hak Cipta Dilindungi Undang-Undang.
+        </p>
+    </footer>
+
+</body>
+</html>

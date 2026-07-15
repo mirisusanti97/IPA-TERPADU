@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 4 - Komponen Darah dan Fungsinya | IPA TERPADU Kelas VIII Semester I</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-navy: #0A192F;
+            --secondary-navy: #112240;
+            --accent-gold: #D4AF37;
+            --accent-gold-light: #F4E4BC;
+            --text-light: #E6F1FF;
+            --text-muted: #8892B0;
+            --white: #FFFFFF;
+            --glass-border: rgba(212, 175, 55, 0.2);
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-navy);
+            color: var(--text-light);
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        .top-nav {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--glass-border);
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .top-nav a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+        
+        .top-nav a:hover {
+            color: var(--accent-gold-light);
+            text-decoration: underline;
+        }
+        
+        .top-nav span {
+            color: var(--text-muted);
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--white);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, var(--white), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .chapter-subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            font-style: italic;
+            border-left: 3px solid var(--accent-gold);
+            padding-left: 1rem;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+        
+        .btn-primary {
+            background: var(--accent-gold);
+            color: var(--primary-navy);
+        }
+        
+        .btn-primary:hover {
+            background: var(--accent-gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -10px rgba(212, 175, 55, 0.5);
+        }
+        
+        .btn-outline {
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+        }
+        
+        .btn-outline:hover {
+            background: rgba(212, 175, 55, 0.1);
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            color: var(--accent-gold-light);
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 1rem;
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+            color: var(--text-light);
+        }
+        
+        ul, ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            color: var(--text-muted);
+        }
+        
+        li {
+            margin-bottom: 0.8rem;
+        }
+        
+        strong {
+            color: var(--white);
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            background: var(--secondary-navy);
+            border-radius: 8px;
+            border: 1px solid var(--glass-border);
+            margin: 2rem 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: var(--text-light);
+        }
+        
+        th {
+            text-align: left;
+            padding: 1rem;
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--accent-gold);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            border-bottom: 2px solid var(--accent-gold);
+        }
+        
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(136, 146, 176, 0.2);
+            color: var(--text-muted);
+        }
+        
+        tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+            color: var(--text-light);
+        }
+        
+        .case-study {
+            background: rgba(10, 25, 47, 0.5);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .case-study strong {
+            color: var(--accent-gold);
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .exam-points {
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .exam-points h3 {
+            color: var(--accent-gold);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .exam-points ul {
+            color: var(--text-light);
+            margin-bottom: 0;
+        }
+        
+        footer {
+            background: #020c1b;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--glass-border);
+            margin-top: 4rem;
+        }
+        
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        footer a {
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Top Navigation -->
+        <div class="top-nav">
+            <a href="index.html"><i class="fas fa-book-open"></i> IPA TERPADU Kelas VIII</a>
+            <span>|</span>
+            <a href="index.html">Beranda</a>
+            <span>|</span>
+            <a href="index.html#daftar-isi">Daftar Bab</a>
+            <span>|</span>
+            <a href="index.html#tentang">Penulis</a>
+        </div>
+
+        <!-- Header -->
+        <header>
+            <h1>BAB 4</h1>
+            <h1 style="font-size: 2rem; margin-top: -0.5rem;">Sistem Peredaran Darah: Komponen Darah dan Fungsinya</h1>
+            <p class="chapter-subtitle">Memahami komposisi darah manusia secara detail, termasuk plasma, eritrosit, leukosit, dan trombosit, beserta fungsi spesifik masing-masing komponen dalam menjaga homeostasis tubuh.</p>
+            
+            <div class="nav-buttons">
+                <a href="3.html" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Bab Sebelumnya</a>
+                <a href="index.html" class="btn btn-outline"><i class="fas fa-home"></i> Beranda</a>
+                <a href="uji-formatif-4.html" class="btn btn-primary"><i class="fas fa-clipboard-check"></i> Uji Formatif Bab 4</a>
+                <a href="5.html" class="btn btn-outline">Bab Selanjutnya <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <h2>A. Pengertian Darah dan Sistem Peredaran Darah</h2>
+            <p>Darah adalah jaringan ikat cair yang bersirkulasi di seluruh tubuh melalui pembuluh darah. Darah berfungsi sebagai sistem transportasi utama yang mengedarkan oksigen, nutrisi, hormon, dan mengangkut zat sisa metabolisme. Dalam tubuh manusia dewasa terdapat sekitar <strong>5-6 liter darah</strong> yang terus-menerus beredar.</p>
+            <p>Sistem peredaran darah (sistem kardiovaskular) terdiri dari tiga komponen utama:</p>
+            <ul>
+                <li><strong>Darah:</strong> Media transportasi yang membawa zat-zat penting.</li>
+                <li><strong>Jantung:</strong> Organ pemompa yang menggerakkan darah ke seluruh tubuh.</li>
+                <li><strong>Pembuluh Darah:</strong> Saluran yang mengalirkan darah (arteri, vena, kapiler).</li>
+            </ul>
+
+            <h2>B. Komposisi Darah</h2>
+            <p>Darah terdiri dari dua komponen utama:</p>
+            <ul>
+                <li><strong>Plasma Darah (55%):</strong> Bagian cair darah yang berwarna kekuningan, terdiri dari 90% air dan 10% zat terlarut (protein, elektrolit, hormon, zat gizi, zat sisa).</li>
+                <li><strong>Sel-Sel Darah (45%):</strong> Terdiri dari eritrosit (sel darah merah), leukosit (sel darah putih), dan trombosit (keping darah).</li>
+            </ul>
+
+            <h2>C. Komponen Darah dan Fungsi Spesifiknya</h2>
+            
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">1. Plasma Darah</h3>
+            <p>Plasma darah adalah komponen cair yang berfungsi sebagai medium transportasi. Kandungan plasma darah meliputi:</p>
+            <ul>
+                <li><strong>Air (90%):</strong> Pelarut universal untuk mengangkut zat-zat terlarut.</li>
+                <li><strong>Protein Plasma (7-8%):</strong>
+                    <ul>
+                        <li><em>Albumin:</em> Menjaga tekanan osmotik darah dan mengangkut hormon serta asam lemak.</li>
+                        <li><em>Globulin:</em> Terdiri dari alfa, beta (transportasi lipid), dan gamma (antibodi/imunoglobulin).</li>
+                        <li><em>Fibrinogen:</em> Berperan dalam proses pembekuan darah.</li>
+                    </ul>
+                </li>
+                <li><strong>Elektrolit:</strong> Natrium (Na⁺), Kalium (K⁺), Kalsium (Ca²⁺), Klorida (Cl⁻), Bikarbonat (HCO₃⁻) untuk keseimbangan cairan dan pH.</li>
+                <li><strong>Zat Terlarut Lain:</strong> Glukosa, asam amino, lipid, vitamin, hormon, oksigen, karbon dioksida, dan zat sisa metabolisme (urea, kreatinin).</li>
+            </ul>
+
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">2. Eritrosit (Sel Darah Merah)</h3>
+            <p>Eritrosit adalah sel darah paling banyak (sekitar 4-5 juta per mm³ darah). Karakteristik eritrosit:</p>
+            <ul>
+                <li><strong>Bentuk:</strong> Bikonkaf (pipih di tengah, tebal di tepi) tanpa inti saat matang.</li>
+                <li><strong>Warna Merah:</strong> Disebabkan oleh <strong>hemoglobin (Hb)</strong>, protein yang mengandung zat besi (Fe).</li>
+                <li><strong>Fungsi Utama:</strong> Mengangkut oksigen dari paru-paru ke seluruh jaringan tubuh, dan mengangkut sebagian karbon dioksida kembali ke paru-paru.</li>
+                <li><strong>Umur:</strong> Sekitar 120 hari, kemudian dihancurkan di limpa dan hati.</li>
+                <li><strong>Produksi:</strong> Di sumsum tulang merah (eritropoiesis), dirangsang oleh hormon <strong>eritropoietin (EPO)</strong> yang dihasilkan ginjal saat kadar oksigen rendah.</li>
+            </ul>
+
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">3. Leukosit (Sel Darah Putih)</h3>
+            <p>Leukosit adalah komponen darah yang berperan dalam sistem pertahanan tubuh (imunitas). Jumlah normal sekitar 5.000-10.000 per mm³ darah. Leukosit memiliki inti sel dan dapat bergerak aktif (amoeboid) menembus dinding pembuluh darah (<em>diapedesis</em>).</p>
+            <p>Berdasarkan ada tidaknya granula dalam sitoplasma, leukosit dibagi menjadi:</p>
+            <ul>
+                <li><strong>Granulosit (bergranula):</strong>
+                    <ul>
+                        <li><em>Neutrofil (60-70%):</em> Fagosit aktif, pertama merespons infeksi bakteri.</li>
+                        <li><em>Eosinofil (2-4%):</em> Melawan infeksi parasit dan berperan dalam reaksi alergi.</li>
+                        <li><em>Basofil (0,5-1%):</em> Menghasilkan histamin dan heparin, terlibat dalam respon inflamasi dan alergi.</li>
+                    </ul>
+                </li>
+                <li><strong>Agranulosit (tidak bergranula):</strong>
+                    <ul>
+                        <li><em>Limfosit (20-25%):</em> Terdiri dari sel B (memproduksi antibodi) dan sel T (imunitas seluler), penting dalam imunitas spesifik.</li>
+                        <li><em>Monosit (3-8%):</em> Berdiferensiasi menjadi makrofag di jaringan, berperan dalam fagositosis dan presentasi antigen.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">4. Trombosit (Keping Darah)</h3>
+            <p>Trombosit adalah fragmen sel (bukan sel utuh) yang berasal dari sel megakariosit di sumsum tulang. Jumlah normal sekitar 150.000-400.000 per mm³ darah.</p>
+            <ul>
+                <li><strong>Fungsi Utama:</strong> Berperan dalam <strong>hemostasis</strong> (penghentian perdarahan) melalui proses pembekuan darah.</li>
+                <li><strong>Mekanisme:</strong> Saat pembuluh darah rusak, trombosit akan menempel (adhesi), berkumpul (agregasi), dan melepaskan zat-zat yang memicu rangkaian reaksi pembekuan, mengubah fibrinogen menjadi fibrin yang membentuk jaring pembeku.</li>
+                <li><strong>Umur:</strong> Sekitar 8-10 hari.</li>
+            </ul>
+
+            <h2>D. Analisis Perbandingan Komponen Darah</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Komponen</th>
+                            <th>Jumlah Normal</th>
+                            <th>Bentuk</th>
+                            <th>Fungsi Utama</th>
+                            <th>Tempat Produksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Plasma Darah</strong></td>
+                            <td>55% volume darah</td>
+                            <td>Cairan kekuningan</td>
+                            <td>Transportasi zat, regulasi suhu, pH, dan tekanan osmotik</td>
+                            <td>Hati (protein), usus (air, nutrisi)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Eritrosit</strong></td>
+                            <td>4-5 juta/mm³</td>
+                            <td>Bikonkaf, tanpa inti</td>
+                            <td>Mengangkut O₂ dan sebagian CO₂</td>
+                            <td>Sumsum tulang merah</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Leukosit</strong></td>
+                            <td>5.000-10.000/mm³</td>
+                            <td>Berbentuk, berinti, dapat bergerak</td>
+                            <td>Pertahanan tubuh (imunitas)</td>
+                            <td>Sumsum tulang, kelenjar limfa</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Trombosit</strong></td>
+                            <td>150.000-400.000/mm³</td>
+                            <td>Fragmen sel, tidak berinti</td>
+                            <td>Pembekuan darah (hemostasis)</td>
+                            <td>Sumsum tulang (dari megakariosit)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>E. Proses Pembentukan Sel Darah (Hematopoiesis)</h2>
+            <p>Semua sel darah berasal dari <strong>sel punca hematopoietik</strong> (hematopoietic stem cells) di sumsum tulang merah. Proses diferensiasi sel punca menjadi berbagai jenis sel darah disebut hematopoiesis.</p>
+            <ul>
+                <li><strong>Eritropoiesis:</strong> Pembentukan eritrosit, dirangsang oleh hormon eritropoietin (EPO) dari ginjal saat kadar O₂ rendah.</li>
+                <li><strong>Leukopoiesis:</strong> Pembentukan leukosit, dirangsang oleh sitokin seperti interleukin dan colony-stimulating factors (CSF).</li>
+                <li><strong>Trombopoiesis:</strong> Pembentukan trombosit, dirangsang oleh hormon trombopoietin (TPO) dari hati.</li>
+            </ul>
+            <p>Setelah matang, sel darah akan dilepaskan ke aliran darah. Sel darah merah yang sudah tua (usia ~120 hari) akan dihancurkan di limpa dan hati, dengan hemoglobin dipecah menjadi <strong>biliverdin</strong> (hijau) lalu <strong>bilirubin</strong> (kuning) yang dibuang melalui empedu.</p>
+
+            <h2>F. Golongan Darah (Pengantar)</h2>
+            <p>Permukaan eritrosit memiliki protein spesifik yang disebut <strong>antigen (aglutinogen)</strong>. Berdasarkan antigen ini, darah manusia dikelompokkan menjadi beberapa sistem, yang paling penting adalah:</p>
+            <ul>
+                <li><strong>Sistem ABO:</strong> Mengelompokkan darah menjadi A, B, AB, dan O berdasarkan antigen A dan B pada eritrosit.</li>
+                <li><strong>Sistem Rhesus (Rh):</strong> Mengelompokkan darah menjadi Rh+ (memiliki antigen D) dan Rh- (tidak memiliki antigen D).</li>
+            </ul>
+            <p><em>Catatan:</em> Pembahasan lebih detail tentang golongan darah, transfusi, dan mekanisme peredaran darah akan dibahas pada Bab 5.</p>
+
+            <div class="case-study">
+                <strong><i class="fas fa-microscope"></i> Studi Kasus: Anemia Defisiensi Besi pada Siswi Remaja</strong>
+                <p>Anemia defisiensi besi adalah gangguan darah paling umum di dunia, terutama pada remaja putri dan wanita usia subur. Di Indonesia, data Riskesdas (2018) menunjukkan sekitar <strong>48,9% remaja putri</strong> mengalami anemia.</p>
+                <p><strong>Mekanisme Biologis:</strong></p>
+                <ul style="margin-top: 0.5rem;">
+                    <li>Besi (Fe) adalah komponen inti dari <strong>hemoglobin</strong> dalam eritrosit.</li>
+                    <li>Kekurangan besi → produksi hemoglobin menurun → eritrosit kecil dan pucat (mikrositik hipokromik).</li>
+                    <li>Kapasitas angkut oksigen darah menurun → jaringan tubuh kekurangan oksigen (hipoksia).</li>
+                </ul>
+                <p><strong>Gejala Klinis:</strong></p>
+                <ul style="margin-top: 0.5rem;">
+                    <li>5L: Lemah, Lesu, Letih, Lelah, Lalai (Lunglai)</li>
+                    <li>Pucat pada konjungtiva mata, kuku, dan telapak tangan</li>
+                    <li>Sesak napas saat beraktivitas, jantung berdebar</li>
+                    <li>Penurunan konsentrasi belajar dan prestasi akademik</li>
+                </ul>
+                <p><strong>Faktor Risiko pada Remaja Putri:</strong></p>
+                <ul style="margin-top: 0.5rem;">
+                    <li>Menstruasi yang menyebabkan kehilangan darah dan zat besi setiap bulan</li>
+                    <li>Pola diet ketat (<em>dieting</em>) yang rendah asupan daging merah dan sayur hijau</li>
+                    <li>Konsumsi teh/kopi berlebihan yang menghambat penyerapan besi (tanin)</li>
+                    <li>Pertumbuhan pesat yang meningkatkan kebutuhan besi</li>
+                </ul>
+                <p><strong>Pencegahan:</strong></p>
+                <ul style="margin-top: 0.5rem;">
+                    <li>Konsumsi makanan kaya zat besi: daging merah, hati, bayam, kacang-kacangan</li>
+                    <li>Padukan dengan vitamin C (jeruk, jambu) untuk meningkatkan penyerapan besi</li>
+                    <li>Hindari teh/kopi saat makan</li>
+                    <li>Program Tablet Tambah Darah (TTD) dari Kemenkes: 1 tablet/minggu untuk remaja putri</li>
+                </ul>
+            </div>
+
+            <h2>G. Tantangan dan Miskonsepsi tentang Komponen Darah</h2>
+            <ul>
+                <li><strong>Miskonsepsi 1:</strong> "Darah yang berwarna merah berarti mengandung oksigen." <em>Koreksi:</em> Darah selalu berwarna merah karena hemoglobin, tetapi darah kaya O₂ berwarna merah terang, sedangkan darah miskin O₂ berwarna merah kebiruan (bukan biru seperti sering digambarkan).</li>
+                <li><strong>Miskonsepsi 2:</strong> "Leukosit hanya ada di dalam darah." <em>Koreksi:</em> Leukosit dapat keluar dari pembuluh darah (<em>diapedesis</em>) menuju jaringan tubuh untuk melawan infeksi, dan juga ditemukan di kelenjar limfa, limpa, dan sumsum tulang.</li>
+                <li><strong>Miskonsepsi 3:</strong> "Trombosit adalah sel darah utuh." <em>Koreksi:</em> Trombosit sebenarnya adalah fragmen sitoplasma dari sel megakariosit, bukan sel utuh, dan tidak memiliki inti.</li>
+                <li><strong>Miskonsepsi 4:</strong> "Anemia selalu disebabkan oleh kekurangan zat besi." <em>Koreksi:</em> Anemia dapat disebabkan oleh banyak hal: defisiensi B12 (anemia pernisiosa), defisiensi asam folat, penyakit kronis, kelainan genetik (thalassemia, sickle cell), atau perdarahan akut.</li>
+            </ul>
+
+            <h2>H. Relevansi untuk Kehidupan Sehari-hari</h2>
+            <ul>
+                <li><strong>Pola Makan Kaya Zat Besi:</strong> Memahami pentingnya konsumsi daging merah, hati, dan sayur hijau untuk mencegah anemia, terutama pada remaja putri.</li>
+                <li><strong>Pengenalan Gejala Anemia:</strong> Siswa dapat mengenali gejala 5L (Lemah, Lesu, Letih, Lelah, Lalai) sebagai tanda awal anemia.</li>
+                <li><strong>Donor Darah:</strong> Pemahaman tentang komponen darah memotivasi siswa untuk menjadi pendonor darah sukarela di masa depan (PMI).</li>
+                <li><strong>Imunitas Tubuh:</strong> Memahami peran leukosit membantu siswa menjaga daya tahan tubuh dengan pola hidup sehat (tidur cukup, olahraga, gizi seimbang).</li>
+                <li><strong>Pencegahan Perdarahan:</strong> Pengetahuan tentang trombosit dan pembekuan darah penting untuk pertolongan pertama pada luka.</li>
+                <li><strong>Literasi Kesehatan:</strong> Memahami hasil pemeriksaan darah (hemoglobin, leukosit, trombosit) saat cek kesehatan.</li>
+            </ul>
+
+            <!-- Poin Penting untuk Ujian -->
+            <div class="exam-points">
+                <h3><i class="fas fa-star"></i> Poin Penting untuk Ujian</h3>
+                <ul>
+                    <li>Kuasai 4 komponen utama darah: plasma, eritrosit, leukosit, trombosit beserta persentasenya.</li>
+                    <li>Pahami fungsi spesifik hemoglobin dalam mengangkut O₂ dan CO₂.</li>
+                    <li>Hafalkan 5 jenis leukosit (neutrofil, eosinofil, basofil, limfosit, monosit) beserta fungsinya.</li>
+                    <li>Pahami proses hematopoiesis dan hormon yang terlibat (EPO, TPO, sitokin).</li>
+                    <li>Kuasai perbedaan granulosit dan agranulosit pada leukosit.</li>
+                    <li>Pahami mekanisme pembekuan darah (hemostasis) yang melibatkan trombosit dan fibrinogen.</li>
+                    <li>Siapkan analisis kasus anemia defisiensi besi pada remaja putri sebagai contoh nyata.</li>
+                    <li><em>Catatan Administratif:</em> Untuk keperluan ujian formatif ini, pastikan siswa menuliskan <strong>NIS</strong> (Nomor Induk Siswa) dengan jelas pada lembar jawaban.</li>
+                </ul>
+            </div>
+
+            <!-- Bottom Navigation -->
+            <div class="nav-buttons" style="margin-top: 3rem;">
+                <a href="3.html" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Bab Sebelumnya</a>
+                <a href="index.html" class="btn btn-outline"><i class="fas fa-home"></i> Kembali ke Beranda</a>
+                <a href="uji-formatif-4.html" class="btn btn-primary"><i class="fas fa-clipboard-check"></i> Uji Formatif Bab 4</a>
+                <a href="5.html" class="btn btn-outline">Bab Selanjutnya <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div style="margin-bottom: 1.5rem;">
+            <i class="fas fa-book-open" style="font-size: 2rem; color: var(--accent-gold);"></i>
+        </div>
+        <p style="font-size: 1.1rem; color: var(--white); margin-bottom: 0.5rem;">IPA TERPADU Kelas VIII Semester I</p>
+        <p>Buku daras untuk siswa MTsS. Teori, praktik, dan aplikasi sains dalam kehidupan sehari-hari.</p>
+        <p style="margin-top: 1.5rem;">
+            <strong>Miri Susanti, S.Pd., Gr</strong> | MTsS Diniyah Limo Jurai
+        </p>
+        <p>
+            <i class="fas fa-envelope"></i> <a href="mailto:mirisusanti97@gmail.com">mirisusanti97@gmail.com</a>
+        </p>
+        <p style="margin-top: 2rem; font-size: 0.8rem; opacity: 0.6;">
+            &copy; 2026 Hak Cipta Dilindungi Undang-Undang.
+        </p>
+    </footer>
+
+</body>
+</html>

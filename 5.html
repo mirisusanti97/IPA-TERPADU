@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 5 - Mekanisme Peredaran Darah & Transfusi | IPA TERPADU Kelas VIII Semester I</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-navy: #0A192F;
+            --secondary-navy: #112240;
+            --accent-gold: #D4AF37;
+            --accent-gold-light: #F4E4BC;
+            --text-light: #E6F1FF;
+            --text-muted: #8892B0;
+            --white: #FFFFFF;
+            --glass-border: rgba(212, 175, 55, 0.2);
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-navy);
+            color: var(--text-light);
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        .top-nav {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--glass-border);
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .top-nav a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+        
+        .top-nav a:hover {
+            color: var(--accent-gold-light);
+            text-decoration: underline;
+        }
+        
+        .top-nav span {
+            color: var(--text-muted);
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--white);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, var(--white), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .chapter-subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            font-style: italic;
+            border-left: 3px solid var(--accent-gold);
+            padding-left: 1rem;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+        
+        .btn-primary {
+            background: var(--accent-gold);
+            color: var(--primary-navy);
+        }
+        
+        .btn-primary:hover {
+            background: var(--accent-gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -10px rgba(212, 175, 55, 0.5);
+        }
+        
+        .btn-outline {
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+        }
+        
+        .btn-outline:hover {
+            background: rgba(212, 175, 55, 0.1);
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            color: var(--accent-gold-light);
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 1rem;
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+            color: var(--text-light);
+        }
+        
+        ul, ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            color: var(--text-muted);
+        }
+        
+        li {
+            margin-bottom: 0.8rem;
+        }
+        
+        strong {
+            color: var(--white);
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            background: var(--secondary-navy);
+            border-radius: 8px;
+            border: 1px solid var(--glass-border);
+            margin: 2rem 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: var(--text-light);
+        }
+        
+        th {
+            text-align: left;
+            padding: 1rem;
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--accent-gold);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            border-bottom: 2px solid var(--accent-gold);
+        }
+        
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(136, 146, 176, 0.2);
+            color: var(--text-muted);
+        }
+        
+        tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+            color: var(--text-light);
+        }
+        
+        .case-study {
+            background: rgba(10, 25, 47, 0.5);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .case-study strong {
+            color: var(--accent-gold);
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .exam-points {
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .exam-points h3 {
+            color: var(--accent-gold);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .exam-points ul {
+            color: var(--text-light);
+            margin-bottom: 0;
+        }
+        
+        footer {
+            background: #020c1b;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--glass-border);
+            margin-top: 4rem;
+        }
+        
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        footer a {
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Top Navigation -->
+        <div class="top-nav">
+            <a href="index.html"><i class="fas fa-book-open"></i> IPA TERPADU Kelas VIII</a>
+            <span>|</span>
+            <a href="index.html">Beranda</a>
+            <span>|</span>
+            <a href="index.html#daftar-isi">Daftar Bab</a>
+            <span>|</span>
+            <a href="index.html#tentang">Penulis</a>
+        </div>
+
+        <!-- Header -->
+        <header>
+            <h1>BAB 5</h1>
+            <h1 style="font-size: 2rem; margin-top: -0.5rem;">Sistem Peredaran Darah: Organ, Mekanisme, Golongan Darah, dan Transfusi</h1>
+            <p class="chapter-subtitle">Menganalisis organ sistem peredaran darah (jantung dan pembuluh darah), mekanisme peredaran darah besar dan kecil, siklus jantung (sistol-diastol), sistem golongan darah ABO & Rhesus, serta prinsip keamanan transfusi darah.</p>
+            
+            <div class="nav-buttons">
+                <a href="4.html" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Bab Sebelumnya</a>
+                <a href="index.html" class="btn btn-outline"><i class="fas fa-home"></i> Beranda</a>
+                <a href="uji-formatif-5.html" class="btn btn-primary"><i class="fas fa-clipboard-check"></i> Uji Formatif Bab 5</a>
+                <a href="6.html" class="btn btn-outline">Bab Selanjutnya <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <h2>A. Organ Utama Sistem Peredaran Darah</h2>
+            <p>Sistem peredaran darah (sistem kardiovaskular) terdiri dari tiga komponen utama yang saling terintegrasi:</p>
+            <ul>
+                <li><strong>Jantung (Cor):</strong> Organ berotot berukuran kepalan tangan yang berfungsi sebagai pompa utama darah. Terletak di rongga dada, sedikit ke kiri, dengan berat sekitar 250-350 gram pada dewasa.</li>
+                <li><strong>Pembuluh Darah:</strong> Sistem saluran tertutup yang mengalirkan darah ke seluruh tubuh (arteri, vena, kapiler).</li>
+                <li><strong>Darah:</strong> Media transportasi yang membawa oksigen, nutrisi, hormon, dan zat sisa (sudah dibahas di Bab 4).</li>
+            </ul>
+
+            <h2>B. Struktur dan Fungsi Jantung</h2>
+            <p>Jantung manusia terdiri dari <strong>empat ruang</strong> yang dipisahkan oleh septum (dinding pemisah):</p>
+            <ul>
+                <li><strong>Serambi Kanan (Atrium Dextra):</strong> Menerima darah kaya CO₂ dari seluruh tubuh melalui vena kava superior dan inferior.</li>
+                <li><strong>Serambi Kiri (Atrium Sinister):</strong> Menerima darah kaya O₂ dari paru-paru melalui vena pulmonalis.</li>
+                <li><strong>Bilik Kanan (Ventrikel Dextra):</strong> Memompa darah kaya CO₂ ke paru-paru melalui arteri pulmonalis.</li>
+                <li><strong>Bilik Kiri (Ventrikel Sinister):</strong> Memompa darah kaya O₂ ke seluruh tubuh melalui aorta. Dindingnya paling tebal karena harus menghasilkan tekanan tinggi.</li>
+            </ul>
+
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">Katup Jantung</h3>
+            <p>Jantung memiliki empat katup yang berfungsi mencegah aliran balik darah:</p>
+            <ul>
+                <li><strong>Katup Trikuspidalis:</strong> Antara serambi kanan dan bilik kanan (3 daun katup).</li>
+                <li><strong>Katup Bikuspidalis (Mitral):</strong> Antara serambi kiri dan bilik kiri (2 daun katup).</li>
+                <li><strong>Katup Pulmonalis:</strong> Antara bilik kanan dan arteri pulmonalis.</li>
+                <li><strong>Katup Aorta:</strong> Antara bilik kiri dan aorta.</li>
+            </ul>
+            <p>Suara jantung "lub-dub" yang kita dengar berasal dari bunyi penutupan katup-katup ini: "lub" dari katup atrioventrikular (trikuspidal & mitral), "dub" dari katup semilunar (pulmonal & aorta).</p>
+
+            <h2>C. Pembuluh Darah</h2>
+            <p>Terdapat tiga jenis pembuluh darah utama dalam tubuh:</p>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Karakteristik</th>
+                            <th>Arteri</th>
+                            <th>Vena</th>
+                            <th>Kapiler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Arah Aliran</strong></td>
+                            <td>Meninggalkan jantung</td>
+                            <td>Menuju jantung</td>
+                            <td>Menghubungkan arteri & vena</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dinding</strong></td>
+                            <td>Tebal, elastis, kuat</td>
+                            <td>Tipis, kurang elastis</td>
+                            <td>Sangat tipis (1 lapis sel)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Katup</strong></td>
+                            <td>Hanya di pangkal jantung</td>
+                            <td>Sepanjang pembuluh</td>
+                            <td>Tidak ada</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tekanan</strong></td>
+                            <td>Tinggi</td>
+                            <td>Rendah</td>
+                            <td>Sedang</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Letak</strong></td>
+                            <td>Agak tersembunyi di dalam</td>
+                            <td>Dekat permukaan tubuh</td>
+                            <td>Menyelimuti jaringan</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Isi Darah</strong></td>
+                            <td>Umumnya kaya O₂ (kecuali arteri pulmonalis)</td>
+                            <td>Umumnya kaya CO₂ (kecuali vena pulmonalis)</td>
+                            <td>Campuran, tempat pertukaran zat</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fungsi Utama</strong></td>
+                            <td>Mendistribusikan darah dari jantung</td>
+                            <td>Mengembalikan darah ke jantung</td>
+                            <td>Tempat pertukaran O₂, CO₂, nutrisi</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>D. Mekanisme Peredaran Darah</h2>
+            <p>Peredaran darah manusia merupakan <strong>peredaran darah ganda dan tertutup</strong>, terdiri dari dua siklus:</p>
+
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">1. Peredaran Darah Kecil (Sirkulasi Pulmonal)</h3>
+            <p><strong>Alur:</strong> Bilik Kanan → Arteri Pulmonalis → Paru-paru (pertukaran CO₂ dengan O₂ di alveolus) → Vena Pulmonalis → Serambi Kiri</p>
+            <p><strong>Tujuan:</strong> Mengikat oksigen dan melepaskan karbon dioksida di paru-paru (oksigenasi darah).</p>
+
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">2. Peredaran Darah Besar (Sirkulasi Sistemik)</h3>
+            <p><strong>Alur:</strong> Bilik Kiri → Aorta → Seluruh Tubuh (kepala, tangan, kaki, organ dalam) → Vena Kava Superior & Inferior → Serambi Kanan</p>
+            <p><strong>Tujuan:</strong> Mengedarkan oksigen dan nutrisi ke seluruh sel tubuh, serta mengangkut zat sisa metabolisme (CO₂, urea) untuk dibuang.</p>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Aspek Perbandingan</th>
+                            <th>Peredaran Darah Besar (Sistemik)</th>
+                            <th>Peredaran Darah Kecil (Pulmonal)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Titik Awal</strong></td>
+                            <td>Bilik Kiri (Ventrikel Sinister)</td>
+                            <td>Bilik Kanan (Ventrikel Dextra)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Titik Akhir</strong></td>
+                            <td>Serambi Kanan (Atrium Dextra)</td>
+                            <td>Serambi Kiri (Atrium Sinister)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Organ yang Dilewati</strong></td>
+                            <td>Seluruh tubuh</td>
+                            <td>Paru-paru saja</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Pembuluh Keluar</strong></td>
+                            <td>Aorta</td>
+                            <td>Arteri Pulmonalis</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Pembuluh Masuk</strong></td>
+                            <td>Vena Kava</td>
+                            <td>Vena Pulmonalis</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tujuan</strong></td>
+                            <td>Mengedarkan O₂ & nutrisi ke seluruh tubuh</td>
+                            <td>Oksigenasi darah di paru-paru</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>E. Siklus Jantung: Sistol dan Diastol</h2>
+            <p>Jantung bekerja secara ritmis melalui dua fase utama:</p>
+            <ul>
+                <li><strong>Sistol:</strong> Fase kontraksi otot jantung, saat bilik memompa darah keluar. Tekanan darah saat sistol disebut <strong>tekanan sistolik</strong> (normal ~120 mmHg).</li>
+                <li><strong>Diastol:</strong> Fase relaksasi otot jantung, saat ruang jantung mengembang dan terisi darah. Tekanan saat diastol disebut <strong>tekanan diastolik</strong> (normal ~80 mmHg).</li>
+            </ul>
+            <p>Nilai tekanan darah normal dewasa adalah <strong>120/80 mmHg</strong>, yang dibaca sebagai "seratus dua puluh per delapan puluh".</p>
+
+            <h2>F. Golongan Darah Sistem ABO dan Rhesus</h2>
+            <p>Permukaan eritrosit memiliki antigen spesifik (aglutinogen) yang menentukan golongan darah seseorang:</p>
+
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">1. Sistem ABO (Karl Landsteiner, 1900)</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Golongan Darah</th>
+                            <th>Antigen di Eritrosit</th>
+                            <th>Antibodi di Plasma</th>
+                            <th>Dapat Menerima Dari</th>
+                            <th>Dapat Mendonorkan Ke</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>A</strong></td>
+                            <td>Antigen A</td>
+                            <td>Anti-B</td>
+                            <td>A, O</td>
+                            <td>A, AB</td>
+                        </tr>
+                        <tr>
+                            <td><strong>B</strong></td>
+                            <td>Antigen B</td>
+                            <td>Anti-A</td>
+                            <td>B, O</td>
+                            <td>B, AB</td>
+                        </tr>
+                        <tr>
+                            <td><strong>AB</strong></td>
+                            <td>Antigen A & B</td>
+                            <td>Tidak ada</td>
+                            <td>A, B, AB, O</td>
+                            <td>AB saja</td>
+                        </tr>
+                        <tr>
+                            <td><strong>O</strong></td>
+                            <td>Tidak ada</td>
+                            <td>Anti-A & Anti-B</td>
+                            <td>O saja</td>
+                            <td>A, B, AB, O</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p><strong>Universal Donor:</strong> Golongan O (karena tidak memiliki antigen A/B, sehingga tidak memicu reaksi antibodi pada penerima).</p>
+            <p><strong>Universal Resipien:</strong> Golongan AB (karena tidak memiliki antibodi Anti-A/Anti-B, sehingga dapat menerima semua golongan darah).</p>
+
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">2. Sistem Rhesus (Rh)</h3>
+            <ul>
+                <li><strong>Rh Positif (Rh+):</strong> Memiliki antigen D di eritrosit (85-90% populasi Indonesia).</li>
+                <li><strong>Rh Negatif (Rh-):</strong> Tidak memiliki antigen D (jarang di Asia, lebih umum di Eropa).</li>
+            </ul>
+            <p>Prinsip transfusi Rh: Darah Rh- hanya dapat mendonorkan ke Rh- dan Rh+, sedangkan darah Rh+ hanya dapat mendonorkan ke Rh+ (tidak boleh ke Rh-).</p>
+
+            <h2>G. Prinsip Transfusi Darah</h2>
+            <p>Transfusi darah adalah proses pemberian darah dari donor ke resipien. Prinsip utama transfusi yang aman:</p>
+            <ul>
+                <li><strong>Kecocokan Golongan Darah:</strong> Darah donor tidak boleh mengandung antigen yang akan diserang oleh antibodi resipien (mencegah aglutinasi).</li>
+                <li><strong>Kecocokan Rhesus:</strong> Idealnya Rh donor = Rh resipien.</li>
+                <li><strong>Crossmatch Test:</strong> Uji silang serologi untuk memastikan kecocokan sebelum transfusi.</li>
+                <li><strong>Volume dan Kecepatan:</strong> Disesuaikan dengan kondisi klinis resipien.</li>
+            </ul>
+
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">Aglutinasi dan Hemolisis</h3>
+            <p>Jika transfusi tidak cocok, akan terjadi reaksi imunologis:</p>
+            <ul>
+                <li><strong>Aglutinasi:</strong> Penggumpalan eritrosit donor akibat reaksi antigen-antibodi.</li>
+                <li><strong>Hemolisis:</strong> Pecahnya eritrosit yang menggumpal, melepaskan hemoglobin bebas ke plasma.</li>
+                <li><strong>Reaksi Hemolitik Transfusi:</strong> Kondisi berbahaya yang dapat menyebabkan gagal ginjal, syok, bahkan kematian.</li>
+            </ul>
+
+            <div class="case-study">
+                <strong><i class="fas fa-microscope"></i> Studi Kasus: Reaksi Hemolitik Akibat Ketidakcocokan Transfusi</strong>
+                <p>Pada tahun-tahun awal pengembangan transfusi darah (sebelum penemuan sistem ABO oleh Karl Landsteiner), banyak pasien meninggal akibat transfusi yang tidak cocok. Salah satu kasus klasik adalah pemberian darah golongan <strong>A ke pasien golongan B</strong>.</p>
+                <p><strong>Mekanisme Reaksi:</strong></p>
+                <ul style="margin-top: 0.5rem;">
+                    <li>Darah donor (golongan A) memiliki <strong>antigen A</strong> di eritrositnya.</li>
+                    <li>Pasien (golongan B) memiliki <strong>antibodi Anti-A</strong> di plasmanya.</li>
+                    <li>Antibodi Anti-A pasien mengenali antigen A donor sebagai "benda asing" dan menyerang.</li>
+                    <li>Terjadi <strong>aglutinasi</strong> (penggumpalan) eritrosit donor di pembuluh darah pasien.</li>
+                    <li>Eritrosit yang menggumpal mengalami <strong>hemolisis</strong> (pecah), melepaskan hemoglobin bebas.</li>
+                </ul>
+                <p><strong>Gejala Klinis Reaksi Hemolitik:</strong></p>
+                <ul style="margin-top: 0.5rem;">
+                    <li>Demam tinggi, menggigil</li>
+                    <li>Nyeri pinggang hebat (akibat ginjal bekerja keras menyaring hemoglobin)</li>
+                    <li>Urin berwarna gelap (hemoglobinuria)</li>
+                    <li>Penurunan tekanan darah drastis (syok)</li>
+                    <li>Gagal ginjal akut</li>
+                    <li>Dapat berakibat fatal jika tidak segera ditangani</li>
+                </ul>
+                <p><strong>Pelajaran Penting:</strong> Kasus ini menunjukkan pentingnya pemeriksaan golongan darah dan uji silang (<em>crossmatch</em>) sebelum transfusi. Prosedur ketat ini kini menjadi standar keselamatan pasien di seluruh rumah sakit modern.</p>
+            </div>
+
+            <h2>H. Donor Darah dan Kemanusiaan</h2>
+            <p>Donor darah adalah tindakan sukarela memberikan darah untuk membantu pasien yang membutuhkan. Syarat donor darah di Indonesia (menurut PMI):</p>
+            <ul>
+                <li>Usia 17-60 tahun</li>
+                <li>Berat badan minimal 45 kg</li>
+                <li>Kadar hemoglobin (Hb) minimal 12,5 g/dL</li>
+                <li>Tekanan darah normal (100-160 / 70-100 mmHg)</li>
+                <li>Tidak sedang sakit, hamil, atau menstruasi</li>
+                <li>Jeda minimal 12 minggu antar donor</li>
+                <li>Tidak memiliki penyakit menular (HIV, Hepatitis B/C, sifilis)</li>
+            </ul>
+            <p>Satu kali donor (sekitar 350-500 mL) dapat menyelamatkan hingga <strong>3 nyawa</strong> karena darah dipisah menjadi komponen (eritrosit, trombosit, plasma).</p>
+
+            <h2>I. Tantangan dan Miskonsepsi tentang Sistem Peredaran Darah</h2>
+            <ul>
+                <li><strong>Miskonsepsi 1:</strong> "Darah di vena berwarna biru." <em>Koreksi:</em> Darah selalu berwarna merah (terang jika kaya O₂, gelap jika kaya CO₂). Vena tampak kebiruan karena efek optik cahaya yang menembus kulit.</li>
+                <li><strong>Miskonsepsi 2:</strong> "Arteri selalu membawa darah kaya O₂." <em>Koreksi:</em> Arteri pulmonalis membawa darah kaya CO₂ dari jantung ke paru-paru. Definisi arteri adalah pembuluh yang <em>meninggalkan jantung</em>, bukan berdasarkan kandungan O₂.</li>
+                <li><strong>Miskonsepsi 3:</strong> "Golongan O bisa menerima semua golongan darah." <em>Koreksi:</em> Golongan O adalah <em>donor universal</em>, bukan resipien universal. Golongan O hanya bisa menerima dari O karena memiliki antibodi Anti-A dan Anti-B.</li>
+                <li><strong>Miskonsepsi 4:</strong> "Donor darah melemahkan tubuh." <em>Koreksi:</em> Tubuh akan mengganti volume darah yang hilang dalam 24-48 jam, dan sel darah baru terbentuk dalam 4-6 minggu. Donor rutin justru merangsang produksi sel darah baru.</li>
+                <li><strong>Miskonsepsi 5:</strong> "Transfusi golongan AB ke O aman." <em>Koreksi:</em> Sangat berbahaya! Pasien O memiliki antibodi Anti-A dan Anti-B yang akan menyerang antigen A dan B dari donor AB, menyebabkan reaksi hemolitik fatal.</li>
+            </ul>
+
+            <h2>J. Relevansi untuk Kehidupan Sehari-hari</h2>
+            <ul>
+                <li><strong>Mengetahui Golongan Darah Sendiri:</strong> Penting untuk persiapan darurat medis dan kesiapan menjadi donor.</li>
+                <li><strong>Budaya Donor Darah:</strong> Memotivasi siswa untuk menjadi pendonor sukarela PMI saat sudah cukup usia.</li>
+                <li><strong>Pemantauan Tekanan Darah:</strong> Memahami arti angka 120/80 mmHg membantu siswa mendeteksi hipertensi sejak dini pada keluarga.</li>
+                <li><strong>Literasi Kesehatan:</strong> Memahami prosedur transfusi yang aman untuk menghindari mitos dan ketakutan yang tidak berdasar.</li>
+                <li><strong>Kemanusiaan:</strong> Menumbuhkan empati dan kepedulian sosial melalui aksi donor darah yang menyelamatkan nyawa.</li>
+                <li><strong>Karir Medis:</strong> Pengetahuan dasar ini penting bagi siswa yang bercita-cita menjadi dokter, perawat, atau tenaga medis lainnya.</li>
+            </ul>
+
+            <!-- Poin Penting untuk Ujian -->
+            <div class="exam-points">
+                <h3><i class="fas fa-star"></i> Poin Penting untuk Ujian</h3>
+                <ul>
+                    <li>Kuasai 4 ruang jantung beserta fungsinya dan pembuluh darah yang terhubung.</li>
+                    <li>Hafalkan 4 katup jantung dan fungsinya mencegah aliran balik.</li>
+                    <li>Pahami perbedaan arteri, vena, dan kapiler (struktur, fungsi, letak).</li>
+                    <li>Kuasai alur peredaran darah besar dan kecil secara lengkap.</li>
+                    <li>Pahami perbedaan sistol dan diastol serta tekanan darah normal (120/80 mmHg).</li>
+                    <li>Hafalkan tabel sistem ABO: antigen, antibodi, donor, resipien untuk setiap golongan.</li>
+                    <li>Kenali istilah universal donor (O) dan universal resipien (AB).</li>
+                    <li>Pahami sistem Rhesus (Rh+ dan Rh-) serta implikasinya pada transfusi.</li>
+                    <li>Pahami mekanisme aglutinasi dan hemolisis pada reaksi transfusi yang tidak cocok.</li>
+                    <li>Siapkan analisis kasus reaksi hemolitik sebagai contoh nyata.</li>
+                    <li><em>Catatan Administratif:</em> Untuk keperluan ujian formatif ini, pastikan siswa menuliskan <strong>NIS</strong> (Nomor Induk Siswa) dengan jelas pada lembar jawaban.</li>
+                </ul>
+            </div>
+
+            <!-- Bottom Navigation -->
+            <div class="nav-buttons" style="margin-top: 3rem;">
+                <a href="4.html" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Bab Sebelumnya</a>
+                <a href="index.html" class="btn btn-outline"><i class="fas fa-home"></i> Kembali ke Beranda</a>
+                <a href="uji-formatif-5.html" class="btn btn-primary"><i class="fas fa-clipboard-check"></i> Uji Formatif Bab 5</a>
+                <a href="6.html" class="btn btn-outline">Bab Selanjutnya <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div style="margin-bottom: 1.5rem;">
+            <i class="fas fa-book-open" style="font-size: 2rem; color: var(--accent-gold);"></i>
+        </div>
+        <p style="font-size: 1.1rem; color: var(--white); margin-bottom: 0.5rem;">IPA TERPADU Kelas VIII Semester I</p>
+        <p>Buku daras untuk siswa MTsS. Teori, praktik, dan aplikasi sains dalam kehidupan sehari-hari.</p>
+        <p style="margin-top: 1.5rem;">
+            <strong>Miri Susanti, S.Pd., Gr</strong> | MTsS Diniyah Limo Jurai
+        </p>
+        <p>
+            <i class="fas fa-envelope"></i> <a href="mailto:mirisusanti97@gmail.com">mirisusanti97@gmail.com</a>
+        </p>
+        <p style="margin-top: 2rem; font-size: 0.8rem; opacity: 0.6;">
+            &copy; 2026 Hak Cipta Dilindungi Undang-Undang.
+        </p>
+    </footer>
+
+</body>
+</html>

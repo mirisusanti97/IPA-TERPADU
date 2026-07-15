@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 6 - Gangguan Sistem Peredaran Darah | IPA TERPADU Kelas VIII Semester I</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-navy: #0A192F;
+            --secondary-navy: #112240;
+            --accent-gold: #D4AF37;
+            --accent-gold-light: #F4E4BC;
+            --text-light: #E6F1FF;
+            --text-muted: #8892B0;
+            --white: #FFFFFF;
+            --glass-border: rgba(212, 175, 55, 0.2);
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-navy);
+            color: var(--text-light);
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        .top-nav {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--glass-border);
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .top-nav a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+        
+        .top-nav a:hover {
+            color: var(--accent-gold-light);
+            text-decoration: underline;
+        }
+        
+        .top-nav span {
+            color: var(--text-muted);
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--white);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, var(--white), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .chapter-subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            font-style: italic;
+            border-left: 3px solid var(--accent-gold);
+            padding-left: 1rem;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+        
+        .btn-primary {
+            background: var(--accent-gold);
+            color: var(--primary-navy);
+        }
+        
+        .btn-primary:hover {
+            background: var(--accent-gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -10px rgba(212, 175, 55, 0.5);
+        }
+        
+        .btn-outline {
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+        }
+        
+        .btn-outline:hover {
+            background: rgba(212, 175, 55, 0.1);
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            color: var(--accent-gold-light);
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 1rem;
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+            color: var(--text-light);
+        }
+        
+        ul, ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            color: var(--text-muted);
+        }
+        
+        li {
+            margin-bottom: 0.8rem;
+        }
+        
+        strong {
+            color: var(--white);
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            background: var(--secondary-navy);
+            border-radius: 8px;
+            border: 1px solid var(--glass-border);
+            margin: 2rem 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: var(--text-light);
+        }
+        
+        th {
+            text-align: left;
+            padding: 1rem;
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--accent-gold);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            border-bottom: 2px solid var(--accent-gold);
+        }
+        
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(136, 146, 176, 0.2);
+            color: var(--text-muted);
+        }
+        
+        tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+            color: var(--text-light);
+        }
+        
+        .case-study {
+            background: rgba(10, 25, 47, 0.5);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .case-study strong {
+            color: var(--accent-gold);
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .exam-points {
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .exam-points h3 {
+            color: var(--accent-gold);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .exam-points ul {
+            color: var(--text-light);
+            margin-bottom: 0;
+        }
+        
+        footer {
+            background: #020c1b;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--glass-border);
+            margin-top: 4rem;
+        }
+        
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        footer a {
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Top Navigation -->
+        <div class="top-nav">
+            <a href="index.html"><i class="fas fa-book-open"></i> IPA TERPADU Kelas VIII</a>
+            <span>|</span>
+            <a href="index.html">Beranda</a>
+            <span>|</span>
+            <a href="index.html#daftar-isi">Daftar Bab</a>
+            <span>|</span>
+            <a href="index.html#tentang">Penulis</a>
+        </div>
+
+        <!-- Header -->
+        <header>
+            <h1>BAB 6</h1>
+            <h1 style="font-size: 2rem; margin-top: -0.5rem;">Gangguan Sistem Peredaran Darah dan Upaya Menjaga Kesehatan</h1>
+            <p class="chapter-subtitle">Menganalisis berbagai gangguan pada sistem peredaran darah manusia (hipertensi, aterosklerosis, penyakit jantung koroner, stroke, varises, hemofilia, leukemia), faktor risiko, serta strategi preventif dan kuratif untuk menjaga kesehatan jantung dan pembuluh darah.</p>
+            
+            <div class="nav-buttons">
+                <a href="5.html" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Bab Sebelumnya</a>
+                <a href="index.html" class="btn btn-outline"><i class="fas fa-home"></i> Beranda</a>
+                <a href="uji-formatif-6.html" class="btn btn-primary"><i class="fas fa-clipboard-check"></i> Uji Formatif Bab 6</a>
+                <a href="7.html" class="btn btn-outline">Bab Selanjutnya <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <h2>A. Pengertian Gangguan Sistem Peredaran Darah</h2>
+            <p>Gangguan sistem peredaran darah (penyakit kardiovaskular) adalah segala kondisi abnormal yang memengaruhi struktur atau fungsi jantung dan pembuluh darah, sehingga mengganggu proses transportasi darah ke seluruh tubuh. Menurut WHO, penyakit kardiovaskular merupakan <strong>penyebab kematian nomor satu di dunia</strong>, dengan sekitar 17,9 juta kematian setiap tahunnya.</p>
+            <p>Di Indonesia, data Riskesdas (2018) menunjukkan bahwa penyakit jantung dan stroke termasuk dalam 10 penyebab kematian tertinggi, dengan prevalensi yang terus meningkat, bahkan pada usia muda. Hal ini berkaitan erat dengan perubahan gaya hidup modern.</p>
+
+            <h2>B. Jenis-Jenis Gangguan Sistem Peredaran Darah</h2>
+            <p>Gangguan sistem peredaran darah dapat dikelompokkan berdasarkan organ yang terkena dan mekanisme patofisiologinya:</p>
+
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">1. Gangguan pada Pembuluh Darah</h3>
+            <ul>
+                <li><strong>Hipertensi (Tekanan Darah Tinggi):</strong> Kondisi di mana tekanan darah sistolik ≥140 mmHg dan/atau diastolik ≥90 mmHg secara persisten. Disebut "silent killer" karena sering tanpa gejala namun merusak organ target (jantung, ginjal, otak, mata).</li>
+                <li><strong>Aterosklerosis:</strong> Penumpukan plak (lemak, kolesterol, kalsium, zat sisa) di dinding arteri, menyebabkan penyempitan dan pengerasan pembuluh darah. Plak ini disebut <em>ateroma</em>.</li>
+                <li><strong>Arteriosklerosis:</strong> Pengerasan dan penebalan dinding arteri secara umum (istilah lebih umum, aterosklerosis adalah salah satu bentuknya).</li>
+                <li><strong>Varises:</strong> Pelebaran pembuluh vena (biasanya di tungkai) akibat katup vena melemah, sehingga darah menumpuk dan vena tampak berkelok-kelok kebiruan.</li>
+                <li><strong>Aneurisma:</strong> Pelebaran abnormal dinding pembuluh darah (biasanya arteri) yang lemah, berisiko pecah dan menyebabkan perdarahan internal fatal.</li>
+            </ul>
+
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">2. Gangguan pada Jantung</h3>
+            <ul>
+                <li><strong>Penyakit Jantung Koroner (PJK):</strong> Penyempitan arteri koroner (pembuluh darah yang memberi makan otot jantung) akibat aterosklerosis, menyebabkan suplai oksigen ke jantung berkurang. Dapat menyebabkan <em>angina pectoris</em> (nyeri dada) atau <em>infark miokard</em> (serangan jantung).</li>
+                <li><strong>Gagal Jantung:</strong> Kondisi di mana jantung tidak mampu memompa darah secara efektif untuk memenuhi kebutuhan tubuh. Dapat disebabkan oleh PJK, hipertensi kronis, atau kardiomiopati.</li>
+                <li><strong>Aritmia:</strong> Gangguan irama jantung (terlalu cepat, terlalu lambat, atau tidak teratur) akibat kelainan sistem konduksi listrik jantung.</li>
+                <li><strong>Jantung Bocor (Defek Septum):</strong> Kelainan bawaan berupa lubang pada septum (dinding pemisah) antar ruang jantung, menyebabkan pencampuran darah kaya O₂ dan miskin O₂.</li>
+            </ul>
+
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">3. Gangguan pada Komponen Darah</h3>
+            <ul>
+                <li><strong>Anemia:</strong> Kekurangan hemoglobin atau eritrosit, sehingga kapasitas angkut oksigen darah menurun. Dapat disebabkan oleh defisiensi besi, B12, perdarahan, atau kelainan genetik.</li>
+                <li><strong>Hemofilia:</strong> Kelainan genetik (terkait kromosom X) di mana darah sulit membeku akibat kekurangan faktor pembekuan (faktor VIII pada hemofilia A, faktor IX pada hemofilia B). Lebih sering terjadi pada laki-laki.</li>
+                <li><strong>Leukemia (Kanker Darah):</strong> Produksi leukosit abnormal yang tidak terkendali di sumsum tulang, mendesak produksi sel darah normal. Dibagi menjadi akut (AML, ALL) dan kronis (CML, CLL).</li>
+                <li><strong>Thalassemia:</strong> Kelainan genetik akibat cacat sintesis rantai hemoglobin (alfa atau beta), menyebabkan eritrosit mudah pecah (hemolisis) dan anemia berat.</li>
+                <li><strong>Sickle Cell Anemia:</strong> Kelainan genetik di mana eritrosit berbentuk sabit (sickle), kaku, dan mudah menyumbat pembuluh darah kecil.</li>
+            </ul>
+
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">4. Gangguan pada Otak (Vaskular)</h3>
+            <ul>
+                <li><strong>Stroke Iskemik:</strong> Penyumbatan pembuluh darah otak oleh trombus atau embolus, menyebabkan sebagian otak kekurangan oksigen dan mati. Merupakan ~85% kasus stroke.</li>
+                <li><strong>Stroke Hemoragik:</strong> Pecahnya pembuluh darah otak, menyebabkan perdarahan di dalam otak. Lebih jarang namun lebih fatal.</li>
+                <li><strong>Transient Ischemic Attack (TIA):</strong> "Mini stroke" berupa gangguan aliran darah otak sementara, sering menjadi peringatan sebelum stroke besar.</li>
+            </ul>
+
+            <h2>C. Faktor Risiko Gangguan Peredaran Darah</h2>
+            <p>Faktor risiko dibagi menjadi dua kategori:</p>
+
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">1. Faktor yang Tidak Dapat Diubah</h3>
+            <ul>
+                <li><strong>Usia:</strong> Risiko meningkat seiring pertambahan usia.</li>
+                <li><strong>Jenis Kelamin:</strong> Laki-laki lebih berisiko di usia muda, wanita menyusul setelah menopause.</li>
+                <li><strong>Genetik/Keturunan:</strong> Riwayat keluarga dengan penyakit jantung atau stroke.</li>
+                <li><strong>Ras/Etnis:</strong> Beberapa populasi memiliki kerentanan genetik tertentu.</li>
+            </ul>
+
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">2. Faktor yang Dapat Diubah (Modifiable)</h3>
+            <ul>
+                <li><strong>Hipertensi:</strong> Faktor risiko utama stroke dan PJK.</li>
+                <li><strong>Dislipidemia:</strong> Kolesterol tinggi (LDL tinggi, HDL rendah).</li>
+                <li><strong>Diabetes Melitus:</strong> Merusak pembuluh darah kecil dan besar.</li>
+                <li><strong>Merokok:</strong> Zat kimia rokok merusak endotel pembuluh darah dan mempercepat aterosklerosis.</li>
+                <li><strong>Obesitas:</strong> Terutama obesitas sentral (perut buncit).</li>
+                <li><strong>Gaya Hidup Sedentari:</strong> Kurang aktivitas fisik.</li>
+                <li><strong>Pola Makan Tidak Sehat:</strong> Tinggi garam, lemak jenuh, gula, rendah serat.</li>
+                <li><strong>Stres Kronis:</strong> Meningkatkan hormon kortisol dan adrenalin yang membebani jantung.</li>
+                <li><strong>Konsumsi Alkohol Berlebihan.</strong>
+            </ul>
+
+            <h2>D. Analisis Perbandingan Gangguan Peredaran Darah</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Gangguan</th>
+                            <th>Organ Terkena</th>
+                            <th>Mekanisme Utama</th>
+                            <th>Gejala Khas</th>
+                            <th>Faktor Risiko Utama</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Hipertensi</strong></td>
+                            <td>Seluruh pembuluh darah</td>
+                            <td>Tekanan darah ≥140/90 mmHg persisten</td>
+                            <td>Sering tanpa gejala, sakit kepala, pusing</td>
+                            <td>Garam tinggi, obesitas, stres, genetik</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Aterosklerosis</strong></td>
+                            <td>Arteri</td>
+                            <td>Penumpukan plak lemak di dinding arteri</td>
+                            <td>Nyeri dada, klaudikasio (nyeri kaki)</td>
+                            <td>Kolesterol tinggi, merokok, diabetes</td>
+                        </tr>
+                        <tr>
+                            <td><strong>PJK</strong></td>
+                            <td>Arteri koroner & jantung</td>
+                            <td>Penyempitan arteri koroner</td>
+                            <td>Angina (nyeri dada), sesak, serangan jantung</td>
+                            <td>Dislipidemia, hipertensi, merokok</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Stroke</strong></td>
+                            <td>Pembuluh darah otak</td>
+                            <td>Iskemik (sumbatan) atau hemoragik (pecah)</td>
+                            <td>Lumpuh separuh tubuh, bicara pelo, wajah asimetris</td>
+                            <td>Hipertensi, diabetes, fibrilasi atrium</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Varises</strong></td>
+                            <td>Vena (biasanya tungkai)</td>
+                            <td>Katup vena melemah, darah menumpuk</td>
+                            <td>Vena berkelok, bengkak, nyeri kaki</td>
+                            <td>Berdiri lama, obesitas, kehamilan, genetik</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hemofilia</strong></td>
+                            <td>Darah (faktor pembekuan)</td>
+                            <td>Kekurangan faktor VIII atau IX</td>
+                            <td>Perdarahan sulit berhenti, hemarthrosis</td>
+                            <td>Genetik (resesif terkait kromosom X)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Leukemia</strong></td>
+                            <td>Sumsum tulang & darah</td>
+                            <td>Produksi leukosit abnormal tak terkendali</td>
+                            <td>Demam, lemas, infeksi berulang, pendarahan</td>
+                            <td>Radiasi, bahan kimia, genetik</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Thalassemia</strong></td>
+                            <td>Darah (hemoglobin)</td>
+                            <td>Cacat sintesis rantai hemoglobin</td>
+                            <td>Anemia berat, wajah khas, pertumbuhan terhambat</td>
+                            <td>Genetik (resesif autosomal)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>E. Upaya Menjaga Kesehatan Sistem Peredaran Darah</h2>
+            <p>Pencegahan adalah kunci utama dalam menjaga kesehatan kardiovaskular. Pendekatan holistik meliputi:</p>
+
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">1. Pola Makan Sehat (Diet DASH & Jantung Sehat)</h3>
+            <ul>
+                <li><strong>Batasi Garam:</strong> Maksimal 1 sendok teh (2.000 mg natrium) per hari untuk mencegah hipertensi.</li>
+                <li><strong>Kurangi Lemak Jenuh & Trans:</strong> Hindari gorengan, makanan cepat saji, jeroan, margarin. Ganti dengan lemak tak jenuh (ikan, alpukat, minyak zaitun).</li>
+                <li><strong>Perbanyak Serat:</strong> Sayur, buah, biji-bijian utuh membantu menurunkan kolesterol LDL.</li>
+                <li><strong>Konsumsi Omega-3:</strong> Ikan salmon, sarden, kembung untuk kesehatan jantung.</li>
+                <li><strong>Diet DASH (Dietary Approaches to Stop Hypertension):</strong> Pola makan kaya buah, sayur, produk susu rendah lemak, biji-bijian utuh, ikan, dan unggas, rendah lemak jenuh dan gula.</li>
+            </ul>
+
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">2. Aktivitas Fisik Teratur</h3>
+            <ul>
+                <li>Olahraga aerobik minimal <strong>150 menit/minggu</strong> (jalan cepat, jogging, berenang, bersepeda).</li>
+                <li>Latihan kekuatan 2x seminggu untuk menjaga massa otot dan metabolisme.</li>
+                <li>Hindari gaya hidup sedentari (duduk terlalu lama).</li>
+            </ul>
+
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">3. Hindari Rokok dan Alkohol</h3>
+            <ul>
+                <li>Berhenti merokok menurunkan risiko PJK hingga 50% dalam 1-2 tahun.</li>
+                <li>Hindari asap rokok orang lain (secondhand smoke) yang sama berbahayanya.</li>
+                <li>Batasi alkohol maksimal 1-2 gelas/hari (jika mengonsumsi).</li>
+            </ul>
+
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">4. Kelola Stres dan Tidur Cukup</h3>
+            <ul>
+                <li>Praktikkan teknik relaksasi: meditasi, yoga, pernapasan dalam, hobi.</li>
+                <li>Tidur berkualitas 7-9 jam per malam untuk regenerasi kardiovaskular.</li>
+                <li>Jaga keseimbangan kerja-istirahat dan hubungan sosial yang sehat.</li>
+            </ul>
+
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">5. Pemeriksaan Kesehatan Rutin</h3>
+            <ul>
+                <li>Cek tekanan darah minimal 1x sebulan (normal: &lt;120/80 mmHg).</li>
+                <li>Cek profil lipid (kolesterol total, LDL, HDL, trigliserida) 1x setahun.</li>
+                <li>Cek gula darah puasa untuk deteksi dini diabetes.</li>
+                <li>Indeks Massa Tubuh (IMT) ideal: 18,5-24,9 kg/m².</li>
+            </ul>
+
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">6. Kenali Tanda Bahaya (FAST untuk Stroke)</h3>
+            <ul>
+                <li><strong>F (Face):</strong> Wajah asimetris, satu sisi mulut turun.</li>
+                <li><strong>A (Arm):</strong> Satu lengan lemah atau lumpuh, tidak bisa diangkat.</li>
+                <li><strong>S (Speech):</strong> Bicara pelo atau tidak bisa berbicara.</li>
+                <li><strong>T (Time):</strong> Segera bawa ke rumah sakit, waktu adalah otak!</li>
+            </ul>
+
+            <div class="case-study">
+                <strong><i class="fas fa-microscope"></i> Studi Kasus: Prehipertensi pada Usia Muda</strong>
+                <p>Data dari berbagai studi epidemiologi menunjukkan peningkatan signifikan kasus <strong>prehipertensi</strong> (tekanan darah 120-139/80-89 mmHg) dan hipertensi pada populasi remaja dan dewasa muda dalam dua dekade terakhir. Fenomena ini berkaitan erat dengan perubahan gaya hidup modern:</p>
+                <p><strong>Faktor Pemicu pada Generasi Muda:</strong></p>
+                <ul style="margin-top: 0.5rem;">
+                    <li>Konsumsi makanan cepat saji (<em>fast food</em>) dan makanan ultra-proses yang tinggi natrium, lemak jenuh, dan pengawet</li>
+                    <li>Kebiasaan menambah garam berlebih pada makanan (saus, penyedap, kerupuk)</li>
+                    <li>Konsumsi minuman bersoda dan berenergi tinggi gula</li>
+                    <li>Gaya hidup sedentari: banyak duduk bermain gawai, kurang aktivitas fisik</li>
+                    <li>Obesitas sentral (perut buncit) akibat pola makan buruk</li>
+                    <li>Stres akademik dan kurang tidur kronis</li>
+                    <li>Merokok atau paparan asap rokok</li>
+                </ul>
+                <p><strong>Mekanisme Biologis:</strong></p>
+                <ul style="margin-top: 0.5rem;">
+                    <li>Asupan natrium berlebih → retensi cairan → volume darah meningkat → tekanan darah naik.</li>
+                    <li>Lemak jenuh → dislipidemia → aterosklerosis dini → pembuluh darah kaku → hipertensi.</li>
+                    <li>Stres kronis → aktivasi sistem saraf simpatis → vasokonstriksi → tekanan darah meningkat.</li>
+                </ul>
+                <p><strong>Dampak Jangka Panjang:</strong> Prehipertensi yang tidak ditangani akan berkembang menjadi hipertensi di usia dewasa muda, meningkatkan risiko PJK, stroke, dan gagal ginjal di usia produktif (30-50 tahun).</p>
+                <p><strong>Solusi Preventif:</strong></p>
+                <ul style="margin-top: 0.5rem;">
+                    <li>Edukasi pola makan sehat sejak dini (kurangi garam, gula, lemak)</li>
+                    <li>Biasakan aktivitas fisik 30 menit/hari</li>
+                    <li>Cek tekanan darah rutin sejak usia remaja</li>
+                    <li>Hindari merokok dan minuman beralkohol</li>
+                </ul>
+            </div>
+
+            <h2>F. Tantangan dan Miskonsepsi tentang Gangguan Peredaran Darah</h2>
+            <ul>
+                <li><strong>Miskonsepsi 1:</strong> "Hipertensi selalu menyebabkan sakit kepala." <em>Koreksi:</em> Hipertensi sering kali <strong>tanpa gejala</strong> (silent killer). Banyak orang baru tahu menderita hipertensi saat terjadi komplikasi (stroke, serangan jantung). Satu-satunya cara mendeteksi adalah dengan mengukur tekanan darah.</li>
+                <li><strong>Miskonsepsi 2:</strong> "Penyakit jantung hanya menyerang orang tua." <em>Koreksi:</em> Aterosklerosis bisa dimulai sejak masa kanak-kanak. Serangan jantung pada usia 30-40 tahun semakin sering terjadi akibat gaya hidup tidak sehat.</li>
+                <li><strong>Miskonsepsi 3:</strong> "Kolesterol jahat harus dihindari sepenuhnya." <em>Koreksi:</em> Tubuh tetap membutuhkan kolesterol untuk sintesis hormon dan membran sel. Yang harus dihindari adalah <strong>LDL berlebihan</strong>, sementara <strong>HDL</strong> justru bersifat protektif.</li>
+                <li><strong>Miskonsepsi 4:</strong> "Hemofilia bisa menular." <em>Koreksi:</em> Hemofilia adalah kelainan genetik resesif terkait kromosom X, bukan penyakit menular. Diturunkan dari ibu (carrier) ke anak laki-lakinya.</li>
+                <li><strong>Miskonsepsi 5:</strong> "Stroke hanya terjadi pada orang dengan tekanan darah tinggi." <em>Koreksi:</em> Meskipun hipertensi adalah faktor risiko utama, stroke juga dapat terjadi pada orang dengan tekanan darah normal akibat fibrilasi atrium, diabetes, merokok, atau kelainan pembekuan darah.</li>
+                <li><strong>Miskonsepsi 6:</strong> "Obat herbal bisa menggantikan obat dokter untuk hipertensi." <em>Koreksi:</em> Obat herbal (bawang putih, seledri) dapat membantu sebagai pendukung, tetapi tidak dapat menggantikan obat antihipertensi yang diresepkan dokter untuk kasus hipertensi yang sudah terdiagnosis.</li>
+            </ul>
+
+            <h2>G. Relevansi untuk Kehidupan Sehari-hari</h2>
+            <ul>
+                <li><strong>Pencegahan Dini:</strong> Memahami faktor risiko membantu siswa mengadopsi gaya hidup sehat sejak remaja untuk mencegah penyakit kardiovaskular di masa dewasa.</li>
+                <li><strong>Literasi Kesehatan Keluarga:</strong> Siswa dapat mengedukasi orang tua dan keluarga tentang pentingnya cek tekanan darah dan kolesterol rutin.</li>
+                <li><strong>Pertolongan Pertama Stroke:</strong> Pengetahuan FAST dapat menyelamatkan nyawa anggota keluarga yang mengalami stroke.</li>
+                <li><strong>Kesadaran Gizi:</strong> Membiasakan pola makan rendah garam, gula, dan lemak jenuh untuk jangka panjang.</li>
+                <li><strong>Kemandirian Kesehatan:</strong> Siswa mampu memantau tekanan darah sendiri menggunakan tensimeter digital dan memahami artinya.</li>
+                <li><strong>Empati Sosial:</strong> Memahami kondisi teman atau keluarga dengan hemofilia, thalassemia, atau leukemia agar tidak mendiskriminasi.</li>
+                <li><strong>Karir Medis:</strong> Pengetahuan dasar ini penting bagi siswa yang bercita-cita menjadi dokter, perawat, atau tenaga medis lainnya.</li>
+            </ul>
+
+            <!-- Poin Penting untuk Ujian -->
+            <div class="exam-points">
+                <h3><i class="fas fa-star"></i> Poin Penting untuk Ujian</h3>
+                <ul>
+                    <li>Kuasai minimal 10 jenis gangguan sistem peredaran darah beserta mekanisme dan gejalanya.</li>
+                    <li>Pahami perbedaan aterosklerosis (spesifik plak lemak) dan arteriosklerosis (pengerasan umum).</li>
+                    <li>Hafalkan faktor risiko modifiable dan non-modifiable penyakit kardiovaskular.</li>
+                    <li>Kuasai prinsip Diet DASH dan pola makan jantung sehat.</li>
+                    <li>Pahami mnemonik FAST untuk mengenali tanda-tanda stroke.</li>
+                    <li>Pahami perbedaan hemofilia (faktor pembekuan), thalassemia (hemoglobin), dan leukemia (leukosit).</li>
+                    <li>Siapkan analisis kasus prehipertensi pada usia muda sebagai contoh nyata.</li>
+                    <li>Mampu membedakan miskonsepsi umum dengan fakta ilmiah tentang gangguan peredaran darah.</li>
+                    <li><em>Catatan Administratif:</em> Untuk keperluan ujian formatif ini, pastikan siswa menuliskan <strong>NIS</strong> (Nomor Induk Siswa) dengan jelas pada lembar jawaban.</li>
+                </ul>
+            </div>
+
+            <!-- Bottom Navigation -->
+            <div class="nav-buttons" style="margin-top: 3rem;">
+                <a href="5.html" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Bab Sebelumnya</a>
+                <a href="index.html" class="btn btn-outline"><i class="fas fa-home"></i> Kembali ke Beranda</a>
+                <a href="uji-formatif-6.html" class="btn btn-primary"><i class="fas fa-clipboard-check"></i> Uji Formatif Bab 6</a>
+                <a href="7.html" class="btn btn-outline">Bab Selanjutnya <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div style="margin-bottom: 1.5rem;">
+            <i class="fas fa-book-open" style="font-size: 2rem; color: var(--accent-gold);"></i>
+        </div>
+        <p style="font-size: 1.1rem; color: var(--white); margin-bottom: 0.5rem;">IPA TERPADU Kelas VIII Semester I</p>
+        <p>Buku daras untuk siswa MTsS. Teori, praktik, dan aplikasi sains dalam kehidupan sehari-hari.</p>
+        <p style="margin-top: 1.5rem;">
+            <strong>Miri Susanti, S.Pd., Gr</strong> | MTsS Diniyah Limo Jurai
+        </p>
+        <p>
+            <i class="fas fa-envelope"></i> <a href="mailto:mirisusanti97@gmail.com">mirisusanti97@gmail.com</a>
+        </p>
+        <p style="margin-top: 2rem; font-size: 0.8rem; opacity: 0.6;">
+            &copy; 2026 Hak Cipta Dilindungi Undang-Undang.
+        </p>
+    </footer>
+
+</body>
+</html>

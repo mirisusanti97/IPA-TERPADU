@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 2 - Makanan & Sistem Pencernaan | IPA TERPADU Kelas VIII Semester I</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-navy: #0A192F;
+            --secondary-navy: #112240;
+            --accent-gold: #D4AF37;
+            --accent-gold-light: #F4E4BC;
+            --text-light: #E6F1FF;
+            --text-muted: #8892B0;
+            --white: #FFFFFF;
+            --glass-border: rgba(212, 175, 55, 0.2);
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-navy);
+            color: var(--text-light);
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        .top-nav {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--glass-border);
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .top-nav a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+        
+        .top-nav a:hover {
+            color: var(--accent-gold-light);
+            text-decoration: underline;
+        }
+        
+        .top-nav span {
+            color: var(--text-muted);
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--white);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, var(--white), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .chapter-subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            font-style: italic;
+            border-left: 3px solid var(--accent-gold);
+            padding-left: 1rem;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+        
+        .btn-primary {
+            background: var(--accent-gold);
+            color: var(--primary-navy);
+        }
+        
+        .btn-primary:hover {
+            background: var(--accent-gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -10px rgba(212, 175, 55, 0.5);
+        }
+        
+        .btn-outline {
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+        }
+        
+        .btn-outline:hover {
+            background: rgba(212, 175, 55, 0.1);
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            color: var(--accent-gold-light);
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 1rem;
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+            color: var(--text-light);
+        }
+        
+        ul, ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            color: var(--text-muted);
+        }
+        
+        li {
+            margin-bottom: 0.8rem;
+        }
+        
+        strong {
+            color: var(--white);
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            background: var(--secondary-navy);
+            border-radius: 8px;
+            border: 1px solid var(--glass-border);
+            margin: 2rem 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: var(--text-light);
+        }
+        
+        th {
+            text-align: left;
+            padding: 1rem;
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--accent-gold);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            border-bottom: 2px solid var(--accent-gold);
+        }
+        
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(136, 146, 176, 0.2);
+            color: var(--text-muted);
+        }
+        
+        tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+            color: var(--text-light);
+        }
+        
+        .case-study {
+            background: rgba(10, 25, 47, 0.5);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .case-study strong {
+            color: var(--accent-gold);
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .exam-points {
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .exam-points h3 {
+            color: var(--accent-gold);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .exam-points ul {
+            color: var(--text-light);
+            margin-bottom: 0;
+        }
+        
+        footer {
+            background: #020c1b;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--glass-border);
+            margin-top: 4rem;
+        }
+        
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        footer a {
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Top Navigation -->
+        <div class="top-nav">
+            <a href="index.html"><i class="fas fa-book-open"></i> IPA TERPADU Kelas VIII</a>
+            <span>|</span>
+            <a href="index.html">Beranda</a>
+            <span>|</span>
+            <a href="index.html#daftar-isi">Daftar Bab</a>
+            <span>|</span>
+            <a href="index.html#tentang">Penulis</a>
+        </div>
+
+        <!-- Header -->
+        <header>
+            <h1>BAB 2</h1>
+            <h1 style="font-size: 2rem; margin-top: -0.5rem;">Makanan dan Sistem Pencernaan: Zat Gizi, Organ Pencernaan, dan Proses Pencernaan</h1>
+            <p class="chapter-subtitle">Memahami jenis-jenis zat gizi makro dan mikro, anatomi organ pencernaan manusia, serta proses pencernaan mekanik dan kimiawi dari mulut hingga anus.</p>
+            
+            <div class="nav-buttons">
+                <a href="index.html" class="btn btn-outline"><i class="fas fa-home"></i> Beranda</a>
+                <a href="uji-formatif-2.html" class="btn btn-primary"><i class="fas fa-clipboard-check"></i> Uji Formatif Bab 2</a>
+                <a href="3.html" class="btn btn-outline">Bab Selanjutnya <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <h2>A. Pengertian Makanan dan Zat Gizi</h2>
+            <p>Makanan adalah segala bahan yang masuk ke dalam tubuh melalui mulut, dikunyah, dicerna, dan diserap oleh tubuh untuk menghasilkan energi, membangun serta memelihara jaringan, dan mengatur proses-proses kehidupan. Zat gizi (nutrien) adalah komponen kimia dalam makanan yang dibutuhkan tubuh untuk menjalankan fungsi-fungsi vital tersebut.</p>
+            <p>Zat gizi diklasifikasikan menjadi dua kelompok besar berdasarkan jumlah yang dibutuhkan tubuh:</p>
+            <ul>
+                <li><strong>Makronutrien:</strong> Dibutuhkan dalam jumlah besar (gram), yaitu Karbohidrat, Protein, dan Lemak. Berfungsi sebagai sumber energi utama.</li>
+                <li><strong>Mikronutrien:</strong> Dibutuhkan dalam jumlah kecil (miligram/mikrogram), yaitu Vitamin dan Mineral. Berfungsi sebagai pengatur proses metabolisme.</li>
+                <li><strong>Air:</strong> Komponen esensial yang menyusun sekitar 60-70% berat tubuh dan berperan dalam transportasi zat serta regulasi suhu tubuh.</li>
+            </ul>
+
+            <h2>B. Fungsi dan Sumber Zat Gizi</h2>
+            <p>Setiap zat gizi memiliki peran spesifik dalam menjaga homeostasis tubuh. Berikut adalah analisis komprehensif fungsi dan sumber masing-masing zat gizi:</p>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Jenis Zat Gizi</th>
+                            <th>Fungsi Utama</th>
+                            <th>Sumber Makanan</th>
+                            <th>Kebutuhan Harian (Remaja)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Karbohidrat</strong></td>
+                            <td>Sumber energi utama (4 kkal/gram), cadangan glikogen</td>
+                            <td>Nasi, roti, kentang, jagung, ubi</td>
+                            <td>250-350 gram</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Protein</strong></td>
+                            <td>Pembangun dan perbaikan jaringan, enzim, hormon, antibodi (4 kkal/gram)</td>
+                            <td>Daging, ikan, telur, tempe, tahu, kacang-kacangan</td>
+                            <td>55-70 gram</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Lemak</strong></td>
+                            <td>Cadangan energi (9 kkal/gram), pelarut vitamin A, D, E, K, pelindung organ</td>
+                            <td>Minyak, mentega, alpukat, kacang, ikan berlemak</td>
+                            <td>50-70 gram</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Vitamin</strong></td>
+                            <td>Pengatur metabolisme, antioksidan, imunitas</td>
+                            <td>Buah, sayur, susu, ikan</td>
+                            <td>Bervariasi (mg/μg)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mineral</strong></td>
+                            <td>Pembentuk tulang (Ca, P), transportasi O2 (Fe), keseimbangan cairan (Na, K)</td>
+                            <td>Susu, daging merah, sayur hijau, garam beryodium</td>
+                            <td>Bervariasi (mg)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Air</strong></td>
+                            <td>Pelarut, transportasi zat, regulasi suhu, pelumas sendi</td>
+                            <td>Air minum, buah, sayur</td>
+                            <td>2-2,5 liter</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>C. Organ Pencernaan Manusia</h2>
+            <p>Sistem pencernaan manusia terdiri dari saluran pencernaan (tractus digestivus) dan kelenjar pencernaan (aksesoris). Saluran pencernaan merupakan saluran berongga yang memanjang dari mulut hingga anus, sementara kelenjar pencernaan adalah organ yang menghasilkan enzim untuk membantu proses pencernaan.</p>
+
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">1. Saluran Pencernaan</h3>
+            <ol>
+                <li><strong>Mulut (Cavum Oris):</strong> Tempat masuknya makanan, terjadi pencernaan mekanik (gigi) dan kimiawi (enzim ptialin/amilase dari kelenjar ludah).</li>
+                <li><strong>Kerongkongan (Esofagus):</strong> Saluran penghubung mulut dan lambung. Gerakan peristaltik (gelombang kontraksi otot) mendorong makanan masuk ke lambung.</li>
+                <li><strong>Lambung (Ventrikulus/Gaster):</strong> Organ berbentuk J yang menghasilkan HCl (asam lambung), pepsin, dan renin. Berfungsi membunuh kuman, mengaktifkan enzim, serta mencerna protein secara kimiawi.</li>
+                <li><strong>Usus Halus (Intestinum Tenue):</strong> Saluran panjang (~6 meter) yang terdiri dari duodenum (usus 12 jari), jejunum, dan ileum. Tempat utama penyerapan sari makanan melalui vili usus.</li>
+                <li><strong>Usus Besar (Kolon):</strong> Menyerap air dan elektrolit dari sisa makanan, membentuk feses, serta menjadi tempat hidup bakteri <em>Escherichia coli</em> yang membantu pembusukan dan sintesis vitamin K.</li>
+                <li><strong>Rektum dan Anus:</strong> Tempat penyimpanan sementara feses sebelum dikeluarkan melalui proses defekasi (buang air besar).</li>
+            </ol>
+
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">2. Kelenjar Pencernaan (Aksessoris)</h3>
+            <ul>
+                <li><strong>Hati (Hepar):</strong> Menghasilkan empedu yang berfungsi mengemulsi lemak.</li>
+                <li><strong>Kandung Empedu (Vesica Fellea):</strong> Menampung dan memekatkan empedu sebelum disalurkan ke usus halus.</li>
+                <li><strong>Pankreas:</strong> Menghasilkan enzim tripsin (pencerna protein), lipase (pencerna lemak), dan amilase pankreatik (pencerna karbohidrat).</li>
+            </ul>
+
+            <h2>D. Proses Pencernaan: Mekanik dan Kimiawi</h2>
+            <p>Pencernaan makanan melibatkan dua proses utama yang berlangsung secara simultan di sepanjang saluran pencernaan:</p>
+            <ul>
+                <li><strong>Pencernaan Mekanik:</strong> Proses penghancuran makanan secara fisik menjadi partikel yang lebih kecil. Contoh: pengunyahan oleh gigi di mulut, kontraksi otot lambung (churning), dan gerakan peristaltik di usus.</li>
+                <li><strong>Pencernaan Kimiawi:</strong> Proses penguraian molekul kompleks menjadi molekul sederhana dengan bantuan enzim. Contoh: amilase memecah pati menjadi maltosa, pepsin memecah protein menjadi pepton.</li>
+            </ul>
+
+            <h3 style="color: var(--accent-gold-light); font-size: 1.3rem; margin-top: 2rem;">Enzim Pencernaan dan Fungsinya</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Enzim</th>
+                            <th>Dihasilkan Oleh</th>
+                            <th>Substrat (Bahan)</th>
+                            <th>Hasil Pencernaan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Ptialin (Amilase Ludah)</strong></td>
+                            <td>Kelenjar Ludah</td>
+                            <td>Amilum (pati)</td>
+                            <td>Maltosa</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Pepsin</strong></td>
+                            <td>Lambung</td>
+                            <td>Protein</td>
+                            <td>Pepton</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Renin</strong></td>
+                            <td>Lambung</td>
+                            <td>Kasein (protein susu)</td>
+                            <td>Kaseinat (gumpalan)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>HCl (Asam Klorida)</strong></td>
+                            <td>Lambung</td>
+                            <td>-</td>
+                            <td>Membunuh kuman, mengaktifkan pepsinogen</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tripsin</strong></td>
+                            <td>Pankreas</td>
+                            <td>Pepton</td>
+                            <td>Asam Amino</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Lipase Pankreatik</strong></td>
+                            <td>Pankreas</td>
+                            <td>Lemak</td>
+                            <td>Asam Lemak + Gliserol</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Amilase Pankreatik</strong></td>
+                            <td>Pankreas</td>
+                            <td>Amilum</td>
+                            <td>Maltosa</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Maltase</strong></td>
+                            <td>Usus Halus</td>
+                            <td>Maltosa</td>
+                            <td>Glukosa</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="case-study">
+                <strong><i class="fas fa-microscope"></i> Studi Kasus: Stunting pada Balita</strong>
+                <p>Stunting adalah kondisi gagal tumbuh pada anak balita akibat kekurangan gizi kronis, terutama pada 1000 hari pertama kehidupan (HPK). Di Indonesia, prevalensi stunting masih menjadi perhatian serius. Data SSGI (2023) menunjukkan sekitar 21,5% balita Indonesia mengalami stunting.</p>
+                <p><strong>Mekanisme:</strong> Kekurangan protein, zinc, dan zat besi secara kronis menghambat sintesis sel baru dan regenerasi jaringan, sehingga pertumbuhan tulang dan perkembangan otak terhambat. Anak yang mengalami stunting tidak hanya pendek secara fisik, tetapi juga memiliki kapasitas kognitif yang lebih rendah, rentan terhadap penyakit infeksi, dan berisiko tinggi menderita penyakit degeneratif di usia dewasa.</p>
+                <p><strong>Pencegahan:</strong> Pemberian ASI eksklusif 6 bulan, MP-ASI bergizi seimbang, suplementasi mikronutrien, serta sanitasi lingkungan yang baik untuk mencegah diare yang memperparah malnutrisi.</p>
+            </div>
+
+            <h2>E. Tantangan dan Miskonsepsi tentang Sistem Pencernaan</h2>
+            <p>Dalam proses pembelajaran, siswa sering menghadapi beberapa miskonsepsi umum:</p>
+            <ul>
+                <li><strong>Miskonsepsi 1:</strong> "Lambung adalah tempat utama penyerapan sari makanan." <em>Koreksi:</em> Penyerapan utama terjadi di usus halus, bukan lambung. Lambung lebih berperan dalam pencernaan protein dan penyimpanan makanan sementara.</li>
+                <li><strong>Miskonsepsi 2:</strong> "Lemak selalu buruk bagi kesehatan." <em>Koreksi:</em> Lemak esensial (omega-3, omega-6) justru vital untuk perkembangan otak dan penyerapan vitamin A, D, E, K.</li>
+                <li><strong>Miskonsepsi 3:</strong> "Makanan bergerak di kerongkongan karena gravitasi." <em>Koreksi:</em> Makanan tetap dapat bergerak dari mulut ke lambung meskipun dalam posisi terbalik, berkat gerakan peristaltik.</li>
+            </ul>
+
+            <h2>F. Relevansi untuk Kehidupan Sehari-hari</h2>
+            <p>Pemahaman tentang sistem pencernaan memiliki aplikasi praktis yang luas:</p>
+            <ul>
+                <li><strong>Pola Makan Seimbang:</strong> Memahami pentingnya gizi seimbang (pedoman "Isi Piringku" dari Kemenkes) untuk mencegah obesitas, diabetes, dan malnutrisi.</li>
+                <li><strong>Pencegahan Penyakit:</strong> Menghindari makanan ultra-proses, membatasi gula dan natrium, serta memperbanyak serat untuk menjaga kesehatan mikrobioma usus.</li>
+                <li><strong>Kesehatan Mikrobioma:</strong> Konsumsi prebiotik (serat dari sayur/buah) dan probiotik (yogurt, tempe) untuk menjaga keseimbangan bakteri baik di usus yang berperan dalam imunitas dan kesehatan mental (gut-brain axis).</li>
+                <li><strong>Kebiasaan Makan:</strong> Mengunyah makanan dengan baik (20-30 kali) untuk meringankan kerja lambung dan meningkatkan penyerapan nutrisi.</li>
+            </ul>
+
+            <!-- Poin Penting untuk Ujian -->
+            <div class="exam-points">
+                <h3><i class="fas fa-star"></i> Poin Penting untuk Ujian</h3>
+                <ul>
+                    <li>Kuasai 6 jenis zat gizi utama beserta fungsi dan sumber makanannya.</li>
+                    <li>Hafalkan urutan saluran pencernaan: Mulut → Esofagus → Lambung → Usus Halus → Usus Besar → Rektum → Anus.</li>
+                    <li>Pahami perbedaan pencernaan mekanik dan kimiawi beserta contohnya di setiap organ.</li>
+                    <li>Kuasai fungsi enzim-enzim utama (ptialin, pepsin, renin, tripsin, lipase, amilase) beserta substrat dan hasilnya.</li>
+                    <li>Pahami peran organ aksessoris: hati (empedu), pankreas (enzim), dan kandung empedu.</li>
+                    <li>Siapkan analisis kasus stunting sebagai contoh nyata gangguan gizi kronis.</li>
+                    <li><em>Catatan Administratif:</em> Untuk keperluan ujian formatif ini, pastikan siswa menuliskan <strong>NIS</strong> (Nomor Induk Siswa) dengan jelas pada lembar jawaban.</li>
+                </ul>
+            </div>
+
+            <!-- Bottom Navigation -->
+            <div class="nav-buttons" style="margin-top: 3rem;">
+                <a href="1.html" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Bab Sebelumnya</a>
+                <a href="index.html" class="btn btn-outline"><i class="fas fa-home"></i> Kembali ke Beranda</a>
+                <a href="uji-formatif-2.html" class="btn btn-primary"><i class="fas fa-clipboard-check"></i> Uji Formatif Bab 2</a>
+                <a href="3.html" class="btn btn-outline">Bab Selanjutnya <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div style="margin-bottom: 1.5rem;">
+            <i class="fas fa-book-open" style="font-size: 2rem; color: var(--accent-gold);"></i>
+        </div>
+        <p style="font-size: 1.1rem; color: var(--white); margin-bottom: 0.5rem;">IPA TERPADU Kelas VIII Semester I</p>
+        <p>Buku daras untuk siswa MTsS. Teori, praktik, dan aplikasi sains dalam kehidupan sehari-hari.</p>
+        <p style="margin-top: 1.5rem;">
+            <strong>Miri Susanti, S.Pd., Gr</strong> | MTsS Diniyah Limo Jurai
+        </p>
+        <p>
+            <i class="fas fa-envelope"></i> <a href="mailto:mirisusanti97@gmail.com">mirisusanti97@gmail.com</a>
+        </p>
+        <p style="margin-top: 2rem; font-size: 0.8rem; opacity: 0.6;">
+            &copy; 2026 Hak Cipta Dilindungi Undang-Undang.
+        </p>
+    </footer>
+
+</body>
+</html>

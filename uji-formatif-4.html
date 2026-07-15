@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uji Formatif Bab 4 - Komponen Darah | IPA TERPADU Kelas VIII</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-navy: #0A192F;
+            --secondary-navy: #112240;
+            --accent-gold: #D4AF37;
+            --accent-gold-light: #F4E4BC;
+            --text-light: #E6F1FF;
+            --text-muted: #8892B0;
+            --white: #FFFFFF;
+            --glass-border: rgba(212, 175, 55, 0.2);
+            --success: #28a745;
+            --error: #dc3545;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-navy);
+            color: var(--text-light);
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        .top-nav {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--glass-border);
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .top-nav a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+        
+        .top-nav a:hover {
+            color: var(--accent-gold-light);
+            text-decoration: underline;
+        }
+        
+        .top-nav span {
+            color: var(--text-muted);
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--white);
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, var(--white), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .exam-meta {
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .exam-meta p {
+            margin: 0.5rem 0;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        
+        .exam-meta strong {
+            color: var(--accent-gold);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--accent-gold-light);
+            font-weight: 500;
+        }
+        
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background: var(--secondary-navy);
+            border: 1px solid var(--glass-border);
+            border-radius: 6px;
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+        
+        .required {
+            color: var(--error);
+        }
+        
+        .question-block {
+            background: var(--secondary-navy);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: border-color 0.3s;
+        }
+        
+        .question-block:hover {
+            border-color: var(--accent-gold);
+        }
+        
+        .question-text {
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+        
+        .options label {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            padding: 0.6rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+            color: var(--text-muted);
+        }
+        
+        .options label:hover {
+            background: rgba(212, 175, 55, 0.05);
+            color: var(--text-light);
+        }
+        
+        .options input[type="radio"] {
+            margin-top: 0.3rem;
+            accent-color: var(--accent-gold);
+        }
+        
+        .options textarea {
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary-navy);
+            border: 1px solid var(--glass-border);
+            border-radius: 6px;
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .options textarea:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.9rem 1.8rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: var(--accent-gold);
+            color: var(--primary-navy);
+        }
+        
+        .btn-primary:hover {
+            background: var(--accent-gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -10px rgba(212, 175, 55, 0.5);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+        }
+        
+        .btn-outline:hover {
+            background: rgba(212, 175, 55, 0.1);
+        }
+        
+        .btn-secondary {
+            background: var(--secondary-navy);
+            border: 1px solid var(--glass-border);
+            color: var(--text-light);
+        }
+        
+        .btn-secondary:hover {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+        }
+        
+        #hasil-section {
+            display: none;
+            background: rgba(212, 175, 55, 0.05);
+            border: 2px solid var(--accent-gold);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+        
+        .score-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .score-card {
+            background: var(--secondary-navy);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--glass-border);
+        }
+        
+        .score-card h4 {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+        }
+        
+        .score-card .score-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .essay-note {
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem;
+            margin-top: 1.5rem;
+            text-align: left;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        
+        footer {
+            background: #020c1b;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--glass-border);
+            margin-top: 4rem;
+        }
+        
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        footer a {
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media print {
+            body { background: white; color: black; }
+            .top-nav, .btn-group, footer { display: none; }
+            .container { max-width: 100%; padding: 0; }
+            .question-block, #hasil-section { border: 1px solid #ccc; break-inside: avoid; }
+            h1, h2, h3 { color: black; -webkit-text-fill-color: black; }
+            .score-value { color: black; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Top Navigation -->
+        <div class="top-nav">
+            <a href="index.html"><i class="fas fa-book-open"></i> IPA TERPADU Kelas VIII</a>
+            <span>|</span>
+            <a href="index.html">Beranda</a>
+            <span>|</span>
+            <a href="index.html#daftar-isi">Daftar Bab</a>
+            <span>|</span>
+            <a href="4.html">Materi Bab 4</a>
+        </div>
+
+        <!-- Header -->
+        <header>
+            <h1>📋 Uji Formatif Bab 4</h1>
+            <h2 style="font-size: 1.5rem; color: var(--accent-gold-light); margin-top: 0.5rem;">Sistem Peredaran Darah: Komponen Darah dan Fungsinya</h2>
+            
+            <div class="exam-meta">
+                <p><strong>📋 Struktur Ujian:</strong> Bagian A: Pilihan Ganda (10 soal, skor 10/soal) | ✍️ Bagian B: Essay (5 soal, skor 20/soal)</p>
+                <p><strong>📚 Materi:</strong> Komponen darah (plasma, eritrosit, leukosit, trombosit), fungsi masing-masing, hematopoiesis, golongan darah, serta studi kasus anemia defisiensi besi.</p>
+                <p><strong>⏱️ Waktu:</strong> Tidak terbatas | <strong>🎯 Total Skor:</strong> 200 poin</p>
+            </div>
+        </header>
+
+        <!-- Student Data Form -->
+        <section id="data-siswa">
+            <h3 style="color: var(--accent-gold); margin-bottom: 1.5rem;"><i class="fas fa-user-graduate"></i> Data Siswa</h3>
+            <div class="form-group">
+                <label>Nama Lengkap <span class="required">*</span></label>
+                <input type="text" id="namaSiswa" placeholder="Masukkan nama lengkap siswa" required>
+            </div>
+            <div class="form-group">
+                <label>NIS (Nomor Induk Siswa) <span class="required">*</span></label>
+                <input type="text" id="nisSiswa" placeholder="Masukkan NIS" required>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                <div class="form-group">
+                    <label>📅 Tanggal Ujian</label>
+                    <input type="date" id="tanggalUjian">
+                </div>
+                <div class="form-group">
+                    <label>Kelas <span class="required">*</span></label>
+                    <select id="kelasSiswa" required>
+                        <option value="">Pilih Kelas</option>
+                        <option value="VIII A">VIII A</option>
+                        <option value="VIII B">VIII B</option>
+                        <option value="VIII C">VIII C</option>
+                        <option value="VIII D">VIII D</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bagian A: Pilihan Ganda -->
+        <section id="bagian-a" style="margin-top: 3rem;">
+            <h3 style="color: var(--accent-gold); margin-bottom: 1rem;"><i class="fas fa-list-ol"></i> Bagian A – Pilihan Ganda</h3>
+            <p style="color: var(--error); font-size: 0.9rem; margin-bottom: 1.5rem;">⚠️ Lengkapi semua 10 soal pilihan ganda! Setiap soal bernilai 10 poin.</p>
+
+            <!-- Soal 1 -->
+            <div class="question-block">
+                <div class="question-text">Soal 1: Komponen cair darah yang berwarna kekuningan dan menyusun sekitar 55% volume darah disebut...</div>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="a"> a) Eritrosit</label>
+                    <label><input type="radio" name="q1" value="b"> b) Leukosit</label>
+                    <label><input type="radio" name="q1" value="c"> c) Plasma darah</label>
+                    <label><input type="radio" name="q1" value="d"> d) Trombosit</label>
+                </div>
+            </div>
+
+            <!-- Soal 2 -->
+            <div class="question-block">
+                <div class="question-text">Soal 2: Protein dalam eritrosit yang berfungsi mengangkut oksigen dan memberikan warna merah pada darah adalah...</div>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="a"> a) Fibrinogen</label>
+                    <label><input type="radio" name="q2" value="b"> b) Albumin</label>
+                    <label><input type="radio" name="q2" value="c"> c) Hemoglobin</label>
+                    <label><input type="radio" name="q2" value="d"> d) Globulin</label>
+                </div>
+            </div>
+
+            <!-- Soal 3 -->
+            <div class="question-block">
+                <div class="question-text">Soal 3: Sel darah putih yang berperan sebagai fagosit pertama dalam merespons infeksi bakteri adalah...</div>
+                <div class="options">
+                    <label><input type="radio" name="q3" value="a"> a) Eosinofil</label>
+                    <label><input type="radio" name="q3" value="b"> b) Neutrofil</label>
+                    <label><input type="radio" name="q3" value="c"> c) Basofil</label>
+                    <label><input type="radio" name="q3" value="d"> d) Limfosit</label>
+                </div>
+            </div>
+
+            <!-- Soal 4 -->
+            <div class="question-block">
+                <div class="question-text">Soal 4: Komponen darah yang berperan dalam proses pembekuan darah (hemostasis) adalah...</div>
+                <div class="options">
+                    <label><input type="radio" name="q4" value="a"> a) Eritrosit</label>
+                    <label><input type="radio" name="q4" value="b"> b) Leukosit</label>
+                    <label><input type="radio" name="q4" value="c"> c) Plasma</label>
+                    <label><input type="radio" name="q4" value="d"> d) Trombosit</label>
+                </div>
+            </div>
+
+            <!-- Soal 5 -->
+            <div class="question-block">
+                <div class="question-text">Soal 5: Hormon yang diproduksi oleh ginjal untuk merangsang pembentukan eritrosit saat kadar oksigen rendah adalah...</div>
+                <div class="options">
+                    <label><input type="radio" name="q5" value="a"> a) Trombopoietin</label>
+                    <label><input type="radio" name="q5" value="b"> b) Eritropoietin (EPO)</label>
+                    <label><input type="radio" name="q5" value="c"> c) Insulin</label>
+                    <label><input type="radio" name="q5" value="d"> d) Adrenalin</label>
+                </div>
+            </div>
+
+            <!-- Soal 6 -->
+            <div class="question-block">
+                <div class="question-text">Soal 6: Leukosit yang berperan dalam reaksi alergi dan melawan infeksi parasit adalah...</div>
+                <div class="options">
+                    <label><input type="radio" name="q6" value="a"> a) Neutrofil</label>
+                    <label><input type="radio" name="q6" value="b"> b) Basofil</label>
+                    <label><input type="radio" name="q6" value="c"> c) Eosinofil</label>
+                    <label><input type="radio" name="q6" value="d"> d) Monosit</label>
+                </div>
+            </div>
+
+            <!-- Soal 7 -->
+            <div class="question-block">
+                <div class="question-text">Soal 7: Proses pembentukan sel darah di sumsum tulang merah disebut...</div>
+                <div class="options">
+                    <label><input type="radio" name="q7" value="a"> a) Hemostasis</label>
+                    <label><input type="radio" name="q7" value="b"> b) Diapedesis</label>
+                    <label><input type="radio" name="q7" value="c"> c) Hematopoiesis</label>
+                    <label><input type="radio" name="q7" value="d"> d) Fagositosis</label>
+                </div>
+            </div>
+
+            <!-- Soal 8 -->
+            <div class="question-block">
+                <div class="question-text">Soal 8: Anemia defisiensi besi pada remaja putri sering disebabkan oleh faktor berikut, KECUALI...</div>
+                <div class="options">
+                    <label><input type="radio" name="q8" value="a"> a) Menstruasi yang menyebabkan kehilangan zat besi</label>
+                    <label><input type="radio" name="q8" value="b"> b) Pola diet ketat yang rendah daging dan sayur hijau</label>
+                    <label><input type="radio" name="q8" value="c"> c) Konsumsi vitamin C berlebihan</label>
+                    <label><input type="radio" name="q8" value="d"> d) Pertumbuhan pesat yang meningkatkan kebutuhan besi</label>
+                </div>
+            </div>
+
+            <!-- Soal 9 -->
+            <div class="question-block">
+                <div class="question-text">Soal 9: Protein plasma yang berperan dalam proses pembekuan darah dengan diubah menjadi fibrin adalah...</div>
+                <div class="options">
+                    <label><input type="radio" name="q9" value="a"> a) Albumin</label>
+                    <label><input type="radio" name="q9" value="b"> b) Globulin</label>
+                    <label><input type="radio" name="q9" value="c"> c) Fibrinogen</label>
+                    <label><input type="radio" name="q9" value="d"> d) Antibodi</label>
+                </div>
+            </div>
+
+            <!-- Soal 10 -->
+            <div class="question-block">
+                <div class="question-text">Soal 10: Limfosit terdiri dari dua jenis utama yang berperan dalam imunitas spesifik, yaitu...</div>
+                <div class="options">
+                    <label><input type="radio" name="q10" value="a"> a) Sel B dan sel T</label>
+                    <label><input type="radio" name="q10" value="b"> b) Neutrofil dan eosinofil</label>
+                    <label><input type="radio" name="q10" value="c"> c) Monosit dan makrofag</label>
+                    <label><input type="radio" name="q10" value="d"> d) Basofil dan trombosit</label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bagian B: Essay -->
+        <section id="bagian-b" style="margin-top: 3rem;">
+            <h3 style="color: var(--accent-gold); margin-bottom: 1rem;"><i class="fas fa-pen-fancy"></i> Bagian B – Essay</h3>
+            <p style="color: var(--error); font-size: 0.9rem; margin-bottom: 1.5rem;">⚠️ Pastikan Nama Lengkap dan NIS telah diisi! Setiap soal essay bernilai 20 poin.</p>
+
+            <div class="question-block">
+                <div class="question-text">Soal Essay 1: Jelaskan komposisi darah manusia beserta persentase masing-masing komponennya, dan sebutkan fungsi utama dari setiap komponen tersebut!</div>
+                <div class="options">
+                    <textarea id="essay1" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <div class="question-text">Soal Essay 2: Uraikan perbedaan antara granulosit dan agranulosit pada leukosit, serta jelaskan fungsi masing-masing jenis sel darah putih (neutrofil, eosinofil, basofil, limfosit, monosit)!</div>
+                <div class="options">
+                    <textarea id="essay2" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <div class="question-text">Soal Essay 3: Jelaskan proses hematopoiesis dan sebutkan hormon-hormon yang berperan dalam pembentukan eritrosit, leukosit, dan trombosit!</div>
+                <div class="options">
+                    <textarea id="essay3" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <div class="question-text">Soal Essay 4: Bagaimana mekanisme pembekuan darah (hemostasis) yang melibatkan trombosit? Jelaskan secara berurutan!</div>
+                <div class="options">
+                    <textarea id="essay4" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <div class="question-text">Soal Essay 5: Berdasarkan studi kasus anemia defisiensi besi pada remaja putri, analisislah penyebab, gejala klinis, dan upaya pencegahan yang dapat dilakukan!</div>
+                <div class="options">
+                    <textarea id="essay5" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                </div>
+            </div>
+        </section>
+
+        <!-- Action Buttons -->
+        <div class="btn-group" style="justify-content: center;">
+            <button class="btn btn-primary" onclick="hitungNilai()"><i class="fas fa-paper-plane"></i> KIRIM JAWABAN & LIHAT HASIL</button>
+        </div>
+
+        <!-- Hasil Uji Formatif -->
+        <section id="hasil-section">
+            <h2 style="color: var(--accent-gold); margin-top: 0;"><i class="fas fa-chart-bar"></i> Hasil Uji Formatif</h2>
+            <p>Terima kasih telah menyelesaikan uji formatif ini, <strong id="hasilNama">Siswa</strong>!</p>
+            
+            <div class="score-grid">
+                <div class="score-card">
+                    <h4>Skor Pilihan Ganda</h4>
+                    <div class="score-value" id="skorPG">0/100</div>
+                </div>
+                <div class="score-card">
+                    <h4>Skor Essay</h4>
+                    <div class="score-value" id="skorEssay">Menunggu</div>
+                </div>
+                <div class="score-card">
+                    <h4>Skor Total Sementara</h4>
+                    <div class="score-value" id="skorTotal">0/200</div>
+                </div>
+                <div class="score-card">
+                    <h4>Nilai Akhir (PG)</h4>
+                    <div class="score-value" id="nilaiAkhir">0</div>
+                </div>
+            </div>
+
+            <div class="essay-note">
+                <strong><i class="fas fa-info-circle"></i> Catatan Penilaian:</strong><br>
+                Skor Pilihan Ganda dihitung secara otomatis. Skor Essay (maksimal 100 poin) akan dinilai secara manual oleh guru berdasarkan ketepatan konsep, kelengkapan jawaban, dan penggunaan istilah ilmiah yang benar. Silakan unduh hasil ini dan kumpulkan kepada guru pengampu.
+            </div>
+
+            <div class="btn-group" style="justify-content: center; margin-top: 2rem;">
+                <button class="btn btn-primary" onclick="window.print()"><i class="fas fa-file-pdf"></i> UNDUH PDF LENGKAP</button>
+                <button class="btn btn-outline" onclick="alert('Fitur kirim email ke guru (mirisusanti97@gmail.com) akan membuka aplikasi email default Anda.')"><i class="fas fa-envelope"></i> KIRIM EMAIL GURU</button>
+                <button class="btn btn-secondary" onclick="location.reload()"><i class="fas fa-redo"></i> MULAI ULANG</button>
+            </div>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <div class="top-nav" style="margin-top: 3rem; justify-content: center; border-top: 1px solid var(--glass-border); border-bottom: none; padding-top: 2rem;">
+            <a href="index.html">🏠 Kembali ke Beranda</a>
+            <span>|</span>
+            <a href="4.html">📖 Kembali ke Materi Bab 4</a>
+            <span>|</span>
+            <a href="5.html">Lanjut ke Materi Bab 5 →</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div style="margin-bottom: 1.5rem;">
+            <i class="fas fa-book-open" style="font-size: 2rem; color: var(--accent-gold);"></i>
+        </div>
+        <p style="font-size: 1.1rem; color: var(--white); margin-bottom: 0.5rem;">IPA TERPADU Kelas VIII Semester I</p>
+        <p>Buku daras untuk siswa MTsS. Teori, praktik, dan aplikasi sains dalam kehidupan sehari-hari.</p>
+        <p style="margin-top: 1.5rem;">
+            <strong>Miri Susanti, S.Pd., Gr</strong> | MTsS Diniyah Limo Jurai
+        </p>
+        <p>
+            <i class="fas fa-envelope"></i> <a href="mailto:mirisusanti97@gmail.com">mirisusanti97@gmail.com</a>
+        </p>
+        <p style="margin-top: 2rem; font-size: 0.8rem; opacity: 0.6;">
+            &copy; 2026 Hak Cipta Dilindungi Undang-Undang.
+        </p>
+    </footer>
+
+    <!-- JavaScript for Scoring and Validation -->
+    <script>
+        const kunciJawaban = {
+            q1: 'c',
+            q2: 'c',
+            q3: 'b',
+            q4: 'd',
+            q5: 'b',
+            q6: 'c',
+            q7: 'c',
+            q8: 'c',
+            q9: 'c',
+            q10: 'a'
+        };
+
+        function hitungNilai() {
+            const nama = document.getElementById('namaSiswa').value.trim();
+            const nis = document.getElementById('nisSiswa').value.trim();
+            const kelas = document.getElementById('kelasSiswa').value;
+
+            if (!nama || !nis || !kelas) {
+                alert('⚠️ Harap lengkapi data siswa (Nama Lengkap, NIS, dan Kelas) sebelum mengirim jawaban!');
+                document.getElementById('data-siswa').scrollIntoView({ behavior: 'smooth' });
+                return;
+            }
+
+            let terjawab = 0;
+            for (let i = 1; i <= 10; i++) {
+                if (document.querySelector(`input[name="q${i}"]:checked`)) {
+                    terjawab++;
+                }
+            }
+
+            if (terjawab < 10) {
+                alert(`⚠️ Anda baru menjawab ${terjawab} dari 10 soal pilihan ganda. Harap lengkapi semua soal!`);
+                return;
+            }
+
+            let skorPG = 0;
+            for (let i = 1; i <= 10; i++) {
+                const jawabanSiswa = document.querySelector(`input[name="q${i}"]:checked`).value;
+                if (jawabanSiswa === kunciJawaban[`q${i}`]) {
+                    skorPG += 10;
+                }
+            }
+
+            document.getElementById('hasilNama').textContent = nama;
+            document.getElementById('skorPG').textContent = skorPG + '/100';
+            document.getElementById('skorTotal').textContent = skorPG + '/200';
+            document.getElementById('nilaiAkhir').textContent = skorPG;
+            
+            const hasilSection = document.getElementById('hasil-section');
+            hasilSection.style.display = 'block';
+            hasilSection.scrollIntoView({ behavior: 'smooth' });
+
+            document.querySelector('button[onclick="hitungNilai()"]').style.display = 'none';
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('tanggalUjian').value = today;
+        });
+    </script>
+</body>
+</html>
